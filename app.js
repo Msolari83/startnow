@@ -1776,6 +1776,69 @@ function pickActivity(type, duration, reason, moreTimeMode) {
   return pickFrom(pool);
 }
 
+/**
+ * pickDifferentActivity(type, duration, reason, moreTimeMode, excludeId)
+ * Used by "Another one" — always excludes the currently visible activity,
+ * cascading through progressively wider fallback pools.
+ * Returns null only when no different activity exists at all.
+ */
+function pickDifferentActivity(type, duration, reason, moreTimeMode, excludeId) {
+  function rand(pool) {
+    const candidates = pool.filter(a => a.id !== excludeId);
+    if (!candidates.length) return null;
+    const picked = candidates[Math.floor(Math.random() * candidates.length)];
+    state.lastActivityId = picked.id;
+    return picked;
+  }
+
+  // 1. Exact match: same type + duration + reason + moreTimeMode
+  if (moreTimeMode) {
+    const r = rand(ACTIVITIES.filter(
+      a => a.moreTimeMode === moreTimeMode && a.duration === duration &&
+           (!a.type || a.type === type)
+    ));
+    if (r) return r;
+
+    const r2 = rand(ACTIVITIES.filter(
+      a => a.moreTimeMode === moreTimeMode && a.duration === duration
+    ));
+    if (r2) return r2;
+  }
+
+  // 2. type + duration + reason
+  if (reason) {
+    const r = rand(ACTIVITIES.filter(
+      a => a.type === type && a.duration === duration &&
+           a.reason === reason && !a.moreTimeMode
+    ));
+    if (r) return r;
+  }
+
+  // 3. type + duration (no reason filter)
+  const r3 = rand(ACTIVITIES.filter(
+    a => a.type === type && a.duration === duration && !a.moreTimeMode
+  ));
+  if (r3) return r3;
+
+  // 4. reason + duration (any type)
+  if (reason) {
+    const r = rand(ACTIVITIES.filter(
+      a => a.reason === reason && a.duration === duration
+    ));
+    if (r) return r;
+  }
+
+  // 5. same type (any duration)
+  const r5 = rand(ACTIVITIES.filter(a => a.type === type && !a.moreTimeMode));
+  if (r5) return r5;
+
+  // 6. same duration (any type)
+  const r6 = rand(ACTIVITIES.filter(a => a.duration === duration && !a.moreTimeMode));
+  if (r6) return r6;
+
+  return null; // truly nothing different available
+}
+
 // ── Language system ────────────────────────────────────────────
 
 /**
@@ -1948,6 +2011,10 @@ function goBack() {
 
 // ── Render Result Screen ───────────────────────────────────────
 function renderResult(activity) {
+  // Clear any "no other task" message from a previous "Another one" attempt
+  const noTaskMsg = document.getElementById("no-other-task-msg");
+  if (noTaskMsg) noTaskMsg.style.display = "none";
+
   const t       = TRANSLATIONS[currentLang];
   const content = activityContent(activity);
 
@@ -2121,12 +2188,44 @@ document.addEventListener("DOMContentLoaded", () => {
   // Result: Another one
   document.getElementById("btn-another").addEventListener("click", () => {
     stopTimer();
-    const activity = pickActivity(
+    const currentId = state.currentActivity ? state.currentActivity.id : null;
+    const activity  = pickDifferentActivity(
       state.selectedType, state.selectedDuration,
-      state.selectedReason, state.selectedMoreTimeMode
+      state.selectedReason, state.selectedMoreTimeMode,
+      currentId
     );
-    state.currentActivity = activity || state.currentActivity;
-    renderResult(state.currentActivity);
+
+    if (!activity) {
+      // Nothing different exists — show a subtle inline message
+      const noTaskMsg = {
+        en: "No other task available for this selection.",
+        it: "Nessun altro compito disponibile per questa scelta."
+      };
+      const existing = document.getElementById("no-other-task-msg");
+      if (existing) { existing.style.display = "block"; return; }
+
+      const msg = document.createElement("p");
+      msg.id          = "no-other-task-msg";
+      msg.textContent = noTaskMsg[currentLang] || noTaskMsg.en;
+      msg.style.cssText = [
+        "font-size:13px",
+        "color:rgba(255,255,255,0.45)",
+        "text-align:center",
+        "margin-top:12px",
+        "line-height:1.5"
+      ].join(";");
+
+      const btnAnother = document.getElementById("btn-another");
+      btnAnother.insertAdjacentElement("afterend", msg);
+      return;
+    }
+
+    // Hide any previous "no other task" message
+    const noTaskMsg = document.getElementById("no-other-task-msg");
+    if (noTaskMsg) noTaskMsg.style.display = "none";
+
+    state.currentActivity = activity;
+    renderResult(activity);
   });
 
   // Result: Timer toggle
