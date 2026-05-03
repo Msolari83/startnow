@@ -265,6 +265,14 @@ body {
   letter-spacing: -0.01em;
 }
 
+.question-helper {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
 /* ── Option Grid ──────────────────────────────────────────── */
 .option-grid {
   display: flex;

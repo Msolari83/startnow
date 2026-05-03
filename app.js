@@ -16,7 +16,7 @@ const TRANSLATIONS = {
     statLabelToday:  "min today",
     statLabelTotal:  "total min",
     statLabelStreak: "day streak",
-    btnStart:        "What are you avoiding?",
+    btnStart:        "Start now",
 
     // Type screen
     step1Label:      "Step 1 of 3",
@@ -89,7 +89,7 @@ const TRANSLATIONS = {
     statLabelToday:  "min oggi",
     statLabelTotal:  "min totali",
     statLabelStreak: "giorni di fila",
-    btnStart:        "Cosa stai evitando?",
+    btnStart:        "Inizia ora",
 
     // Type screen
     step1Label:      "Passo 1 di 3",
