@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0d0d0f" />
+  <meta name="description" content="Stop procrastinating. StartNow." />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>StartNow</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="app">
+
+  <!-- ══════════════════════════════════════════════════
+       SCREEN 1 — INTRO
+  ══════════════════════════════════════════════════ -->
+  <section class="screen" id="screen-intro">
+
+    <!-- Top bar: logo + language selector -->
+    <div class="top-bar">
+      <div class="logo" aria-hidden="true">
+        <div class="logo-mark">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <polygon points="4,2 14,8 4,14" fill="#0d0d0f"/>
+          </svg>
+        </div>
+        <span class="logo-name">StartNow</span>
+      </div>
+
+      <!-- Language selector — visible on first screen -->
+      <div class="lang-switcher" role="group" aria-label="Language selector">
+        <button class="lang-btn" data-lang="it" aria-label="Italiano">IT</button>
+        <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+      </div>
+    </div>
+
+    <div class="spacer"></div>
+
+    <p class="intro-tagline" data-i18n="introTagline">Take action</p>
+
+    <h1 class="intro-headline" data-i18n-html="introHeadline">
+      Stop thinking.<br><em>Start doing.</em>
+    </h1>
+
+    <p class="intro-body" data-i18n="introBody">
+      You're avoiding something. This app helps you start — right now, with whatever time you have.
+    </p>
+
+    <!-- Stats strip -->
+    <div class="stats-strip" aria-label="Your progress">
+      <div class="stat-chip">
+        <span class="val" id="intro-today">0</span>
+        <span class="lbl" data-i18n="statLabelToday">min today</span>
+      </div>
+      <div class="stat-chip">
+        <span class="val" id="intro-total">0</span>
+        <span class="lbl" data-i18n="statLabelTotal">total min</span>
+      </div>
+      <div class="stat-chip">
+        <span class="val" id="intro-streak">0</span>
+        <span class="lbl" data-i18n="statLabelStreak">day streak</span>
+      </div>
+    </div>
+
+    <button id="btn-start" class="btn-cta" data-i18n="btnStart">What are you avoiding?</button>
+
+    <!-- Reset statistics — subtle link-style below the CTA -->
+    <button id="btn-reset-stats" class="btn-reset-stats" data-i18n="btnResetStats">Reset statistics</button>
+
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════
+       SCREEN 2 — TYPE SELECTION
+  ══════════════════════════════════════════════════ -->
+  <section class="screen" id="screen-type">
+
+    <div class="top-bar">
+      <div class="logo" aria-hidden="true">
+        <div class="logo-mark">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <polygon points="4,2 14,8 4,14" fill="#0d0d0f"/>
+          </svg>
+        </div>
+        <span class="logo-name">StartNow</span>
+      </div>
+    </div>
+
+    <div class="screen-header">
+      <div class="step-indicator">
+        <div class="step-dots" aria-hidden="true">
+          <div class="step-dot active"></div>
+          <div class="step-dot"></div>
+          <div class="step-dot"></div>
+        </div>
+        <span data-i18n="step1Label">Step 1 of 3</span>
+      </div>
+      <h2 class="question" data-i18n-html="questionType">What are you<br>avoiding?</h2>
+    </div>
+
+    <div class="option-grid" role="group">
+      <button class="option-btn" data-type="work">
+        <span class="option-icon" aria-hidden="true">💼</span>
+        <span data-i18n="typeWork">Work</span>
+      </button>
+      <button class="option-btn" data-type="decision">
+        <span class="option-icon" aria-hidden="true">⚖️</span>
+        <span data-i18n="typeDecision">A decision</span>
+      </button>
+      <button class="option-btn" data-type="training">
+        <span class="option-icon" aria-hidden="true">🏃</span>
+        <span data-i18n="typeTraining">Training</span>
+      </button>
+      <button class="option-btn" data-type="thinking">
+        <span class="option-icon" aria-hidden="true">💭</span>
+        <span data-i18n="typeThinking">Thinking about something</span>
+      </button>
+      <button class="option-btn" data-type="stuck">
+        <span class="option-icon" aria-hidden="true">🔒</span>
+        <span data-i18n="typeStuck">I feel stuck</span>
+      </button>
+      <button class="option-btn" data-type="stuck">
+        <span class="option-icon" aria-hidden="true">🤷</span>
+        <span data-i18n="typeDontKnow">I don't know</span>
+      </button>
+    </div>
+
+    <button id="btn-back-type" class="btn-back-nav" data-i18n="btnBack">Back</button>
+
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════
+       SCREEN 2b — REASON (Truth Mode)
+  ══════════════════════════════════════════════════ -->
+  <section class="screen" id="screen-reason">
+
+    <div class="top-bar">
+      <div class="logo" aria-hidden="true">
+        <div class="logo-mark">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <polygon points="4,2 14,8 4,14" fill="#0d0d0f"/>
+          </svg>
+        </div>
+        <span class="logo-name">StartNow</span>
+      </div>
+    </div>
+
+    <div class="screen-header">
+      <div class="step-indicator">
+        <div class="step-dots" aria-hidden="true">
+          <div class="step-dot done"></div>
+          <div class="step-dot active"></div>
+          <div class="step-dot"></div>
+        </div>
+        <span data-i18n="step2of3Label">Step 2 of 3</span>
+      </div>
+      <!-- Truth Mode badge -->
+      <div class="truth-mode-badge">
+        <span class="truth-mode-icon" aria-hidden="true">◎</span>
+        <span data-i18n="reasonTruthMode">Truth Mode</span>
+      </div>
+      <h2 class="question" data-i18n-html="questionReason">Why are you<br>avoiding it?</h2>
+    </div>
+
+    <div class="option-grid" role="group">
+      <button class="option-btn" data-reason="too_difficult">
+        <span class="option-icon" aria-hidden="true">🪨</span>
+        <span data-i18n="reasonTooDifficult">Too difficult</span>
+      </button>
+      <button class="option-btn" data-reason="dont_feel_like">
+        <span class="option-icon" aria-hidden="true">😶</span>
+        <span data-i18n="reasonDontFeelLike">I don't feel like it</span>
+      </button>
+      <button class="option-btn" data-reason="afraid">
+        <span class="option-icon" aria-hidden="true">😬</span>
+        <span data-i18n="reasonAfraid">I'm afraid</span>
+      </button>
+      <button class="option-btn" data-reason="dont_know_start">
+        <span class="option-icon" aria-hidden="true">🗺️</span>
+        <span data-i18n="reasonDontKnowStart">I don't know where to start</span>
+      </button>
+      <button class="option-btn" data-reason="not_important">
+        <span class="option-icon" aria-hidden="true">🌫️</span>
+        <span data-i18n="reasonNotImportant">It's not important</span>
+      </button>
+      <button class="option-btn" data-reason="feel_stuck">
+        <span class="option-icon" aria-hidden="true">🔩</span>
+        <span data-i18n="reasonFeelStuck">I feel stuck</span>
+      </button>
+    </div>
+
+    <button id="btn-back-reason" class="btn-back-nav" data-i18n="btnBack">Back</button>
+
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════
+       SCREEN 3 — TIME SELECTION
+  ══════════════════════════════════════════════════ -->
+  <section class="screen" id="screen-time">
+
+    <div class="top-bar">
+      <div class="logo" aria-hidden="true">
+        <div class="logo-mark">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <polygon points="4,2 14,8 4,14" fill="#0d0d0f"/>
+          </svg>
+        </div>
+        <span class="logo-name">StartNow</span>
+      </div>
+    </div>
+
+    <div class="screen-header">
+      <div class="step-indicator">
+        <div class="step-dots" aria-hidden="true">
+          <div class="step-dot done"></div>
+          <div class="step-dot done"></div>
+          <div class="step-dot active"></div>
+        </div>
+        <span data-i18n="step2Label">Step 3 of 3</span>
+      </div>
+      <h2 class="question" data-i18n-html="questionTime">How much time<br>do you have?</h2>
+    </div>
+
+    <div class="time-grid" role="group" aria-label="Available time">
+      <button class="time-btn" data-duration="5">
+        5<span data-i18n="timeUnit">min</span>
+      </button>
+      <button class="time-btn" data-duration="10">
+        10<span data-i18n="timeUnit">min</span>
+      </button>
+      <button class="time-btn" data-duration="15">
+        15<span data-i18n="timeUnit">min</span>
+      </button>
+    </div>
+
+    <!-- More time option — below the grid, visually distinct but calm -->
+    <button id="btn-more-time" class="btn-more-time" data-i18n="btnMoreTime">More time</button>
+
+    <button id="btn-back-time" class="btn-back-nav" data-i18n="btnBack">Back</button>
+
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════
+       SCREEN 3b — MORE TIME (Start or Continue)
+  ══════════════════════════════════════════════════ -->
+  <section class="screen" id="screen-moretime">
+
+    <div class="top-bar">
+      <div class="logo" aria-hidden="true">
+        <div class="logo-mark">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <polygon points="4,2 14,8 4,14" fill="#0d0d0f"/>
+          </svg>
+        </div>
+        <span class="logo-name">StartNow</span>
+      </div>
+    </div>
+
+    <div class="screen-header">
+      <div class="step-indicator">
+        <div class="step-dots" aria-hidden="true">
+          <div class="step-dot done"></div>
+          <div class="step-dot done"></div>
+          <div class="step-dot active"></div>
+        </div>
+        <span data-i18n="step2Label">Step 3 of 3</span>
+      </div>
+      <h2 class="question" data-i18n-html="questionMoreTime">How do you want<br>to use it?</h2>
+    </div>
+
+    <div class="moretime-grid" role="group">
+      <button class="moretime-btn" data-moretime="start">
+        <span class="moretime-btn__label" data-i18n="moreTimeStart">Start</span>
+        <span class="moretime-btn__sub" data-i18n="moreTimeStartSub">10 min block</span>
+      </button>
+      <button class="moretime-btn" data-moretime="continue">
+        <span class="moretime-btn__label" data-i18n="moreTimeContinue">Continue</span>
+        <span class="moretime-btn__sub" data-i18n="moreTimeContinueSub">15 min block</span>
+      </button>
+    </div>
+
+    <button id="btn-back-moretime" class="btn-back-nav" data-i18n="btnBack">Back</button>
+
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════
+       SCREEN 4 — RESULT
+  ══════════════════════════════════════════════════ -->
+  <section class="screen" id="screen-result">
+
+    <div class="top-bar">
+      <div class="logo" aria-hidden="true">
+        <div class="logo-mark">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <polygon points="4,2 14,8 4,14" fill="#0d0d0f"/>
+          </svg>
+        </div>
+        <span class="logo-name">StartNow</span>
+      </div>
+    </div>
+
+    <!-- Activity card -->
+    <div class="result-card" id="result-card">
+      <!-- Truth Mode badge — shown only for reason-specific activities -->
+      <span id="result-truth-badge" class="result-truth-badge" style="display:none;" data-i18n="resultTruthMode">Truth Mode</span>
+      <p class="result-label" data-i18n="resultLabel">Your task</p>
+      <h2 class="result-title" id="result-title">—</h2>
+      <!-- Truth line — direct sentence tied to the selected reason -->
+      <p id="result-truth-line" class="result-truth-line" style="display:none;"></p>
+      <p class="result-desc"  id="result-desc">—</p>
+    </div>
+
+    <!-- Steps card -->
+    <div class="steps-card">
+      <p class="steps-label" data-i18n="stepsLabel">Steps</p>
+      <ol id="result-steps"></ol>
+    </div>
+
+    <!-- Timer (hidden until started) -->
+    <div id="timer-block" role="timer" aria-live="polite">
+      <div class="timer-ring-wrap">
+        <svg width="80" height="80" viewBox="0 0 80 80">
+          <circle class="timer-track" cx="40" cy="40" r="36"/>
+          <circle id="timer-ring"    cx="40" cy="40" r="36"/>
+        </svg>
+        <span id="timer-display">00:00</span>
+      </div>
+      <div class="timer-meta">
+        <p class="timer-state" data-i18n="timerStateLabel">Running</p>
+        <p class="timer-name"  id="timer-activity-name">—</p>
+      </div>
+    </div>
+
+    <!-- Action buttons -->
+    <div class="result-actions">
+      <button id="btn-done"        class="btn-primary"   data-i18n="btnDone">Done</button>
+      <button id="btn-timer"       class="btn-secondary" data-i18n="btnTimer">Start timer</button>
+      <button id="btn-another"     class="btn-secondary" data-i18n="btnAnother">Another one</button>
+      <button id="btn-back"        class="btn-secondary" data-i18n="btnBack">Back</button>
+      <button id="btn-result-home" class="btn-secondary btn-home-result" data-i18n="btnResultHome">Home</button>
+    </div>
+
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════
+       SCREEN 5 — DONE / FEEDBACK
+  ══════════════════════════════════════════════════ -->
+  <section class="screen" id="screen-done">
+
+    <div class="top-bar">
+      <div class="logo" aria-hidden="true">
+        <div class="logo-mark">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <polygon points="4,2 14,8 4,14" fill="#0d0d0f"/>
+          </svg>
+        </div>
+        <span class="logo-name">StartNow</span>
+      </div>
+    </div>
+
+    <div class="spacer"></div>
+
+    <h2 class="done-message" data-i18n-html="doneMessage">You started.<br>That's what matters.</h2>
+    <p  class="done-sub"     data-i18n="doneSub">Progress doesn't require perfection.</p>
+
+    <div class="done-stats">
+      <div class="done-stat">
+        <span class="val" id="done-today">0</span>
+        <span class="lbl" data-i18n="statLabelToday2">min today</span>
+      </div>
+      <div class="done-stat">
+        <span class="val" id="done-total">0</span>
+        <span class="lbl" data-i18n="statLabelTotal2">total min</span>
+      </div>
+      <div class="done-stat">
+        <span class="val" id="done-streak">0</span>
+        <span class="lbl" data-i18n="statLabelStreak2">day streak</span>
+      </div>
+    </div>
+
+    <div class="done-actions">
+      <button id="btn-again" class="btn-cta"   data-i18n="btnAgain">Start another</button>
+      <button id="btn-home"  class="btn-ghost" data-i18n="btnHome">Back to home</button>
+      <button id="btn-back-done" class="btn-back-nav" data-i18n="btnBack">Back</button>
+    </div>
+
+  </section>
+
+</div><!-- /#app -->
+
+<script src="app.js"></script>
+
+<script>
+  // Register PWA service worker
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js').catch(() => {});
+  }
+</script>
+
+</body>
+</html>
