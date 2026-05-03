@@ -73,13 +73,15 @@ const TRANSLATIONS = {
     reasonFeelStuck:     "I feel stuck",
 
     // Done screen
-    doneMessage:     "You started.<br>That's what matters.",
-    doneSub:         "Progress doesn't require perfection.",
+    doneMessage:     "You acted.<br>This changes everything.",
+    doneSub:         "You don't need to do it well. Just do it.",
     statLabelToday2: "min today",
     statLabelTotal2: "total min",
     statLabelStreak2:"day streak",
     btnAgain:        "Start another",
     btnHome:         "Back to home",
+    streakSub1:      "Don't stop now.",
+    streakSub2:      "You're building consistency.",
 
     // More Time flow
     btnMoreTime:          "More time",
@@ -155,13 +157,15 @@ const TRANSLATIONS = {
     reasonFeelStuck:     "Mi sento bloccato",
 
     // Done screen
-    doneMessage:     "Hai iniziato.<br>È quello che conta.",
-    doneSub:         "Il progresso non richiede perfezione.",
+    doneMessage:     "Hai agito.<br>Questo cambia tutto.",
+    doneSub:         "Non serve farlo bene. Basta farlo.",
     statLabelToday2: "min oggi",
     statLabelTotal2: "min totali",
     statLabelStreak2:"giorni di fila",
-    btnAgain:        "Iniziane un altro",
+    btnAgain:        "Inizia un altro",
     btnHome:         "Torna all'inizio",
+    streakSub1:      "Non fermarti ora.",
+    streakSub2:      "Stai costruendo continuità.",
 
     // More Time flow
     btnMoreTime:          "Ho più tempo",
@@ -2192,9 +2196,17 @@ function renderResult(activity) {
 
 // ── Render Done Screen ─────────────────────────────────────────
 function renderDone(stats) {
+  const t = TRANSLATIONS[currentLang];
   document.getElementById("done-today").textContent  = stats.minutesToday;
   document.getElementById("done-total").textContent  = stats.totalMinutes;
   document.getElementById("done-streak").textContent = stats.streakDays;
+
+  const streakSub = document.getElementById("done-streak-sub");
+  if (streakSub) {
+    streakSub.textContent = stats.streakDays <= 1
+      ? (t.streakSub1 || "Non fermarti ora.")
+      : (t.streakSub2 || "Stai costruendo continuità.");
+  }
 }
 
 // ── Event Wiring ───────────────────────────────────────────────
