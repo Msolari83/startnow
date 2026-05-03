@@ -185,6 +185,511 @@ const TRUTH_LINES = {
   }
 };
 
+// ── Motivational Messages ──────────────────────────────────────
+// Shown on the time selection screen, keyed by type+reason.
+// Each entry has `en` and `it` arrays; one is picked at random.
+// Falls back to reason-only key if no type+reason match.
+const MOTIVATIONAL_MESSAGES = {
+
+  // ── work + reason ─────────────────────────────────────────────
+  "work+too_difficult": {
+    en: [
+      "It feels hard because you haven't started. Starting makes it smaller.",
+      "Difficult tasks don't get easier by waiting. They just get heavier.",
+      "You don't need to finish it. You need to take one step.",
+      "Break it in half. Then in half again. Now do the first piece.",
+      "Hard is not the same as impossible. Start and find out."
+    ],
+    it: [
+      "Sembra difficile perché non hai iniziato. Iniziare lo ridimensiona.",
+      "I compiti difficili non migliorano aspettando. Diventano solo più pesanti.",
+      "Non devi finirlo. Devi fare un passo.",
+      "Dividilo a metà. Poi ancora a metà. Ora fai la prima parte.",
+      "Difficile non significa impossibile. Inizia e scoprilo."
+    ]
+  },
+
+  "work+dont_feel_like": {
+    en: [
+      "It is not motivation. It is resistance. Start anyway.",
+      "You will not start with motivation. You start first.",
+      "Waiting for motivation is the trap. Start without it.",
+      "5 minutes. That is all. Then decide if you stop.",
+      "You do not need to do it well. You need to start it."
+    ],
+    it: [
+      "Non è voglia. È resistenza. Parti comunque.",
+      "Non inizierai mai con voglia. Inizi e basta.",
+      "Aspettare motivazione è la trappola. Parti senza.",
+      "5 minuti. Solo questo. Poi decidi se fermarti.",
+      "Non devi farlo bene. Devi farlo partire."
+    ]
+  },
+
+  "work+dont_know_start": {
+    en: [
+      "You don't need the right starting point. You need any starting point.",
+      "Open the file. That's step one. Everything else comes after.",
+      "Pick the smallest visible piece and do only that.",
+      "The first action doesn't have to be perfect. It has to exist.",
+      "Write one sentence. Send one email. Make one move."
+    ],
+    it: [
+      "Non ti serve il punto di partenza giusto. Ti serve un punto di partenza.",
+      "Apri il file. Questo è il passo uno. Tutto il resto viene dopo.",
+      "Scegli il pezzo più piccolo che vedi e fai solo quello.",
+      "La prima azione non deve essere perfetta. Deve esistere.",
+      "Scrivi una riga. Manda un'email. Fai una mossa."
+    ]
+  },
+
+  "work+afraid": {
+    en: [
+      "Fear of doing it wrong is still fear of doing it. Do it anyway.",
+      "The work won't judge you. Just start.",
+      "You're not afraid of the task. You're afraid of what it means. Start anyway.",
+      "Action reduces fear. Waiting amplifies it.",
+      "Done imperfectly beats not done perfectly every time."
+    ],
+    it: [
+      "La paura di farlo male è sempre paura di farlo. Fallo comunque.",
+      "Il lavoro non ti giudica. Inizia e basta.",
+      "Non hai paura del compito. Hai paura di cosa significa. Inizia comunque.",
+      "L'azione riduce la paura. L'attesa la amplifica.",
+      "Fatto male batte non fatto ogni volta."
+    ]
+  },
+
+  // ── decision + reason ─────────────────────────────────────────
+  "decision+too_difficult": {
+    en: [
+      "It is not too difficult. You are avoiding the choice.",
+      "You want the right choice. But only a made choice exists.",
+      "The longer you wait, the heavier it gets. Choose now, adjust later.",
+      "You are not missing ability. You are missing the start.",
+      "It is not complex. It is just uncomfortable to decide."
+    ],
+    it: [
+      "Non è troppo difficile. Stai evitando di scegliere.",
+      "Vuoi la scelta giusta. Ma esiste solo una scelta fatta.",
+      "Più aspetti, peggio diventa. Scegli adesso, aggiusta dopo.",
+      "Non ti manca la capacità. Ti manca il via.",
+      "Non è complesso. È solo scomodo decidere."
+    ]
+  },
+
+  "decision+afraid": {
+    en: [
+      "Every decision is a bet. You're just refusing to place yours.",
+      "Fear of the wrong choice is still a choice — to stay stuck.",
+      "Being afraid means it matters. That's a good reason to decide.",
+      "No decision is also a decision. It's just the passive one.",
+      "You'll survive the wrong choice. You won't survive not choosing."
+    ],
+    it: [
+      "Ogni decisione è una scommessa. Stai solo rifiutando di fare la tua.",
+      "La paura della scelta sbagliata è già una scelta — restare bloccato.",
+      "Avere paura significa che è importante. È un buon motivo per decidere.",
+      "Non decidere è già una decisione. Solo quella passiva.",
+      "Sopravviverai alla scelta sbagliata. Non sopravviverai al non scegliere."
+    ]
+  },
+
+  "decision+dont_know_start": {
+    en: [
+      "List your options. You already know more than you think.",
+      "You don't need more information. You need to commit to one direction.",
+      "Start by writing down what you actually want. Not what you should want.",
+      "The perfect decision doesn't exist. A good enough decision does.",
+      "Clarity comes from deciding, not from thinking about deciding."
+    ],
+    it: [
+      "Elenca le opzioni. Sai già più di quanto pensi.",
+      "Non ti servono altre informazioni. Ti serve scegliere una direzione.",
+      "Inizia scrivendo cosa vuoi davvero. Non cosa dovresti volere.",
+      "La decisione perfetta non esiste. Una decisione abbastanza buona sì.",
+      "La chiarezza viene dal decidere, non dal pensare di decidere."
+    ]
+  },
+
+  "decision+dont_feel_like": {
+    en: [
+      "Decisions don't feel comfortable. That's not a sign to wait.",
+      "You don't have to want to decide. You just have to decide.",
+      "The discomfort is the decision asking to be made.",
+      "Dragging it out doesn't make it easier. It makes you more tired.",
+      "Make the call. You can always adjust later."
+    ],
+    it: [
+      "Le decisioni non sono comode. Non è un segnale per aspettare.",
+      "Non devi avere voglia di decidere. Devi solo decidere.",
+      "Il disagio è la decisione che chiede di essere presa.",
+      "Rimandare non la rende più facile. Ti stanca di più.",
+      "Prendila. Puoi sempre aggiustare dopo."
+    ]
+  },
+
+  // ── training + reason ─────────────────────────────────────────
+  "training+dont_feel_like": {
+    en: [
+      "You never feel like it before. You always feel better after.",
+      "Your body doesn't need motivation. It needs movement.",
+      "The part of you that doesn't want to go has never been right.",
+      "Start the warmup. The rest follows on its own.",
+      "5 minutes in, you'll wonder why you hesitated."
+    ],
+    it: [
+      "Non ne hai mai voglia prima. Ti senti sempre meglio dopo.",
+      "Il tuo corpo non ha bisogno di motivazione. Ha bisogno di movimento.",
+      "La parte di te che non vuole andare non ha mai avuto ragione.",
+      "Inizia il riscaldamento. Il resto viene da solo.",
+      "Dopo 5 minuti ti chiederai perché hai esitato."
+    ]
+  },
+
+  "training+too_difficult": {
+    en: [
+      "Hard training is how easy training gets made.",
+      "You've done hard before. You'll do it again.",
+      "Reduce the target. Do half. Then decide if you continue.",
+      "Difficult today means stronger tomorrow. That's the deal.",
+      "Start slower. But start."
+    ],
+    it: [
+      "L'allenamento difficile è come si costruisce quello facile.",
+      "Hai già fatto cose difficili. Lo farai di nuovo.",
+      "Riduci l'obiettivo. Fai la metà. Poi decidi se continuare.",
+      "Difficile oggi significa più forte domani. Questo è il patto.",
+      "Inizia più lentamente. Ma inizia."
+    ]
+  },
+
+  "training+afraid": {
+    en: [
+      "Afraid of pushing too hard? Start easy. Afraid of failing? You haven't started yet.",
+      "The gym doesn't care how you perform. Just show up.",
+      "Fear before training always disappears once you're moving.",
+      "You're not afraid of the workout. You're afraid it won't be enough. Do it anyway.",
+      "One rep, one step, one move. Fear can't survive that."
+    ],
+    it: [
+      "Paura di spingere troppo? Inizia piano. Paura di fallire? Non hai ancora iniziato.",
+      "L'allenamento non si preoccupa di come vai. Presentati e basta.",
+      "La paura prima dell'allenamento sparisce sempre quando sei in movimento.",
+      "Non hai paura dell'allenamento. Hai paura che non basti. Fallo comunque.",
+      "Un ripetizione, un passo, un gesto. La paura non sopravvive a questo."
+    ]
+  },
+
+  "training+dont_know_start": {
+    en: [
+      "Put on your shoes. That's it. That's step one.",
+      "You don't need a plan. You need to move.",
+      "Pick one exercise. Do it for 5 minutes. Build from there.",
+      "Start with what you know. You know more than nothing.",
+      "Imperfect movement beats perfect stillness every time."
+    ],
+    it: [
+      "Metti le scarpe. Solo questo. Questo è il passo uno.",
+      "Non ti serve un piano. Ti serve muoverti.",
+      "Scegli un esercizio. Fallo per 5 minuti. Costruisci da lì.",
+      "Inizia da quello che sai. Sai più di niente.",
+      "Il movimento imperfetto batte l'immobilità perfetta ogni volta."
+    ]
+  },
+
+  // ── thinking + reason ─────────────────────────────────────────
+  "thinking+afraid": {
+    en: [
+      "You're afraid of what thinking might reveal. Think anyway.",
+      "Clarity is on the other side of the thought you're avoiding.",
+      "The thing you don't want to think about is exactly what needs attention.",
+      "Thinking it through is less dangerous than thinking around it forever.",
+      "Sit with it for 5 minutes. You won't break."
+    ],
+    it: [
+      "Hai paura di cosa il pensiero potrebbe rivelare. Pensa comunque.",
+      "La chiarezza è dall'altro lato del pensiero che stai evitando.",
+      "La cosa a cui non vuoi pensare è esattamente quella che ha bisogno di attenzione.",
+      "Pensarci è meno pericoloso che girarci attorno per sempre.",
+      "Stacci dentro 5 minuti. Non ti romperà."
+    ]
+  },
+
+  "thinking+dont_know_start": {
+    en: [
+      "Write the question, not the answer. Start there.",
+      "You don't need to solve it now. You need to look at it.",
+      "Open a blank page. Write whatever comes. Order it later.",
+      "Name the thing. Just naming it is progress.",
+      "The thought is already in your head. Let it out onto paper."
+    ],
+    it: [
+      "Scrivi la domanda, non la risposta. Inizia da lì.",
+      "Non devi risolverlo adesso. Devi solo guardarlo.",
+      "Apri una pagina bianca. Scrivi quello che viene. Ordinalo dopo.",
+      "Dai un nome alla cosa. Solo nominarla è un progresso.",
+      "Il pensiero è già nella tua testa. Lascialo uscire su carta."
+    ]
+  },
+
+  "thinking+dont_feel_like": {
+    en: [
+      "You don't want to think because thinking means facing it.",
+      "Avoidance doesn't make the thought go away. It makes it louder.",
+      "Give it 5 minutes of real attention. It deserves that.",
+      "The longer you avoid it, the more space it takes up.",
+      "Think about it now, on your terms. Or it'll surface at 3am."
+    ],
+    it: [
+      "Non vuoi pensarci perché pensarci significa affrontarlo.",
+      "Evitarlo non fa sparire il pensiero. Lo rende più rumoroso.",
+      "Dagli 5 minuti di attenzione vera. Lo merita.",
+      "Più a lungo lo eviti, più spazio occupa.",
+      "Pensaci adesso, a modo tuo. O verrà fuori alle 3 di notte."
+    ]
+  },
+
+  "thinking+too_difficult": {
+    en: [
+      "Complex thoughts don't simplify themselves. You have to engage.",
+      "It's not too complex to think about. It's too important to ignore.",
+      "Break it into one question. Just one. Answer only that.",
+      "Difficult thinking is still thinking. Start messy.",
+      "You don't need the full answer. You need the next question."
+    ],
+    it: [
+      "I pensieri complessi non si semplificano da soli. Devi impegnarti.",
+      "Non è troppo complesso per pensarci. È troppo importante per ignorarlo.",
+      "Riducilo a una domanda. Solo una. Rispondi solo a quella.",
+      "Pensare è difficile. Inizia lo stesso, anche in modo caotico.",
+      "Non ti serve la risposta completa. Ti serve la prossima domanda."
+    ]
+  },
+
+  // ── stuck + any reason (type=stuck catches all) ───────────────
+  "stuck+feel_stuck": {
+    en: [
+      "You are not blocked. You are avoiding the first step.",
+      "Being stuck is often just delayed movement.",
+      "Start badly. But start.",
+      "The stuck feeling is a signal to act, not to wait.",
+      "You've been here before and moved. Move again."
+    ],
+    it: [
+      "Non sei bloccato. Stai evitando il primo passo.",
+      "Il blocco è solo indecisione prolungata.",
+      "Parti male. Ma parti.",
+      "La sensazione di blocco è un segnale per agire, non per aspettare.",
+      "Sei già stato qui e ti sei mosso. Muoviti di nuovo."
+    ]
+  },
+
+  "stuck+too_difficult": {
+    en: [
+      "It's not too hard. It's too unfamiliar. That changes once you start.",
+      "Stuck and difficult are not the same. One move will prove it.",
+      "You don't need to unstick everything. Just unstick this moment.",
+      "Hard things look harder when you're standing still.",
+      "The first step doesn't require confidence. Just action."
+    ],
+    it: [
+      "Non è troppo difficile. È troppo sconosciuto. Cambia appena inizi.",
+      "Bloccato e difficile non sono la stessa cosa. Una mossa lo dimostrerà.",
+      "Non devi sbloccare tutto. Devi sbloccare solo questo momento.",
+      "Le cose difficili sembrano più difficili quando sei fermo.",
+      "Il primo passo non richiede sicurezza. Solo azione."
+    ]
+  },
+
+  "stuck+afraid": {
+    en: [
+      "You're stuck because moving feels risky. It's less risky than staying.",
+      "Fear keeps you stuck. Action dissolves fear. Simple equation.",
+      "What's the worst that happens if you take one step? Do that.",
+      "Stuck and afraid usually mean you care. Let that push you forward.",
+      "You can be afraid and moving at the same time."
+    ],
+    it: [
+      "Sei bloccato perché muoverti sembra rischioso. È meno rischioso che restare.",
+      "La paura ti tiene bloccato. L'azione scioglie la paura. Equazione semplice.",
+      "Cosa succede di peggio se fai un passo? Fallo.",
+      "Bloccato e spaventato di solito significa che ci tieni. Lascia che ti spinga avanti.",
+      "Puoi avere paura e muoverti allo stesso tempo."
+    ]
+  },
+
+  "stuck+dont_know_start": {
+    en: [
+      "Pick any direction. Stuck people overthink direction.",
+      "You don't need the right move. You need a move.",
+      "Write down three things you could do. Do the first one.",
+      "Start with the smallest visible action. Not the right one. The nearest one.",
+      "Standing still waiting for clarity keeps you stuck. Move to find it."
+    ],
+    it: [
+      "Scegli qualsiasi direzione. Le persone bloccate pensano troppo alla direzione.",
+      "Non ti serve la mossa giusta. Ti serve una mossa.",
+      "Scrivi tre cose che potresti fare. Fai la prima.",
+      "Inizia con la più piccola azione visibile. Non quella giusta. Quella più vicina.",
+      "Stare fermi ad aspettare chiarezza ti tiene bloccato. Muoviti per trovarla."
+    ]
+  },
+
+  "stuck+dont_feel_like": {
+    en: [
+      "Not feeling like it while stuck is expected. It's not an excuse.",
+      "Motivation won't come while you're stuck. Movement will bring it.",
+      "You don't have to want to move. You just have to move.",
+      "The feeling will change once you start. It never changes before.",
+      "Stuck plus unwilling is still just stuck. One move fixes both."
+    ],
+    it: [
+      "Non averne voglia quando sei bloccato è normale. Non è una scusa.",
+      "La motivazione non arriva mentre sei bloccato. Il movimento la porta.",
+      "Non devi avere voglia di muoverti. Devi solo muoverti.",
+      "La sensazione cambierà quando inizi. Non cambia mai prima.",
+      "Bloccato più senza voglia è ancora solo bloccato. Una mossa risolve entrambi."
+    ]
+  },
+
+  // ── reason-only fallbacks (used when type+reason has no match) ─
+  "reason+too_difficult": {
+    en: [
+      "Hard things stay hard until you start. Then they get manageable.",
+      "You don't need to see the whole path. Just the next step.",
+      "Difficult is not a stop sign. It's a description.",
+      "Everything hard was unfamiliar first. Start the familiarity.",
+      "The difficulty is real. Your ability to handle it is too."
+    ],
+    it: [
+      "Le cose difficili restano difficili finché non inizi. Poi diventano gestibili.",
+      "Non devi vedere tutto il percorso. Solo il passo successivo.",
+      "Difficile non è un segnale di stop. È una descrizione.",
+      "Tutto ciò che è difficile era prima sconosciuto. Inizia a familiarizzarti.",
+      "La difficoltà è reale. Anche la tua capacità di gestirla."
+    ]
+  },
+
+  "reason+dont_feel_like": {
+    en: [
+      "Waiting to feel ready is the oldest procrastination trick.",
+      "Feelings follow action, not the other way around.",
+      "You don't owe your future self this delay.",
+      "The moment you start, the resistance drops. Every time.",
+      "Not feeling like it means nothing about whether you should."
+    ],
+    it: [
+      "Aspettare di sentirti pronto è il trucco più antico della procrastinazione.",
+      "I sentimenti seguono l'azione, non il contrario.",
+      "Non devi a te stesso questo ritardo.",
+      "Nel momento in cui inizi, la resistenza cala. Ogni volta.",
+      "Non averne voglia non dice nulla su se dovresti farlo."
+    ]
+  },
+
+  "reason+afraid": {
+    en: [
+      "Fear gets smaller after action, not before.",
+      "You don't have to feel brave. You just have to move.",
+      "Being afraid means it matters. That's enough reason to start.",
+      "Action is the only thing that changes fear into something smaller.",
+      "The fear is lying to you about how bad starting will be."
+    ],
+    it: [
+      "La paura si riduce dopo l'azione, non prima.",
+      "Non devi sentirti coraggioso. Devi solo muoverti.",
+      "Avere paura significa che è importante. È abbastanza per iniziare.",
+      "L'azione è l'unica cosa che trasforma la paura in qualcosa di più piccolo.",
+      "La paura ti sta mentendo su quanto sarà difficile iniziare."
+    ]
+  },
+
+  "reason+dont_know_start": {
+    en: [
+      "The right starting point does not exist. Start anywhere.",
+      "Confusion clears once you're moving. Not before.",
+      "Do the most obvious thing first. Then do the next obvious thing.",
+      "You know enough to take one step. That's all you need.",
+      "Start messy. Order comes from movement, not from planning."
+    ],
+    it: [
+      "Il punto di partenza perfetto non esiste. Inizia da qualsiasi punto.",
+      "La confusione si chiarisce quando ti muovi. Non prima.",
+      "Fai prima la cosa più ovvia. Poi la prossima cosa ovvia.",
+      "Sai abbastanza per fare un passo. È tutto ciò che ti serve.",
+      "Inizia in modo caotico. L'ordine viene dal movimento, non dalla pianificazione."
+    ]
+  },
+
+  "reason+feel_stuck": {
+    en: [
+      "Stuck is temporary. Starting makes it so.",
+      "The block you feel is smaller than it looks. Test it.",
+      "You've moved before from this exact feeling. Move again.",
+      "Stuck is a state, not a verdict. Change the state.",
+      "One small action is enough to prove stuck wrong."
+    ],
+    it: [
+      "Bloccato è temporaneo. Iniziare lo rende tale.",
+      "Il blocco che senti è più piccolo di quanto sembra. Mettilo alla prova.",
+      "Ti sei già mosso da questa stessa sensazione. Muoviti di nuovo.",
+      "Bloccato è uno stato, non un verdetto. Cambia lo stato.",
+      "Una piccola azione è sufficiente per dimostrare che il blocco ha torto."
+    ]
+  },
+
+  "reason+not_important": {
+    en: [
+      "If it's not important, finish it fast and be done.",
+      "You're spending more energy avoiding it than doing it.",
+      "Unimportant things still pile up. Clear it now.",
+      "Not important enough to care about, but important enough to keep avoiding? Do it.",
+      "The fastest way past it is through it."
+    ],
+    it: [
+      "Se non è importante, finiscilo in fretta e liberatene.",
+      "Stai spendendo più energia ad evitarlo che a farlo.",
+      "Le cose non importanti si accumulano comunque. Liberatene adesso.",
+      "Non abbastanza importante da curartene, ma abbastanza da continuare a evitarlo? Fallo.",
+      "Il modo più veloce per superarlo è attraversarlo."
+    ]
+  }
+};
+
+/**
+ * renderMotivationalMessage()
+ * Picks a random message for the current type+reason combination
+ * and injects it into the #time-motivational-msg element.
+ */
+function renderMotivationalMessage() {
+  const el = document.getElementById("time-motivational-msg");
+  if (!el) return;
+
+  const type   = state.selectedType;
+  const reason = state.selectedReason;
+  const lang   = currentLang;
+
+  // Try exact type+reason match first, then reason-only fallback
+  const key         = type && reason ? `${type}+${reason}` : null;
+  const fallbackKey = reason ? `reason+${reason}` : null;
+
+  const pool =
+    (key        && MOTIVATIONAL_MESSAGES[key]?.[lang])        ||
+    (fallbackKey && MOTIVATIONAL_MESSAGES[fallbackKey]?.[lang]) ||
+    null;
+
+  if (!pool || pool.length === 0) {
+    el.textContent = "";
+    el.style.display = "none";
+    return;
+  }
+
+  const msg = pool[Math.floor(Math.random() * pool.length)];
+  el.textContent   = msg;
+  el.style.display = "block";
+}
+
 // ── Activity Library (bilingual) ───────────────────────────────
 // id, type, duration are language-neutral.
 // Each activity has an `en` and `it` block: { title, description, steps }.
@@ -1402,6 +1907,9 @@ function goTo(screenName, opts = {}) {
   }
   setTimeout(() => next.classList.add("active"), current ? 200 : 0);
   state.screen = screenName;
+
+  // Render dynamic motivational message when entering time selection
+  if (screenName === "time") renderMotivationalMessage();
 
   // Clear selection state when returning to home
   if (resetFlow) {

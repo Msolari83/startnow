@@ -273,6 +273,16 @@ body {
   line-height: 1.4;
 }
 
+/* ── Motivational message on time screen ──────────────────────── */
+.time-motivational-msg {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.48);
+  margin-bottom: 20px;
+  letter-spacing: 0.01em;
+}
+
 /* ── Option Grid ──────────────────────────────────────────── */
 .option-grid {
   display: flex;
