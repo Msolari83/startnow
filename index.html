@@ -328,13 +328,13 @@
 
     <!-- Activity card -->
     <div class="result-card" id="result-card">
-      <!-- Truth Mode badge — shown only for reason-specific activities -->
-      <span id="result-truth-badge" class="result-truth-badge" style="display:none;" data-i18n="resultTruthMode">Truth Mode</span>
       <p class="result-label" data-i18n="resultLabel">Your task</p>
       <h2 class="result-title" id="result-title">—</h2>
       <!-- Truth line — direct sentence tied to the selected reason -->
       <p id="result-truth-line" class="result-truth-line" style="display:none;"></p>
       <p class="result-desc"  id="result-desc">—</p>
+      <button class="why-toggle" id="why-toggle" aria-expanded="false" data-i18n="whyToggle">Perché funziona</button>
+      <p class="why-body" id="why-body" aria-hidden="true"></p>
     </div>
 
     <!-- Steps card -->
@@ -362,8 +362,8 @@
     <div class="result-actions">
       <button id="btn-done"        class="btn-primary"   data-i18n="btnDone">Done</button>
       <button id="btn-timer"       class="btn-secondary" data-i18n="btnTimer">Start timer</button>
-      <button id="btn-another"     class="btn-secondary" data-i18n="btnAnother">Another one</button>
       <button id="btn-back"        class="btn-secondary" data-i18n="btnBack">Back</button>
+      <button id="btn-another"     class="btn-secondary btn-another-inner" data-i18n="btnAnother">Another one</button>
       <button id="btn-result-home" class="btn-secondary btn-home-result" data-i18n="btnResultHome">Home</button>
     </div>
 

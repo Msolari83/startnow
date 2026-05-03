@@ -41,7 +41,8 @@ const TRANSLATIONS = {
     btnDoneTimer:    "Timer done — mark complete",
     btnTimer:        "Start timer",
     btnTimerStop:    "Stop timer",
-    btnAnother:      "Another one",
+    btnAnother:      "Not convinced? Try another",
+    whyToggle:       "Why this works",
     btnBack:         "Back",
     btnResultHome:   "Home",
 
@@ -114,7 +115,8 @@ const TRANSLATIONS = {
     btnDoneTimer:    "Tempo scaduto — segna completato",
     btnTimer:        "Avvia timer",
     btnTimerStop:    "Ferma timer",
-    btnAnother:      "Un altro",
+    btnAnother:      "Non ti convince? Prova un'alternativa",
+    whyToggle:       "Perché funziona",
     btnBack:         "Indietro",
     btnResultHome:   "Home",
 
@@ -1943,6 +1945,73 @@ function onTimerDone() {
 // user arrived at the current screen.
 const history = [];
 
+// ── Why It Works ───────────────────────────────────────────────
+// Short bilingual explanations keyed by type, with reason overrides.
+// Used to populate the collapsible "Perché funziona" block.
+const WHY_IT_WORKS = {
+  // By type
+  work: {
+    en: "Small actions break mental resistance. You don't need to be ready — you just need to start.",
+    it: "Le piccole azioni rompono la resistenza mentale. Non serve essere pronti — serve solo iniziare."
+  },
+  decision: {
+    en: "Decisions get harder the longer you delay them. A chosen direction, even imperfect, beats no direction.",
+    it: "Le decisioni diventano più difficili più aspetti. Una direzione scelta, anche imperfetta, vale più dell'immobilità."
+  },
+  training: {
+    en: "Movement changes your mental state. You never feel like it before — you always feel better after.",
+    it: "Il movimento cambia il tuo stato mentale. Non ne hai mai voglia prima — ti senti sempre meglio dopo."
+  },
+  thinking: {
+    en: "Structured thinking replaces mental noise. Putting it on paper gives your brain permission to stop looping.",
+    it: "Pensare in modo strutturato sostituisce il rumore mentale. Metterlo su carta dà al cervello il permesso di smettere di girare in tondo."
+  },
+  stuck: {
+    en: "Being stuck dissolves through action, not through thinking. One move changes everything.",
+    it: "Il blocco si scioglie con l'azione, non con il pensiero. Una sola mossa cambia tutto."
+  },
+  // Reason overrides (Truth Mode)
+  "reason+too_difficult": {
+    en: "Breaking a hard task into one step lowers the activation threshold. The difficulty feels smaller once you're moving.",
+    it: "Ridurre un compito difficile a un solo passo abbassa la soglia di attivazione. La difficoltà sembra minore appena inizi."
+  },
+  "reason+dont_feel_like": {
+    en: "Motivation follows action — it doesn't precede it. Starting without wanting to is exactly how it works.",
+    it: "La motivazione segue l'azione, non la precede. Iniziare senza voglia è esattamente il meccanismo."
+  },
+  "reason+afraid": {
+    en: "Fear shrinks with exposure. The action itself is the antidote — not preparation, not reassurance.",
+    it: "La paura si riduce con l'esposizione. L'azione stessa è l'antidoto — non la preparazione, non le rassicurazioni."
+  },
+  "reason+dont_know_start": {
+    en: "Any starting point is better than no starting point. Clarity comes from doing, not from planning.",
+    it: "Qualsiasi punto di partenza è meglio di nessuno. La chiarezza viene dal fare, non dal pianificare."
+  },
+  "reason+feel_stuck": {
+    en: "Stuck is a signal to act, not to wait. Even the wrong move gives you information the right direction.",
+    it: "Bloccato è un segnale per agire, non per aspettare. Anche la mossa sbagliata ti dà informazioni sulla direzione giusta."
+  },
+  "reason+not_important": {
+    en: "Clearing low-priority tasks frees mental space. Done and gone is better than lingering undone.",
+    it: "Completare le cose poco importanti libera spazio mentale. Fatto e archiviato è meglio di lasciato in sospeso."
+  }
+};
+
+function getWhyItWorks(activity) {
+  const lang   = currentLang;
+  const type   = activity.type;
+  const reason = activity.reason;
+
+  // Reason override takes priority in Truth Mode
+  if (reason && WHY_IT_WORKS[`reason+${reason}`]) {
+    return WHY_IT_WORKS[`reason+${reason}`][lang] || WHY_IT_WORKS[`reason+${reason}`].en;
+  }
+  if (type && WHY_IT_WORKS[type]) {
+    return WHY_IT_WORKS[type][lang] || WHY_IT_WORKS[type].en;
+  }
+  return null;
+}
+
 // ── Screen Transitions ─────────────────────────────────────────
 /**
  * goTo(screenName, opts)
@@ -2076,6 +2145,25 @@ function renderResult(activity) {
   const timerBtn = document.getElementById("btn-timer");
   if (doneBtn)  { doneBtn.classList.remove("pulse"); doneBtn.textContent  = t.btnDone; }
   if (timerBtn) timerBtn.textContent = t.btnTimer;
+
+  // ── Why it works
+  const whyToggle = document.getElementById("why-toggle");
+  const whyBody   = document.getElementById("why-body");
+  if (whyToggle && whyBody) {
+    const whyText = getWhyItWorks(activity);
+    if (whyText) {
+      whyBody.textContent = whyText;
+      whyToggle.textContent = t.whyToggle || "Perché funziona";
+      whyToggle.style.display = "inline-block";
+      // Reset to collapsed on every new task
+      whyBody.classList.remove("open");
+      whyToggle.setAttribute("aria-expanded", "false");
+      whyBody.setAttribute("aria-hidden", "true");
+    } else {
+      whyToggle.style.display = "none";
+      whyBody.classList.remove("open");
+    }
+  }
 }
 
 // ── Render Done Screen ─────────────────────────────────────────
@@ -2175,6 +2263,15 @@ document.addEventListener("DOMContentLoaded", () => {
       renderResult(state.currentActivity);
       setTimeout(() => goTo("result"), 200);
     });
+  });
+
+  // Result: Why it works toggle
+  document.getElementById("why-toggle").addEventListener("click", () => {
+    const toggle = document.getElementById("why-toggle");
+    const body   = document.getElementById("why-body");
+    const isOpen = body.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    body.setAttribute("aria-hidden", isOpen ? "false" : "true");
   });
 
   // Result: Done
