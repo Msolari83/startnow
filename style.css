@@ -927,3 +927,15 @@ body {
 @media (min-height: 800px) {
   .top-bar { padding-top: 44px; }
 }
+
+/* ── Intro attribution signature ──────────────────────────── */
+.intro-attribution {
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-weight: 400;
+  line-height: 1;
+}
