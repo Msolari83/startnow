@@ -10,16 +10,17 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:        #0d0d0f;
-  --surface:   #141418;
-  --surface2:  #1c1c22;
-  --border:    rgba(255,255,255,0.07);
+  --bg:        #0a0a0c;
+  --surface:   #111116;
+  --surface2:  #18181f;
+  --border:    rgba(255,255,255,0.10);
+  --border-hi: rgba(255,255,255,0.16);
   --text:      #e8e8e8;
-  --muted:     #6b6b7a;
-  --accent:    #e8ff5a;       /* electric lime */
-  --accent-dim:#b0c630;
-  --radius:    18px;
-  --radius-sm: 12px;
+  --muted:     #5a5a6a;
+  --accent:    #e8ff5a;       /* electric lime — reserved for key elements */
+  --accent-dim:#9aaa35;
+  --radius:    14px;
+  --radius-sm: 10px;
   --font-mono: 'DM Mono', monospace;
   --font-sans: 'DM Sans', sans-serif;
   --danger:    #ff6b6b;
@@ -42,9 +43,14 @@ body {
   justify-content: center;
   min-height: 100dvh;
   background-image:
-    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(232,255,90,0.04) 0%, transparent 70%),
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  background-size: cover, 200px 200px;
+    /* Faint structural grid */
+    linear-gradient(rgba(255,255,255,0.024) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.024) 1px, transparent 1px),
+    /* Very subtle lime vignette at top — tighter and dimmer */
+    radial-gradient(ellipse 60% 40% at 50% 0%, rgba(232,255,90,0.025) 0%, transparent 100%),
+    /* Fine noise texture */
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  background-size: 32px 32px, 32px 32px, cover, 200px 200px;
 }
 
 /* ── App Shell ────────────────────────────────────────────── */
@@ -105,7 +111,7 @@ body {
   width: 32px;
   height: 32px;
   background: var(--accent);
-  border-radius: 8px;
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -135,19 +141,19 @@ body {
   font-weight: 500;
   letter-spacing: 0.1em;
   padding: 6px 12px;
-  border-radius: 8px;
+  border-radius: 6px;
   border: 1px solid var(--border);
   background: var(--surface);
   color: var(--muted);
   cursor: pointer;
-  transition: background 0.18s, color 0.18s, border-color 0.18s;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
   line-height: 1;
 }
 
 .lang-btn:hover {
   background: var(--surface2);
   color: var(--text);
-  border-color: rgba(255,255,255,0.14);
+  border-color: var(--border-hi);
 }
 
 /* Active / selected language */
@@ -299,10 +305,10 @@ body {
   font-family: var(--font-sans);
   font-size: 16px;
   font-weight: 400;
-  padding: 18px 22px;
+  padding: 16px 20px;
   text-align: left;
   cursor: pointer;
-  transition: background 0.18s, border-color 0.18s, transform 0.12s;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
   display: flex;
   align-items: center;
   gap: 14px;
@@ -312,21 +318,58 @@ body {
 
 .option-btn:hover {
   background: var(--surface2);
-  border-color: rgba(255,255,255,0.14);
+  border-color: var(--border-hi);
 }
 
 .option-btn.selected {
-  background: rgba(232, 255, 90, 0.08);
-  border-color: var(--accent);
-  color: var(--accent);
+  background: rgba(232, 255, 90, 0.06);
+  border-color: rgba(232, 255, 90, 0.55);
+  color: var(--text);
 }
 
 .option-icon {
-  font-size: 20px;
-  width: 24px;
-  text-align: center;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
+  transition: color 0.15s;
 }
+
+/* Per-category muted colors — desaturated, low-brightness */
+.option-icon--work     { color: #7a9ab8; }   /* cool steel blue  */
+.option-icon--decision { color: #9b84c4; }   /* soft purple      */
+.option-icon--training { color: #c4825a; }   /* warm terracotta  */
+.option-icon--thinking { color: #6aaac4; }   /* soft sky blue    */
+.option-icon--stuck    { color: #c47070; }   /* muted rose red   */
+.option-icon--dontknow { color: #7a7a8a; }   /* neutral gray     */
+
+/* Hover: slightly brighter, same hue */
+.option-btn:hover .option-icon--work     { color: #9ab8d4; }
+.option-btn:hover .option-icon--decision { color: #b8a0dc; }
+.option-btn:hover .option-icon--training { color: #dc9a72; }
+.option-btn:hover .option-icon--thinking { color: #88c4dc; }
+.option-btn:hover .option-icon--stuck    { color: #dc8888; }
+.option-btn:hover .option-icon--dontknow { color: #9a9aaa; }
+
+/* Selected: always lime accent, regardless of category */
+.option-btn.selected .option-icon { color: var(--accent); }
+
+/* ── Step 2 reason icon colors ────────────────────────────────── */
+.option-icon--difficult    { color: #b87a5a; }   /* warm amber-brown   */
+.option-icon--nofeel       { color: #7a8aa0; }   /* desaturated slate  */
+.option-icon--afraid       { color: #9b7ab8; }   /* muted violet       */
+.option-icon--nostart      { color: #6aaab0; }   /* teal-gray          */
+.option-icon--notimportant { color: #666878; }   /* cool dim gray      */
+.option-icon--feelstuck    { color: #b87070; }   /* dusty rose         */
+
+.option-btn:hover .option-icon--difficult    { color: #d4956e; }
+.option-btn:hover .option-icon--nofeel       { color: #96a8bc; }
+.option-btn:hover .option-icon--afraid       { color: #b898d4; }
+.option-btn:hover .option-icon--nostart      { color: #88c8ce; }
+.option-btn:hover .option-icon--notimportant { color: #888a9a; }
+.option-btn:hover .option-icon--feelstuck    { color: #d48888; }
 
 /* Time row — horizontal */
 .time-grid { display: flex; gap: 10px; }
@@ -340,9 +383,9 @@ body {
   font-family: var(--font-mono);
   font-size: 22px;
   font-weight: 500;
-  padding: 28px 10px;
+  padding: 26px 10px;
   cursor: pointer;
-  transition: background 0.18s, border-color 0.18s, transform 0.12s;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
   text-align: center;
 }
 
@@ -359,14 +402,14 @@ body {
 
 .time-btn:hover {
   background: var(--surface2);
-  border-color: rgba(255,255,255,0.14);
+  border-color: var(--border-hi);
 }
 
 .time-btn:active  { transform: scale(0.97); }
 
 .time-btn.selected {
-  background: rgba(232, 255, 90, 0.08);
-  border-color: var(--accent);
+  background: rgba(232, 255, 90, 0.06);
+  border-color: rgba(232, 255, 90, 0.55);
   color: var(--accent);
 }
 
@@ -532,7 +575,7 @@ body {
   grid-column: 1 / -1;
   padding: 20px;
   background: var(--accent);
-  color: #0d0d0f;
+  color: #0a0a0c;
   border: none;
   border-radius: var(--radius);
   font-family: var(--font-sans);
@@ -540,23 +583,22 @@ body {
   font-weight: 700;
   cursor: pointer;
   letter-spacing: -0.01em;
-  transition: background 0.18s, transform 0.12s, box-shadow 0.18s;
+  transition: background 0.15s, transform 0.1s;
 }
 
 .btn-primary:hover {
   background: #f0ff72;
-  box-shadow: 0 0 32px rgba(232,255,90,0.25);
 }
 
 .btn-primary:active { transform: scale(0.98); }
 
 .btn-primary.pulse {
-  animation: pulsate 0.9s ease infinite;
+  animation: pulsate 1s ease infinite;
 }
 
 @keyframes pulsate {
-  0%   { box-shadow: 0 0 0 0   rgba(232,255,90,0.5); }
-  70%  { box-shadow: 0 0 0 16px rgba(232,255,90,0);   }
+  0%   { box-shadow: 0 0 0 0   rgba(232,255,90,0.35); }
+  70%  { box-shadow: 0 0 0 10px rgba(232,255,90,0);   }
   100% { box-shadow: 0 0 0 0   rgba(232,255,90,0);   }
 }
 
@@ -570,13 +612,13 @@ body {
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
-  transition: background 0.18s, border-color 0.18s, transform 0.12s;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
   text-align: center;
 }
 
 .btn-secondary:hover {
   background: var(--surface2);
-  border-color: rgba(255,255,255,0.14);
+  border-color: var(--border-hi);
 }
 
 .btn-secondary:active { transform: scale(0.97); }
@@ -644,7 +686,7 @@ body {
   width: 100%;
   padding: 20px;
   background: var(--accent);
-  color: #0d0d0f;
+  color: #0a0a0c;
   border: none;
   border-radius: var(--radius);
   font-family: var(--font-sans);
@@ -652,12 +694,11 @@ body {
   font-weight: 700;
   cursor: pointer;
   letter-spacing: -0.01em;
-  transition: background 0.18s, transform 0.12s, box-shadow 0.18s;
+  transition: background 0.15s, transform 0.1s;
 }
 
 .btn-cta:hover {
   background: #f0ff72;
-  box-shadow: 0 0 32px rgba(232,255,90,0.22);
 }
 
 .btn-cta:active { transform: scale(0.98); }
@@ -673,12 +714,12 @@ body {
   font-size: 14px;
   font-weight: 400;
   cursor: pointer;
-  transition: color 0.18s, border-color 0.18s;
+  transition: color 0.15s, border-color 0.15s;
 }
 
 .btn-ghost:hover {
   color: var(--text);
-  border-color: rgba(255,255,255,0.14);
+  border-color: var(--border-hi);
 }
 
 /* ── Back navigation button — shared across type/time/done ── */
@@ -695,7 +736,7 @@ body {
   font-size: 14px;
   font-weight: 400;
   cursor: pointer;
-  transition: color 0.18s, border-color 0.18s, background 0.18s;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -711,7 +752,7 @@ body {
 
 .btn-back-nav:hover {
   color: var(--text);
-  border-color: rgba(255,255,255,0.18);
+  border-color: var(--border-hi);
   background: var(--surface);
 }
 
@@ -722,7 +763,7 @@ body {
 
 /* ── Home button on result screen — full-width ghost row ─── */
 .btn-home-result {
-  grid-column: 1 / -1;          /* spans both columns */
+  grid-column: 1 / -1;
   color: var(--muted);
   border-color: var(--border);
   font-size: 13px;
@@ -734,14 +775,14 @@ body {
 }
 
 .btn-home-result::before {
-  content: '⌂';
-  font-size: 15px;
+  content: '↖';
+  font-size: 14px;
   line-height: 1;
 }
 
 .btn-home-result:hover {
   color: var(--text);
-  border-color: rgba(255,255,255,0.18);
+  border-color: var(--border-hi);
 }
 
 /* ── Reset statistics — minimal text button on home screen ── */
@@ -769,20 +810,19 @@ body {
 }
 
 /* ── "More time" button on time screen ───────────────────── */
-/* Sits below the 3-column time grid. Calm, slightly distinct. */
 .btn-more-time {
   width: 100%;
   margin-top: 12px;
   padding: 16px 22px;
   background: var(--surface);
-  border: 1px solid rgba(232, 255, 90, 0.18);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
-  color: var(--text);
+  color: var(--muted);
   font-family: var(--font-sans);
   font-size: 15px;
   font-weight: 500;
   cursor: pointer;
-  transition: background 0.18s, border-color 0.18s, transform 0.12s;
+  transition: background 0.15s, border-color 0.15s, color 0.15s, transform 0.1s;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -790,23 +830,27 @@ body {
   flex-shrink: 0;
 }
 
-/* Small clock icon via pseudo-element */
+/* Minimal plus marker */
 .btn-more-time::before {
-  content: '⏱';
+  content: '+';
+  font-family: var(--font-mono);
   font-size: 16px;
   line-height: 1;
+  color: var(--muted);
+  opacity: 0.7;
 }
 
 .btn-more-time:hover {
   background: var(--surface2);
-  border-color: rgba(232, 255, 90, 0.35);
+  border-color: var(--border-hi);
+  color: var(--text);
 }
 
 .btn-more-time:active { transform: scale(0.98); }
 
 .btn-more-time.selected {
-  background: rgba(232, 255, 90, 0.08);
-  border-color: var(--accent);
+  background: rgba(232, 255, 90, 0.06);
+  border-color: rgba(232, 255, 90, 0.55);
   color: var(--accent);
 }
 
@@ -827,7 +871,7 @@ body {
   padding: 22px 24px;
   text-align: left;
   cursor: pointer;
-  transition: background 0.18s, border-color 0.18s, transform 0.12s;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -835,14 +879,14 @@ body {
 
 .moretime-btn:hover {
   background: var(--surface2);
-  border-color: rgba(255,255,255,0.14);
+  border-color: var(--border-hi);
 }
 
 .moretime-btn:active { transform: scale(0.98); }
 
 .moretime-btn.selected {
-  background: rgba(232, 255, 90, 0.08);
-  border-color: var(--accent);
+  background: rgba(232, 255, 90, 0.06);
+  border-color: rgba(232, 255, 90, 0.55);
 }
 
 .moretime-btn.selected .moretime-btn__label { color: var(--accent); }
@@ -892,13 +936,12 @@ body {
 /* ── Truth Mode — result card accent variant ──────────────── */
 /* Applied via JS when activity.reason is set.               */
 .result-card--truth {
-  border-color: rgba(232, 255, 90, 0.28);
+  border-color: rgba(232, 255, 90, 0.22);
   background: linear-gradient(
     160deg,
-    rgba(232, 255, 90, 0.055) 0%,
-    var(--surface) 60%
+    rgba(232, 255, 90, 0.035) 0%,
+    var(--surface) 50%
   );
-  box-shadow: 0 0 0 1px rgba(232, 255, 90, 0.10) inset;
 }
 
 /* ── Truth Mode badge — result card ──────────────────────── */
