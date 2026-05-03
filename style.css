@@ -623,6 +623,33 @@ body {
   margin-bottom: 10px;
 }
 
+/* ── Done flash message ────────────────────────────────────── */
+.done-flash {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+  margin-bottom: 0;
+}
+
+.done-flash.visible {
+  height: auto;
+  opacity: 1;
+  margin-bottom: 10px;
+}
+
+/* Confirmed state for the Fatto button */
+.btn-primary.confirmed {
+  background: #b8d44a;           /* slightly muted lime — less bright */
+  transition: background 0.15s ease-out;
+}
+
 .btn-another-inner {
   grid-column: 1 / -1;
   width: 100%;

@@ -39,6 +39,14 @@ const TRANSLATIONS = {
     timerStateLabel: "Running",
     btnDone:         "Done",
     btnDoneTimer:    "Timer done — mark complete",
+    btnDoneConfirmed:"✔ Keep it up",
+    doneFlashMessages: [
+      "You started. That's what counts.",
+      "Action beats thinking.",
+      "One more done.",
+      "You showed up.",
+      "That's momentum."
+    ],
     btnTimer:        "Start timer",
     btnTimerStop:    "Stop timer",
     btnAnother:      "Not convinced? Try another",
@@ -113,6 +121,14 @@ const TRANSLATIONS = {
     timerStateLabel: "In corso",
     btnDone:         "Fatto",
     btnDoneTimer:    "Tempo scaduto — segna completato",
+    btnDoneConfirmed:"✔ Continua così",
+    doneFlashMessages: [
+      "Hai iniziato. Questo conta.",
+      "Azione > pensiero.",
+      "Uno in più.",
+      "Ci sei arrivato.",
+      "Questo è slancio."
+    ],
     btnTimer:        "Avvia timer",
     btnTimerStop:    "Ferma timer",
     btnAnother:      "Non ti convince? Prova un'alternativa",
@@ -2143,8 +2159,16 @@ function renderResult(activity) {
 
   const doneBtn  = document.getElementById("btn-done");
   const timerBtn = document.getElementById("btn-timer");
-  if (doneBtn)  { doneBtn.classList.remove("pulse"); doneBtn.textContent  = t.btnDone; }
+  if (doneBtn)  {
+    doneBtn.classList.remove("pulse", "confirmed");
+    doneBtn.disabled = false;
+    doneBtn.textContent = t.btnDone;
+  }
   if (timerBtn) timerBtn.textContent = t.btnTimer;
+
+  // Reset flash
+  const flash = document.getElementById("done-flash");
+  if (flash) { flash.textContent = ""; flash.classList.remove("visible"); }
 
   // ── Why it works
   const whyToggle = document.getElementById("why-toggle");
@@ -2277,9 +2301,33 @@ document.addEventListener("DOMContentLoaded", () => {
   // Result: Done
   document.getElementById("btn-done").addEventListener("click", () => {
     stopTimer();
-    const stats = addMinutes(state.currentActivity.duration);
-    renderDone(stats);
-    goTo("done");
+    const stats   = addMinutes(state.currentActivity.duration);
+    const t       = TRANSLATIONS[currentLang];
+    const doneBtn = document.getElementById("btn-done");
+    const flash   = document.getElementById("done-flash");
+
+    // Disable button immediately to prevent double-click
+    doneBtn.disabled = true;
+
+    // 1. Swap button text + muted visual state
+    doneBtn.textContent = t.btnDoneConfirmed || "✔ Continua così";
+    doneBtn.classList.add("confirmed");
+
+    // 2. Show a random flash message
+    if (flash && t.doneFlashMessages) {
+      const pool = t.doneFlashMessages;
+      flash.textContent = pool[Math.floor(Math.random() * pool.length)];
+      flash.classList.add("visible");
+    }
+
+    // 3. After 1.5s: navigate to done screen
+    setTimeout(() => {
+      if (flash) flash.classList.remove("visible");
+      doneBtn.classList.remove("confirmed");
+      doneBtn.disabled = false;
+      renderDone(stats);
+      goTo("done");
+    }, 1500);
   });
 
   // Result: Another one
