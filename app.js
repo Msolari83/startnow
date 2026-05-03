@@ -1519,27 +1519,27 @@ const ACTIVITIES = [
   {
     id: "tm-dns-01", type: "work", reason: "dont_know_start", duration: 5,
     en: {
-      title: "Pick a role. Search it on LinkedIn.",
-      description: "You don't need a plan. You need one search.",
-      steps: ["Write 2–3 job titles you could see yourself doing", "Pick the one that feels most realistic right now", "Open LinkedIn and search for that job title", "Look at 2 job posts — just read them"]
+      title: "Write what you don't want. That narrows it.",
+      description: "You don't need to know what you want. Rule out what you don't.",
+      steps: ["Write 3 work situations you definitely don't want", "Write 1 thing that felt easy or natural in past work or school", "Open LinkedIn and search that easy thing as a keyword", "Read the first result — you're looking, not deciding"]
     },
     it: {
-      title: "Scegli un ruolo. Cercalo su LinkedIn.",
-      description: "Non ti serve un piano. Ti serve una ricerca.",
-      steps: ["Scrivi 2–3 titoli di lavoro che potresti fare", "Scegli quello che sembra più realistico adesso", "Apri LinkedIn e cerca quel titolo", "Leggi 2 offerte — solo leggile"]
+      title: "Scrivi cosa non vuoi. Questo restringe il campo.",
+      description: "Non devi sapere cosa vuoi. Elimina prima ciò che non vuoi.",
+      steps: ["Scrivi 3 situazioni lavorative che non vuoi di sicuro", "Scrivi 1 cosa che ti veniva facile o naturale nel lavoro o scuola", "Apri LinkedIn e cerca quella cosa come parola chiave", "Leggi il primo risultato — stai guardando, non decidendo"]
     }
   },
   {
     id: "tm-dns-02", type: "work", reason: "dont_know_start", duration: 10,
     en: {
-      title: "Clarify your direction. Find 2 real offers.",
-      description: "Clarity first. Action second. Both in 10 minutes.",
-      steps: ["Write: 3 things you're good at, 2 sectors you like, 1 role that combines them", "Open LinkedIn or Indeed and search for that role", "Read 3 job posts — note what skills they ask for", "Save the 2 that feel most realistic"]
+      title: "Look at real jobs. Note your reactions.",
+      description: "Your gut response to job listings tells you more than any quiz.",
+      steps: ["Open LinkedIn or Google Jobs", "Search any broad term: 'marketing', 'operations', 'support', 'data', or 'design'", "Read 5 posts fully — don't apply, just read each description", "Write next to each: 'yes / no / maybe' — gut reaction only", "Look at your maybes — search more of those tomorrow"]
     },
     it: {
-      title: "Chiarisci la direzione. Trova 2 offerte reali.",
-      description: "Prima chiarezza. Poi azione. Entrambe in 10 minuti.",
-      steps: ["Scrivi: 3 cose in cui sei bravo, 2 settori che ti piacciono, 1 ruolo che le combina", "Apri LinkedIn o Indeed e cerca quel ruolo", "Leggi 3 offerte di lavoro — annota che competenze chiedono", "Salva le 2 che sembrano più realistiche"]
+      title: "Guarda lavori reali. Annota le tue reazioni.",
+      description: "La tua reazione viscerale alle offerte ti dice più di qualsiasi quiz.",
+      steps: ["Apri LinkedIn o Google Jobs", "Cerca un termine ampio: 'marketing', 'operations', 'supporto', 'dati', o 'design'", "Leggi 5 offerte per intero — non candidarti, leggi solo le descrizioni", "Scrivi accanto a ognuna: 'sì / no / forse' — solo di pancia", "Guarda i tuoi 'forse' — cercane altri domani"]
     }
   },
   {
@@ -1558,14 +1558,14 @@ const ACTIVITIES = [
   {
     id: "tm-dns-04", type: "stuck", reason: "dont_know_start", duration: 10,
     en: {
-      title: "Write what you already know",
-      description: "You know more than you think. Start with what you already have.",
-      steps: ["Write: 'What I already know about this situation is...'", "Keep writing until you've listed everything", "Write: 'The most obvious first step given all that is...'", "Do that step — 'obvious' is perfectly fine"]
+      title: "Walk somewhere you've never walked before.",
+      description: "Not to think. Just to break the pattern of same place, same thoughts.",
+      steps: ["Leave where you are and walk in a direction you don't usually take", "Walk for at least 8 minutes — no destination required", "Look at what's around you: buildings, people, small details you've never noticed", "Write one sentence when you return: 'One thing I noticed that I've never paid attention to before is ___'"]
     },
     it: {
-      title: "Scrivi quello che sai già",
-      description: "Sai più di quanto pensi. Inizia da quello che hai già.",
-      steps: ["Scrivi: 'Quello che so già di questa situazione è...'", "Continua a scrivere finché non hai elencato tutto", "Scrivi: 'Il primo passo più ovvio dato tutto questo è...'", "Fai quel passo — 'ovvio' va benissimo"]
+      title: "Cammina in un posto dove non sei mai stato.",
+      description: "Non per pensare. Solo per rompere il pattern di stesso posto, stessi pensieri.",
+      steps: ["Lascia dove sei e cammina in una direzione che non prendi di solito", "Cammina per almeno 8 minuti — nessuna destinazione richiesta", "Guarda cosa c'è intorno: edifici, persone, piccoli dettagli che non hai mai notato", "Scrivi una frase quando torni: 'Una cosa che ho notato e a cui non avevo mai prestato attenzione è ___'"]
     }
   },
 
@@ -1638,16 +1638,16 @@ const ACTIVITIES = [
     }
   },
   {
-    id: "tm-stuck-03", type: "stuck", reason: "feel_stuck", duration: 5,
+    id: "tm-stuck-03", type: "stuck", reason: "feel_stuck", duration: 10,
     en: {
-      title: "Write the block. Then step away and come back.",
-      description: "Name what's stuck. Then break the pattern.",
-      steps: ["Write one sentence: what exactly is blocking you right now", "Walk to another room, pour a drink, or step outside for 3 minutes", "Come back. Look at your list.", "Pick the simplest task. Start it immediately."]
+      title: "You don't need answers. You need to move.",
+      description: "Staying in the same place keeps the same thoughts running.",
+      steps: ["Leave where you are — go outside, to a café, or anywhere you don't usually go", "Stay for 10 minutes without your phone open", "Notice one thing you haven't paid attention to before — a sound, a detail, a person", "Write one sentence: what did you notice, and what did it make you think of?"]
     },
     it: {
-      title: "Scrivi il blocco. Poi stacca e torna.",
-      description: "Nomina cosa blocca. Poi rompi il pattern.",
-      steps: ["Scrivi una frase: cosa ti sta bloccando esattamente adesso", "Vai in un'altra stanza, versati da bere, o esci fuori per 3 minuti", "Torna. Guarda la lista.", "Scegli il compito più semplice. Inizialo subito."]
+      title: "Non ti servono risposte. Ti serve muoverti.",
+      description: "Restare nello stesso posto fa girare gli stessi pensieri.",
+      steps: ["Lascia dove sei — esci fuori, vai in un bar, o in qualsiasi posto che non frequenti di solito", "Resta lì per 10 minuti senza aprire il telefono", "Nota una cosa a cui non hai mai prestato attenzione — un suono, un dettaglio, una persona", "Scrivi una frase: cosa hai notato, e a cosa ti ha fatto pensare?"]
     }
   },
   {
@@ -1672,53 +1672,53 @@ const ACTIVITIES = [
   {
     id: "tm-dns-01b", type: "work", reason: "dont_know_start", duration: 5,
     en: {
-      title: "Search one company. Read one job post.",
-      description: "No plan needed. One search, one post.",
-      steps: ["Think of one company you'd like to work for", "Open their website or LinkedIn page", "Find one open role and read the full description", "Write one line: what skills do you already have that match?"]
+      title: "Find one job that doesn't make you say no.",
+      description: "Not the right job. Just one that doesn't feel obviously wrong.",
+      steps: ["Open LinkedIn", "Search any broad word: 'coordinator', 'analyst', 'assistant', or 'specialist'", "Scroll 10 posts — skip anything that clearly doesn't fit", "Save the one post that didn't make you scroll past immediately"]
     },
     it: {
-      title: "Cerca un'azienda. Leggi un'offerta.",
-      description: "Nessun piano. Una ricerca, un'offerta.",
-      steps: ["Pensa a un'azienda per cui ti piacerebbe lavorare", "Apri il loro sito o la pagina LinkedIn", "Trova un ruolo aperto e leggi la descrizione completa", "Scrivi una riga: quali competenze hai già che corrispondono?"]
+      title: "Trova un lavoro che non ti faccia dire no.",
+      description: "Non quello giusto. Solo uno che non sembri ovviamente sbagliato.",
+      steps: ["Apri LinkedIn", "Cerca una parola ampia qualsiasi: 'coordinatore', 'analista', 'assistente', o 'specialista'", "Scorri 10 offerte — salta quelle che chiaramente non fanno per te", "Salva l'unica che non ti ha fatto scorrere subito"]
     }
   },
   {
     id: "tm-dns-01c", type: "work", reason: "dont_know_start", duration: 5,
     en: {
-      title: "Open your CV. Update one section.",
-      description: "Start with what exists. Improve one part.",
-      steps: ["Open your CV file (or create a blank one)", "Find the most outdated section", "Update it with your most recent experience or skill", "Save the file"]
+      title: "Write what's come easy to you. Search it.",
+      description: "What feels effortless to you is often valuable to others.",
+      steps: ["Write 2 tasks that don't feel like work to you — anything", "Pick the one that sounds more like a job skill", "Search that on Google: '___ jobs' or 'career in ___'", "Read one result — you're exploring, not committing"]
     },
     it: {
-      title: "Apri il CV. Aggiorna una sezione.",
-      description: "Parti da ciò che esiste. Migliora una parte.",
-      steps: ["Apri il file del tuo CV (o creane uno vuoto)", "Trova la sezione più obsoleta", "Aggiornala con la tua esperienza o competenza più recente", "Salva il file"]
+      title: "Scrivi cosa ti viene facile. Cercalo.",
+      description: "Ciò che per te è senza sforzo è spesso prezioso per gli altri.",
+      steps: ["Scrivi 2 cose che non ti sembrano fatica — qualsiasi cosa", "Scegli quella che suona di più come una competenza lavorativa", "Cercala su Google: 'lavori ___' o 'carriera in ___'", "Leggi un risultato — stai esplorando, non decidendo"]
     }
   },
   {
     id: "tm-dns-02b", type: "work", reason: "dont_know_start", duration: 10,
     en: {
-      title: "Identify your skill gaps. Find one resource.",
-      description: "Know what's missing. Find how to fill it.",
-      steps: ["Open LinkedIn and search for 3 jobs you'd want", "Read each and list the skills they require", "Circle the skills you don't have yet", "Search for one free resource (course, article, video) for the top gap"]
+      title: "Read one person's career path. See if anything resonates.",
+      description: "Real examples are clearer than abstract career advice.",
+      steps: ["Open LinkedIn", "Search a broad job title that vaguely interests you", "Click on 2 profiles of people with that role", "Read their career history — note anything that sounds tolerable or interesting", "Write: 'One thing I could see myself doing is ___'"]
     },
     it: {
-      title: "Identifica i gap. Trova una risorsa.",
-      description: "Scopri cosa manca. Trova come colmarlo.",
-      steps: ["Apri LinkedIn e cerca 3 lavori che vorresti", "Leggili ed elenca le competenze che richiedono", "Cerchia le competenze che non hai ancora", "Cerca una risorsa gratuita (corso, articolo, video) per il gap principale"]
+      title: "Leggi il percorso di carriera di qualcuno. Vedi se risuona.",
+      description: "Gli esempi reali sono più chiari di qualsiasi consiglio astratto.",
+      steps: ["Apri LinkedIn", "Cerca un titolo di lavoro ampio che ti interessa vagamente", "Clicca su 2 profili di persone con quel ruolo", "Leggi la loro storia lavorativa — annota qualcosa che sembra tollerabile o interessante", "Scrivi: 'Una cosa che potrei vedermi fare è ___'"]
     }
   },
   {
     id: "tm-dns-02c", type: "work", reason: "dont_know_start", duration: 10,
     en: {
-      title: "Find 3 companies. Save their career pages.",
-      description: "Build a target list. Start small.",
-      steps: ["Think of 3 companies you'd want to work at", "Open each one's LinkedIn or careers page", "Check if they have open roles in your area", "Save or bookmark all three pages for follow-up"]
+      title: "Search what you don't want. Find the opposite.",
+      description: "Knowing what to avoid is the fastest way to find what to try.",
+      steps: ["Write 3 jobs or roles that sound unappealing to you", "For each, write the opposite quality — what that job lacks that you'd want", "Take those 3 qualities and search them on LinkedIn: 'jobs with ___'", "Read 3 results and note which sector they come from"]
     },
     it: {
-      title: "Trova 3 aziende. Salva le loro pagine carriere.",
-      description: "Costruisci una lista di obiettivi. Inizia in piccolo.",
-      steps: ["Pensa a 3 aziende in cui vorresti lavorare", "Apri la pagina LinkedIn o careers di ognuna", "Controlla se hanno ruoli aperti nella tua area", "Salva o metti nei preferiti tutte e tre le pagine"]
+      title: "Cerca cosa non vuoi. Trova il contrario.",
+      description: "Sapere cosa evitare è il modo più rapido per trovare cosa provare.",
+      steps: ["Scrivi 3 lavori o ruoli che ti sembrano poco attraenti", "Per ognuno, scrivi la qualità opposta — cosa manca a quel lavoro che tu vorresti", "Prendi quelle 3 qualità e cercale su LinkedIn: 'lavori con ___'", "Leggi 3 risultati e annota da quale settore vengono"]
     }
   },
 
@@ -1752,29 +1752,29 @@ const ACTIVITIES = [
 
   // — dont_know_start: stuck ────────────────────────────────────
   {
-    id: "tm-dns-04b", type: "stuck", reason: "dont_know_start", duration: 10,
+    id: "tm-dns-04b", type: "stuck", reason: "dont_know_start", duration: 15,
     en: {
-      title: "Map the situation. Choose one move.",
-      description: "Get it on paper. Pick one direction.",
-      steps: ["Write the situation in 3 sentences — what it is, what's blocked, what you want", "Write 3 possible actions, however small", "Circle the one with the lowest barrier", "Do it now for 5 minutes"]
+      title: "Talk to someone outside your usual circle.",
+      description: "People you always talk to reflect back what you already think.",
+      steps: ["Think of someone you haven't spoken to in a while — not a close friend, someone more distant", "Send them a message: 'Hey, how are things going for you?' — no agenda, just ask", "If they respond: listen. If not: find a podcast or interview with someone whose life looks different from yours and listen for 10 minutes", "Write one sentence: 'Something I heard that I hadn't considered before is ___'"]
     },
     it: {
-      title: "Mappa la situazione. Scegli una mossa.",
-      description: "Mettila su carta. Scegli una direzione.",
-      steps: ["Scrivi la situazione in 3 frasi — cos'è, cosa è bloccato, cosa vuoi", "Scrivi 3 possibili azioni, anche piccole", "Cerchia quella con la barriera più bassa", "Falla adesso per 5 minuti"]
+      title: "Parla con qualcuno fuori dalla tua cerchia abituale.",
+      description: "Le persone con cui parli sempre riflettono ciò che già pensi.",
+      steps: ["Pensa a qualcuno con cui non hai parlato da un po' — non un amico stretto, qualcuno di più distante", "Mandagli un messaggio: 'Ciao, come vanno le cose?' — nessun obiettivo, chiedi soltanto", "Se risponde: ascolta. Se no: trova un podcast o un'intervista con qualcuno la cui vita sembra diversa dalla tua e ascolta per 10 minuti", "Scrivi una frase: 'Una cosa che ho sentito e che non avevo considerato prima è ___'"]
     }
   },
   {
     id: "tm-dns-04c", type: "stuck", reason: "dont_know_start", duration: 10,
     en: {
-      title: "Find one person who's done this. Learn from them.",
-      description: "Someone has been where you are. Use their path.",
-      steps: ["Write who you know (or could find) who has navigated this situation", "Send them a message or search for their story online", "Write one thing you can copy from their approach", "Do that one thing now"]
+      title: "Do something with your hands. No screen.",
+      description: "The brain loosens when the hands are busy and the screen is off.",
+      steps: ["Pick any physical task that takes no thinking: wash dishes, fold laundry, cook something simple, draw anything, rearrange a shelf", "Do it for 10 minutes — no phone, no music with lyrics", "Don't try to think about the situation — let it run in the background", "When done, write one sentence: 'Something that came to mind while I was doing that is ___'"]
     },
     it: {
-      title: "Trova qualcuno che l'ha fatto. Impara da loro.",
-      description: "Qualcuno è stato dove sei tu. Usa il loro percorso.",
-      steps: ["Scrivi chi conosci (o potresti trovare) che ha affrontato questa situazione", "Mandagli un messaggio o cerca la loro storia online", "Scrivi una cosa che puoi copiare dal loro approccio", "Fai quella cosa adesso"]
+      title: "Fai qualcosa con le mani. Senza schermi.",
+      description: "Il cervello si allenta quando le mani sono occupate e lo schermo è spento.",
+      steps: ["Scegli qualsiasi compito fisico che non richiede pensiero: lava i piatti, piega il bucato, cucina qualcosa di semplice, disegna qualcosa, riorganizza uno scaffale", "Fallo per 10 minuti — senza telefono, senza musica con testi", "Non cercare di pensare alla situazione — lasciala girare in sottofondo", "Quando hai finito, scrivi una frase: 'Una cosa che mi è venuta in mente mentre lo facevo è ___'"]
     }
   },
 
@@ -1877,14 +1877,14 @@ const ACTIVITIES = [
   {
     id: "tm-dfl-04c", type: "thinking", reason: "dont_feel_like", duration: 5,
     en: {
-      title: "Say it out loud. Write one sentence after.",
-      description: "Hear yourself. Then write one thing.",
-      steps: ["Find 2 minutes alone", "Say out loud what's been on your mind — full sentences", "Write the one thing you just said that felt most true", "Stop there"]
+      title: "Open a note. Write for 5 minutes. Stop.",
+      description: "No filter, no structure. Just get it out.",
+      steps: ["Open any notes app or a blank page", "Write whatever is on your mind — no editing, no rereading", "Keep writing until the 5 minutes end", "Close the note — done"]
     },
     it: {
-      title: "Dillo ad alta voce. Scrivi una frase dopo.",
-      description: "Ascoltati. Poi scrivi una cosa.",
-      steps: ["Trova 2 minuti da solo", "Di' ad alta voce quello che hai in testa — frasi complete", "Scrivi la cosa che hai appena detto che sembrava più vera", "Fermati qui"]
+      title: "Apri una nota. Scrivi per 5 minuti. Stop.",
+      description: "Nessun filtro, nessuna struttura. Tiralo fuori.",
+      steps: ["Apri qualsiasi app di note o una pagina bianca", "Scrivi qualunque cosa hai in testa — senza correggere, senza rileggere", "Continua a scrivere fino alla fine dei 5 minuti", "Chiudi la nota — fatto"]
     }
   },
 
@@ -2252,29 +2252,29 @@ const ACTIVITIES = [
 
   // — feel_stuck: stuck ─────────────────────────────────────────
   {
-    id: "tm-stuck-03b", type: "stuck", reason: "feel_stuck", duration: 5,
+    id: "tm-stuck-03b", type: "stuck", reason: "feel_stuck", duration: 15,
     en: {
-      title: "Name it. Walk for 3 minutes. Come back.",
-      description: "Clarity first. Reset. Then one task.",
-      steps: ["Write one sentence: 'I'm stuck because ___'", "Stand up and walk — outside, around the room, anywhere — for 3 minutes", "Come back and open your task list", "Start the simplest item on it immediately"]
+      title: "Do something you haven't done in a while.",
+      description: "Routine keeps you in the same mental state. Change the input.",
+      steps: ["Pick one thing you used to do but stopped — a walk in a new direction, a type of music, a podcast, a food — and do it now for 10 minutes", "While doing it, don't think about the situation — just experience the thing", "When 10 minutes end, write: 'One thing I felt or thought that I haven't felt in a while is ___'"]
     },
     it: {
-      title: "Nominalo. Cammina 3 minuti. Torna.",
-      description: "Prima chiarezza. Reset. Poi un compito.",
-      steps: ["Scrivi una frase: 'Sono bloccato perché ___'", "Alzati e cammina — fuori, in giro per la stanza, ovunque — per 3 minuti", "Torna e apri la lista dei compiti", "Inizia subito il compito più semplice"]
+      title: "Fai qualcosa che non fai da un po'.",
+      description: "La routine ti tiene nello stesso stato mentale. Cambia l'input.",
+      steps: ["Scegli una cosa che facevi ma hai smesso — una camminata in una direzione nuova, un tipo di musica, un podcast, un cibo — e falla adesso per 10 minuti", "Mentre la fai, non pensare alla situazione — vivi solo quella cosa", "Quando finiscono i 10 minuti, scrivi: 'Una cosa che ho sentito o pensato che non sentivo da un po' è ___'"]
     }
   },
   {
-    id: "tm-stuck-03c", type: "stuck", reason: "feel_stuck", duration: 5,
+    id: "tm-stuck-03c", type: "stuck", reason: "feel_stuck", duration: 10,
     en: {
-      title: "Write what unstuck looks like. Do one step of it.",
-      description: "Imagine moving. Then move.",
-      steps: ["Write: 'When this is resolved, I will have done ___'", "Write the first step of that resolved version", "Do that first step now — even imperfectly", "Stop — you're no longer stuck"]
+      title: "Put something new in front of your eyes.",
+      description: "New input changes what comes out. You don't need to think — just look.",
+      steps: ["Open YouTube, a news site, or a magazine — any topic you don't usually follow", "Read or watch one thing for 8 minutes — no multitasking, no skipping", "Write one sentence: 'Something this made me think about my situation is ___'", "Don't force a connection — if nothing comes, write 'nothing' and that's fine too"]
     },
     it: {
-      title: "Scrivi com'è sbloccarsi. Fai un passo di quello.",
-      description: "Immagina di muoverti. Poi muoviti.",
-      steps: ["Scrivi: 'Quando questo si risolve, avrò fatto ___'", "Scrivi il primo passo di quella versione risolta", "Fai quel primo passo adesso — anche imperfettamente", "Fermati — non sei più bloccato"]
+      title: "Metti qualcosa di nuovo davanti agli occhi.",
+      description: "Un nuovo input cambia ciò che esce. Non devi pensare — guarda soltanto.",
+      steps: ["Apri YouTube, un sito di notizie, o una rivista — qualsiasi argomento che non segui di solito", "Leggi o guarda una cosa per 8 minuti — senza fare altro, senza saltare", "Scrivi una frase: 'Una cosa che questo mi ha fatto pensare della mia situazione è ___'", "Non forzare il collegamento — se non viene niente, scrivi 'niente' e va bene lo stesso"]
     }
   },
 
