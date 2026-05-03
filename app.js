@@ -21,11 +21,13 @@ const TRANSLATIONS = {
     // Type screen
     step1Label:      "Step 1 of 3",
     questionType:    "What are you<br>avoiding?",
-    typeWork:        "Work",
+    typeWork:        "Work task",
+    typeSearchJob:   "Job searching",
+    typeLearn:       "Learning something",
     typeDecision:    "A decision",
-    typeTraining:    "Training",
-    typeThinking:    "Thinking about something",
-    typeStuck:       "I feel stuck",
+    typeTraining:    "Physical training",
+    typeThinking:    "Something I'm overthinking",
+    typeStuck:       "Getting unstuck",
     typeDontKnow:    "I don't know",
 
     // Time screen
@@ -50,6 +52,11 @@ const TRANSLATIONS = {
     btnTimer:        "Start timer",
     btnTimerStop:    "Stop timer",
     btnAnother:      "Not convinced? Try another",
+    anotherVariants: [
+      "Not convinced? Try another",
+      "Still not right? One more.",
+      "Keep looking — here's another."
+    ],
     whyToggle:       "Why this works",
     btnBack:         "Back",
     btnResultHome:   "Home",
@@ -63,8 +70,8 @@ const TRANSLATIONS = {
     step2of3Label:       "Step 2 of 3",
     step3of3Label:       "Step 3 of 3",
     questionReason:      "Why are you<br>avoiding it?",
-    reasonTruthMode:     "Truth Mode",
-    resultTruthMode:     "Truth Mode",
+    reasonTruthMode:     "",
+    resultTruthMode:     "",
     reasonTooDifficult:  "Too difficult",
     reasonDontFeelLike:  "I don't feel like it",
     reasonAfraid:        "I'm afraid",
@@ -105,11 +112,13 @@ const TRANSLATIONS = {
     // Type screen
     step1Label:      "Passo 1 di 3",
     questionType:    "Cosa stai<br>evitando?",
-    typeWork:        "Lavoro",
-    typeDecision:    "Una decisione",
-    typeTraining:    "Allenamento",
-    typeThinking:    "Pensare a qualcosa",
-    typeStuck:       "Mi sento bloccato",
+    typeWork:        "Qualcosa nel lavoro",
+    typeSearchJob:   "Cercare lavoro",
+    typeLearn:       "Imparare qualcosa",
+    typeDecision:    "Prendere una decisione",
+    typeTraining:    "Allenamento fisico",
+    typeThinking:    "Affrontare qualcosa a cui penso troppo",
+    typeStuck:       "Uscire da una situazione bloccante",
     typeDontKnow:    "Non lo so",
 
     // Time screen
@@ -134,6 +143,11 @@ const TRANSLATIONS = {
     btnTimer:        "Avvia timer",
     btnTimerStop:    "Ferma timer",
     btnAnother:      "Non ti convince? Prova un'alternativa",
+    anotherVariants: [
+      "Non ti convince? Prova un'alternativa",
+      "Ancora no? Eccone un'altra.",
+      "Continua a cercare — ecco un'altra."
+    ],
     whyToggle:       "Perché funziona",
     btnBack:         "Indietro",
     btnResultHome:   "Home",
@@ -147,8 +161,8 @@ const TRANSLATIONS = {
     step2of3Label:       "Passo 2 di 3",
     step3of3Label:       "Passo 3 di 3",
     questionReason:      "Perché lo stai<br>evitando?",
-    reasonTruthMode:     "Modalità Verità",
-    resultTruthMode:     "Modalità Verità",
+    reasonTruthMode:     "",
+    resultTruthMode:     "",
     reasonTooDifficult:  "Troppo difficile",
     reasonDontFeelLike:  "Non ne ho voglia",
     reasonAfraid:        "Ho paura",
@@ -721,105 +735,105 @@ const ACTIVITIES = [
   {
     id: "work-01", type: "work", duration: 5,
     en: {
-      title: "No motivation needed",
-      description: "Start without thinking.",
-      steps: ["Open the task", "Do the first small action", "Stop after 5 minutes if you want"]
+      title: "Open it and do one thing",
+      description: "Not a plan. Not a review. One action.",
+      steps: ["Open the file, email, or tool for this task", "Do the first visible action (type, click, write, send)", "Stop after 5 minutes"]
     },
     it: {
-      title: "Non serve motivazione",
-      description: "Inizia senza pensare.",
-      steps: ["Apri il compito", "Fai la prima piccola azione", "Fermati dopo 5 minuti se vuoi"]
+      title: "Aprilo e fai una cosa",
+      description: "Non pianificare. Non rivedere. Un'azione.",
+      steps: ["Apri il file, l'email o lo strumento per questo compito", "Fai la prima azione visibile (scrivi, clicca, invia)", "Fermati dopo 5 minuti"]
     }
   },
   {
     id: "work-02", type: "work", duration: 10,
     en: {
-      title: "Two-minute rule",
-      description: "If it takes less than two minutes, do it right now.",
-      steps: ["List three small tasks", "Pick the fastest one", "Do it completely", "Move to the next"]
+      title: "Clear your inbox by 3",
+      description: "Pick three overdue emails. Write and send all three.",
+      steps: ["Open your email", "Find the 3 most overdue messages", "Reply to each in 2 sentences or less", "Send all three before the timer ends"]
     },
     it: {
-      title: "Regola dei due minuti",
-      description: "Se ci vuole meno di due minuti, fallo adesso.",
-      steps: ["Elenca tre piccoli compiti", "Scegli quello più veloce", "Fallo completamente", "Passa al successivo"]
+      title: "Svuota 3 email",
+      description: "Scegli tre email in sospeso. Scrivi e invia tutte e tre.",
+      steps: ["Apri la tua email", "Trova i 3 messaggi più in ritardo", "Rispondi a ognuno in 2 frasi o meno", "Invia tutte e tre prima che il timer finisca"]
     }
   },
   {
     id: "work-03", type: "work", duration: 15,
     en: {
-      title: "Ugly first draft",
-      description: "Done beats perfect every time.",
-      steps: ["Open a blank document", "Write or sketch without editing", "Don't stop for 10 minutes", "Review only after time is up"]
+      title: "One document, written rough",
+      description: "Open a doc. Write without editing for 15 minutes.",
+      steps: ["Open Google Docs or any editor", "Write a title for the thing you need to produce", "Write continuously — no deleting, no rewriting", "Stop when the timer rings. You now have a draft."]
     },
     it: {
-      title: "Brutta prima bozza",
-      description: "Fatto batte perfetto ogni volta.",
-      steps: ["Apri un documento vuoto", "Scrivi o abbozza senza correggere", "Non fermarti per 10 minuti", "Rivedi solo dopo che il tempo è scaduto"]
+      title: "Un documento, scritto di getto",
+      description: "Apri un documento. Scrivi senza modificare per 15 minuti.",
+      steps: ["Apri Google Docs o qualsiasi editor", "Scrivi un titolo per la cosa che devi produrre", "Scrivi continuamente — niente cancellazioni, niente riscritture", "Fermati quando suona il timer. Hai una bozza."]
     }
   },
   {
     id: "work-04", type: "work", duration: 5,
     en: {
-      title: "One email sent",
-      description: "The inbox won't clear itself.",
-      steps: ["Open your inbox", "Find the most overdue email", "Write three sentences and send"]
+      title: "Send the message you've been avoiding",
+      description: "One message. Three sentences. Send it now.",
+      steps: ["Open the conversation (email, Slack, WhatsApp)", "Write 3 sentences — what you need, by when, from whom", "Send before you reread it"]
     },
     it: {
-      title: "Un'email inviata",
-      description: "La posta in arrivo non si svuota da sola.",
-      steps: ["Apri la posta in arrivo", "Trova l'email più in ritardo", "Scrivi tre frasi e invia"]
+      title: "Invia il messaggio che stai evitando",
+      description: "Un messaggio. Tre frasi. Invialo adesso.",
+      steps: ["Apri la conversazione (email, Slack, WhatsApp)", "Scrivi 3 frasi — cosa ti serve, entro quando, da chi", "Invia prima di rileggerlo"]
     }
   },
   {
     id: "work-05", type: "work", duration: 10,
     en: {
-      title: "Clear the surface",
-      description: "A clear workspace reduces resistance.",
-      steps: ["Remove everything not related to the task", "Keep only what you need open", "Set a 10-minute countdown", "Work until it rings"]
+      title: "Close everything and work",
+      description: "One tab. One task. 10 minutes.",
+      steps: ["Close every browser tab except the one you need", "Turn off Slack, email, and phone notifications", "Set a 10-minute timer", "Work on only one thing until it rings"]
     },
     it: {
-      title: "Libera la scrivania",
-      description: "Un ambiente pulito riduce la resistenza.",
-      steps: ["Togli tutto ciò che non riguarda il compito", "Tieni aperto solo ciò che ti serve", "Imposta un conto alla rovescia di 10 minuti", "Lavora fino al segnale"]
+      title: "Chiudi tutto e lavora",
+      description: "Una scheda. Un compito. 10 minuti.",
+      steps: ["Chiudi ogni scheda del browser tranne quella che ti serve", "Disattiva Slack, email e notifiche del telefono", "Imposta un timer da 10 minuti", "Lavora su una sola cosa fino alla fine"]
     }
   },
   {
     id: "work-06", type: "work", duration: 15,
     en: {
-      title: "Single tab rule",
-      description: "Close everything that isn't the work.",
-      steps: ["Close all tabs except one", "Turn off notifications", "Work on that one thing for 15 minutes", "No switching allowed"]
+      title: "Build the task list you're avoiding",
+      description: "If it's unclear what to do, write what needs doing.",
+      steps: ["Open a notebook or notes app", "Write every task you've been avoiding in one list", "Mark which one takes less than 15 minutes", "Do it now, completely"]
     },
     it: {
-      title: "Regola della scheda singola",
-      description: "Chiudi tutto ciò che non è lavoro.",
-      steps: ["Chiudi tutte le schede tranne una", "Disattiva le notifiche", "Lavora su quella cosa per 15 minuti", "Niente cambi di pagina"]
+      title: "Costruisci la lista che stai evitando",
+      description: "Se non è chiaro cosa fare, scrivi cosa va fatto.",
+      steps: ["Apri un foglio o l'app note", "Scrivi ogni compito che stai evitando in una lista", "Segna quale richiede meno di 15 minuti", "Fallo adesso, completamente"]
     }
   },
   {
     id: "work-07", type: "work", duration: 5,
     en: {
-      title: "Next physical action",
-      description: "Identify exactly what your hands need to do.",
-      steps: ["Name the task in one sentence", "Write the first physical action", "Do only that action now"]
+      title: "Name the next physical action",
+      description: "Not a goal. The specific thing your hands need to do.",
+      steps: ["Write one sentence: 'The next thing I need to do is ___'", "Make it physical and specific (open, write, call, click)", "Do it immediately — don't plan further"]
     },
     it: {
-      title: "Prossima azione fisica",
-      description: "Identifica esattamente cosa devono fare le tue mani.",
-      steps: ["Nomina il compito in una frase", "Scrivi la prima azione fisica", "Fai solo quell'azione adesso"]
+      title: "Nomina la prossima azione fisica",
+      description: "Non un obiettivo. La cosa specifica che le tue mani devono fare.",
+      steps: ["Scrivi una frase: 'La prossima cosa che devo fare è ___'", "Rendila fisica e specifica (aprire, scrivere, chiamare, cliccare)", "Falla subito — non pianificare oltre"]
     }
   },
   {
     id: "work-08", type: "work", duration: 10,
     en: {
-      title: "Review what's actually due",
-      description: "Most of the list can wait. Find what can't.",
-      steps: ["Open your task list", "Mark items due today", "Pick the top one", "Start immediately"]
+      title: "Find your one real priority",
+      description: "Most of the list can wait. One thing can't.",
+      steps: ["Open your task list or calendar", "Ask: what has the hardest deadline or consequence?", "Write that task at the top of a blank page", "Work on only that for 10 minutes"]
     },
     it: {
-      title: "Rivedi cosa è davvero urgente",
-      description: "La maggior parte della lista può aspettare. Trova ciò che non può.",
-      steps: ["Apri la lista dei compiti", "Segna ciò che scade oggi", "Scegli il più importante", "Inizia subito"]
+      title: "Trova la tua vera priorità",
+      description: "La maggior parte della lista può aspettare. Una cosa no.",
+      steps: ["Apri la lista dei compiti o il calendario", "Chiediti: cosa ha la scadenza o la conseguenza più urgente?", "Scrivi quel compito in cima a una pagina bianca", "Lavora solo su quello per 10 minuti"]
     }
   },
 
@@ -827,185 +841,184 @@ const ACTIVITIES = [
   {
     id: "decision-01", type: "decision", duration: 5,
     en: {
-      title: "You already know",
-      description: "Clarity comes from action.",
-      steps: ["Write 2 options", "Write 1 pro and 1 con each", "Choose"]
+      title: "Write the two options. Choose one.",
+      description: "No analysis. Two options, one choice.",
+      steps: ["Write Option A in one sentence", "Write Option B in one sentence", "Circle the one you'd pick if you had to answer right now", "That's your answer"]
     },
     it: {
-      title: "Lo sai già",
-      description: "La chiarezza arriva con l'azione.",
-      steps: ["Scrivi 2 opzioni", "Scrivi 1 pro e 1 contro per ognuna", "Scegli"]
+      title: "Scrivi le due opzioni. Scegline una.",
+      description: "Nessuna analisi. Due opzioni, una scelta.",
+      steps: ["Scrivi l'opzione A in una frase", "Scrivi l'opzione B in una frase", "Cerchia quella che sceglieresti se dovessi rispondere adesso", "Questa è la tua risposta"]
     }
   },
   {
     id: "decision-02", type: "decision", duration: 10,
     en: {
-      title: "Worst case, then what?",
-      description: "Fear of a decision is usually fear of one outcome.",
-      steps: ["Write the decision", "Write the worst realistic outcome", "Write what you'd do after that", "Decide with that in mind"]
+      title: "Write the worst outcome. Then act.",
+      description: "Name the real fear. It's smaller than it feels.",
+      steps: ["Write the decision you're avoiding", "Write the realistic worst case if you choose wrong", "Write one thing you'd do to recover from that", "Make the decision — you now know you can handle it"]
     },
     it: {
-      title: "Nel caso peggiore, poi cosa?",
-      description: "La paura di decidere è spesso paura di un solo scenario.",
-      steps: ["Scrivi la decisione", "Scrivi il peggior risultato realistico", "Scrivi cosa faresti dopo", "Decidi tenendolo a mente"]
+      title: "Scrivi il caso peggiore. Poi agisci.",
+      description: "Nomina la vera paura. È più piccola di quanto sembra.",
+      steps: ["Scrivi la decisione che stai evitando", "Scrivi il caso peggiore realistico se scegli male", "Scrivi una cosa che faresti per riprenderti", "Prendi la decisione — ora sai che puoi gestirla"]
     }
   },
   {
     id: "decision-03", type: "decision", duration: 5,
     en: {
-      title: "One-way or two-way door?",
-      description: "Most decisions are reversible.",
-      steps: ["Write the decision", "Ask: can I undo this?", "If yes, decide now. If no, write one more thought first"]
+      title: "Is it reversible? Then decide now.",
+      description: "Most decisions can be undone. Stop treating them like they can't.",
+      steps: ["Write the decision in one sentence", "Ask yourself: can I reverse this in the next 30 days?", "If yes: decide immediately", "If no: write one more fact you'd need, then decide"]
     },
     it: {
-      title: "Porta a senso unico o doppio?",
-      description: "La maggior parte delle decisioni è reversibile.",
-      steps: ["Scrivi la decisione", "Chiediti: posso tornare indietro?", "Se sì, decidi adesso. Se no, scrivi prima un altro pensiero"]
+      title: "È reversibile? Allora decidi adesso.",
+      description: "La maggior parte delle decisioni si può annullare. Smetti di trattarle come se non fosse possibile.",
+      steps: ["Scrivi la decisione in una frase", "Chiediti: posso tornare indietro nei prossimi 30 giorni?", "Se sì: decidi subito", "Se no: scrivi un dato in più che ti serve, poi decidi"]
     }
   },
   {
     id: "decision-04", type: "decision", duration: 15,
     en: {
-      title: "The five-year test",
-      description: "Distance gives clarity.",
-      steps: ["Write the decision", "Write how it looks in 5 years if you choose A", "Write how it looks in 5 years if you choose B", "Write your honest reaction to each. Decide."]
+      title: "Five years from now",
+      description: "Distance cuts through noise. Use it.",
+      steps: ["Write the decision at the top of a page", "Write: 'In 5 years, if I chose A, my life looks like...'", "Write: 'In 5 years, if I chose B, my life looks like...'", "Read both. Write your honest gut reaction.", "Circle the option you'd regret not choosing"]
     },
     it: {
-      title: "Il test dei cinque anni",
-      description: "La distanza dà chiarezza.",
-      steps: ["Scrivi la decisione", "Scrivi come appare tra 5 anni se scegli A", "Scrivi come appare tra 5 anni se scegli B", "Scrivi la tua reazione onesta a ognuna. Decidi."]
+      title: "Tra cinque anni",
+      description: "La distanza taglia il rumore. Usala.",
+      steps: ["Scrivi la decisione in cima alla pagina", "Scrivi: 'Tra 5 anni, se scelgo A, la mia vita assomiglia a...'", "Scrivi: 'Tra 5 anni, se scelgo B, la mia vita assomiglia a...'", "Leggi entrambe. Scrivi la tua reazione viscerale onesta.", "Cerchia l'opzione di cui ti pentiresti non aver scelto"]
     }
   },
   {
     id: "decision-05", type: "decision", duration: 10,
     en: {
-      title: "What information do you actually need?",
-      description: "Most delays are about imaginary missing data.",
-      steps: ["Write the decision", "List what you think you're missing", "Check: do you actually need it?", "Decide with what you have"]
+      title: "What do you actually need to know?",
+      description: "List only the information that would genuinely change your decision.",
+      steps: ["Write the decision", "Write every question you feel you still need answered", "Cross out any that wouldn't actually change your choice", "If anything remains: get that one fact. Then decide."]
     },
     it: {
-      title: "Quali informazioni ti servono davvero?",
-      description: "La maggior parte dei ritardi riguarda dati mancanti immaginari.",
-      steps: ["Scrivi la decisione", "Elenca ciò che pensi ti manchi", "Controlla: ti serve davvero?", "Decidi con quello che hai"]
+      title: "Cosa hai davvero bisogno di sapere?",
+      description: "Elenca solo le informazioni che cambierebbero genuinamente la tua decisione.",
+      steps: ["Scrivi la decisione", "Scrivi ogni domanda che senti ancora aperta", "Cancella quelle che non cambierebbero comunque la tua scelta", "Se rimane qualcosa: ottieni quel dato. Poi decidi."]
     }
   },
   {
     id: "decision-06", type: "decision", duration: 5,
     en: {
-      title: "Coin flip test",
-      description: "Your reaction to the outcome tells you what you want.",
-      steps: ["Assign heads and tails to each option", "Flip a coin (or pick one)", "Notice how you feel about the result", "That feeling is your answer"]
+      title: "Ask someone in 60 seconds",
+      description: "A fast outside perspective breaks the loop.",
+      steps: ["Pick one person you trust (text, call, or think of them)", "Describe the decision in one sentence", "Ask: 'What would you do?' — listen without arguing", "Make your decision now, with that in mind"]
     },
     it: {
-      title: "Test della monetina",
-      description: "La tua reazione al risultato ti dice cosa vuoi.",
-      steps: ["Assegna testa e croce a ogni opzione", "Lancia una moneta (o scegline una)", "Osserva come ti senti rispetto al risultato", "Quella sensazione è la tua risposta"]
+      title: "Chiedi a qualcuno in 60 secondi",
+      description: "Una prospettiva esterna rapida rompe il loop.",
+      steps: ["Scegli una persona di cui ti fidi (scrivi, chiama o pensa a lei)", "Descrivi la decisione in una frase", "Chiedi: 'Cosa faresti?' — ascolta senza argomentare", "Prendi la tua decisione adesso, tenendolo a mente"]
     }
   },
   {
     id: "decision-07", type: "decision", duration: 10,
     en: {
-      title: "Write the recommendation",
-      description: "Pretend you're advising someone else.",
-      steps: ["Describe the situation in three sentences", "Write what you'd tell a friend to do", "Read it back. Follow your own advice."]
+      title: "Write what you already know you'll choose",
+      description: "You usually know. You're just not letting yourself choose.",
+      steps: ["Write: 'If I had to decide in the next 60 seconds, I'd choose...'", "Write that answer — don't think, just write", "Write one reason you've been resisting it", "Ask: is that reason real, or is it fear?", "Commit to the answer you already had"]
     },
     it: {
-      title: "Scrivi la raccomandazione",
-      description: "Fai finta di consigliare qualcun altro.",
-      steps: ["Descrivi la situazione in tre frasi", "Scrivi cosa diresti a un amico di fare", "Rileggilo. Segui il tuo stesso consiglio."]
+      title: "Scrivi cosa sai già che sceglierai",
+      description: "Di solito lo sai già. Non ti stai solo permettendo di scegliere.",
+      steps: ["Scrivi: 'Se dovessi decidere nei prossimi 60 secondi, sceglierei...'", "Scrivi quella risposta — non pensare, scrivi e basta", "Scrivi un motivo per cui ti stai resistendo", "Chiediti: quel motivo è reale, o è paura?", "Impegnati nella risposta che avevi già"]
     }
   },
-
   // ── TRAINING ──────────────────────────────────────────────────
   {
     id: "training-01", type: "training", duration: 5,
     en: {
-      title: "Just start moving",
-      description: "You don't need a full workout.",
-      steps: ["Put your shoes on", "Do 10 squats", "Do 10 push-ups"]
+      title: "5-minute bodyweight start",
+      description: "No equipment. No warm-up needed. Start now.",
+      steps: ["10 squats — slow down, fast up", "10 push-ups — any variation counts", "20-second plank", "Repeat once if you have time left"]
     },
     it: {
-      title: "Inizia a muoverti",
-      description: "Non hai bisogno di un allenamento completo.",
-      steps: ["Metti le scarpe", "Fai 10 squat", "Fai 10 flessioni"]
+      title: "5 minuti a corpo libero",
+      description: "Nessun attrezzo. Nessun riscaldamento. Inizia adesso.",
+      steps: ["10 squat — scendi lento, su veloce", "10 flessioni — qualsiasi variante va bene", "Plank per 20 secondi", "Ripeti una volta se hai ancora tempo"]
     }
   },
   {
     id: "training-02", type: "training", duration: 10,
     en: {
-      title: "Floor circuit",
-      description: "No equipment. No excuse.",
-      steps: ["20 jumping jacks", "15 push-ups", "20 squats", "30-second plank"]
+      title: "10-minute floor circuit",
+      description: "No equipment, no excuses. 3 rounds.",
+      steps: ["Round 1: 15 squats, 10 push-ups, 15 jumping jacks", "Round 2: same, faster", "Round 3: same, as fast as you can", "Stretch for 90 seconds when done"]
     },
     it: {
-      title: "Circuito a terra",
-      description: "Nessun attrezzo. Nessuna scusa.",
-      steps: ["20 jumping jack", "15 flessioni", "20 squat", "Plank per 30 secondi"]
+      title: "Circuito a terra 10 minuti",
+      description: "Nessun attrezzo, nessuna scusa. 3 round.",
+      steps: ["Round 1: 15 squat, 10 flessioni, 15 jumping jack", "Round 2: uguale, più veloce", "Round 3: uguale, più veloce possibile", "Allunga per 90 secondi alla fine"]
     }
   },
   {
     id: "training-03", type: "training", duration: 15,
     en: {
-      title: "Walk and think",
-      description: "Movement clears the head.",
-      steps: ["Put on shoes", "Walk outside or pace inside for 15 minutes", "Leave your phone behind if possible"]
+      title: "15-minute walk — no phone",
+      description: "Put the phone down. Move for 15 minutes.",
+      steps: ["Put your shoes on", "Leave your phone at home or in your bag", "Walk outside at a brisk pace for 15 minutes", "When you return: drink water and write the one task you'll do next"]
     },
     it: {
-      title: "Cammina e pensa",
-      description: "Il movimento schiarisce le idee.",
-      steps: ["Metti le scarpe", "Cammina fuori o su e giù per 15 minuti", "Lascia il telefono a casa se puoi"]
+      title: "Camminata 15 minuti — senza telefono",
+      description: "Posa il telefono. Muoviti per 15 minuti.",
+      steps: ["Metti le scarpe", "Lascia il telefono a casa o in borsa", "Cammina fuori a passo sostenuto per 15 minuti", "Quando torni: bevi acqua e scrivi il prossimo compito che farai"]
     }
   },
   {
     id: "training-04", type: "training", duration: 5,
     en: {
-      title: "Stretch it out",
-      description: "Tension in the body creates tension in the mind.",
-      steps: ["Neck rolls, 10 seconds each side", "Shoulder stretch, 10 seconds", "Hip flexor stretch, 10 seconds each side", "Take three deep breaths"]
+      title: "Full-body stretch in 5 minutes",
+      description: "Tension in the body keeps you stuck. Release it.",
+      steps: ["Neck: slow circles, 10 seconds each direction", "Shoulders: cross-arm stretch, 10 seconds each", "Hips: lunge stretch, 15 seconds each side", "Take 3 deep slow breaths to finish"]
     },
     it: {
-      title: "Allunga il corpo",
-      description: "La tensione nel corpo crea tensione nella mente.",
-      steps: ["Rotazioni del collo, 10 secondi per lato", "Allungamento delle spalle, 10 secondi", "Flessori dell'anca, 10 secondi per lato", "Fai tre respiri profondi"]
+      title: "Stretching totale in 5 minuti",
+      description: "La tensione nel corpo ti blocca. Liberala.",
+      steps: ["Collo: rotazioni lente, 10 secondi per direzione", "Spalle: allungamento braccio incrociato, 10 secondi per lato", "Fianchi: affondo allungato, 15 secondi per lato", "Fai 3 respiri profondi e lenti per finire"]
     }
   },
   {
     id: "training-05", type: "training", duration: 10,
     en: {
-      title: "Stair repeats",
-      description: "If there are stairs, use them.",
-      steps: ["Find a flight of stairs", "Walk up and down 5 times", "Take the last two runs at a jog", "Stretch for 2 minutes after"]
+      title: "Stairs or hill — 10 minutes",
+      description: "Find elevation. Use it. No gym required.",
+      steps: ["Find a staircase or small hill (indoors or outdoors)", "Walk up and down steadily for 8 minutes", "Last 2 minutes: increase pace", "Stretch your calves and quads for 1 minute after"]
     },
     it: {
-      title: "Ripetute sulle scale",
-      description: "Se ci sono le scale, usale.",
-      steps: ["Trova una rampa di scale", "Sali e scendi 5 volte", "Le ultime due falle di corsa", "Allunga per 2 minuti dopo"]
+      title: "Scale o salita — 10 minuti",
+      description: "Trova un dislivello. Usalo. Nessuna palestra necessaria.",
+      steps: ["Trova una scala o una salita (dentro o fuori)", "Sali e scendi con ritmo costante per 8 minuti", "Ultimi 2 minuti: aumenta il passo", "Allunga polpacci e quadricipiti per 1 minuto dopo"]
     }
   },
   {
     id: "training-06", type: "training", duration: 15,
     en: {
-      title: "Bodyweight ladder",
-      description: "Start low, build up, come back down.",
-      steps: ["2 push-ups, 2 squats, 2 lunges", "4 push-ups, 4 squats, 4 lunges", "6 push-ups, 6 squats, 6 lunges", "Back down: 4, then 2"]
+      title: "Ladder workout",
+      description: "Start with 2 reps. Build to 10. Come back down.",
+      steps: ["Exercise 1: push-ups. Exercise 2: squats.", "2 reps each → 4 → 6 → 8 → 10 → 8 → 6 → 4 → 2", "Rest only when absolutely needed", "Total: about 90 reps each — you'll feel it"]
     },
     it: {
-      title: "Scaletta a corpo libero",
-      description: "Inizia piano, sali, poi scendi.",
-      steps: ["2 flessioni, 2 squat, 2 affondi", "4 flessioni, 4 squat, 4 affondi", "6 flessioni, 6 squat, 6 affondi", "Torna giù: 4, poi 2"]
+      title: "Allenamento a scaletta",
+      description: "Inizia con 2 ripetizioni. Arriva a 10. Torna indietro.",
+      steps: ["Esercizio 1: flessioni. Esercizio 2: squat.", "2 rip. → 4 → 6 → 8 → 10 → 8 → 6 → 4 → 2", "Riposa solo se assolutamente necessario", "Totale: circa 90 rip. per esercizio — si sente"]
     }
   },
   {
     id: "training-07", type: "training", duration: 5,
     en: {
-      title: "Cold exposure",
-      description: "A cold splash resets your state fast.",
-      steps: ["Go to the sink", "Splash cold water on your face and wrists", "Take three slow breaths", "Notice the shift"]
+      title: "Cold water reset",
+      description: "A physical reset changes your state fast.",
+      steps: ["Go to the sink right now", "Run cold water on your face and wrists for 30 seconds", "Take 3 slow deep breaths", "Return to your desk and open the task"]
     },
     it: {
-      title: "Acqua fredda",
-      description: "Uno schizzo di acqua fredda resetta il tuo stato rapidamente.",
-      steps: ["Vai al lavandino", "Sciacquati il viso e i polsi con acqua fredda", "Fai tre respiri lenti", "Osserva il cambiamento"]
+      title: "Reset con acqua fredda",
+      description: "Un reset fisico cambia il tuo stato rapidamente.",
+      steps: ["Vai al lavandino adesso", "Sciacqua il viso e i polsi con acqua fredda per 30 secondi", "Fai 3 respiri profondi e lenti", "Torna alla scrivania e apri il compito"]
     }
   },
 
@@ -1013,92 +1026,92 @@ const ACTIVITIES = [
   {
     id: "thinking-01", type: "thinking", duration: 10,
     en: {
-      title: "Face it now",
-      description: "Avoiding it makes it worse.",
-      steps: ["Write what bothers you", "Write why", "Write the next step"]
+      title: "Write it out — all of it",
+      description: "Get it out of your head and onto paper. Then you can see it.",
+      steps: ["Open a notebook or notes app", "Write: 'I keep thinking about...' and don't stop writing for 8 minutes", "Read what you wrote", "Circle the one thing that actually needs a decision or action"]
     },
     it: {
-      title: "Affrontalo adesso",
-      description: "Evitarlo lo peggiora.",
-      steps: ["Scrivi cosa ti disturba", "Scrivi perché", "Scrivi il prossimo passo"]
+      title: "Scrivilo — tutto",
+      description: "Tiralo fuori dalla testa e mettilo su carta. Poi puoi vederlo.",
+      steps: ["Apri un quaderno o l'app note", "Scrivi: 'Continuo a pensare a...' e non smettere di scrivere per 8 minuti", "Rileggi quello che hai scritto", "Cerchia la cosa che ha davvero bisogno di una decisione o azione"]
     }
   },
   {
     id: "thinking-02", type: "thinking", duration: 15,
     en: {
-      title: "Brain dump",
-      description: "Get it out of your head and onto paper.",
-      steps: ["Set a 10-minute timer", "Write everything that's in your head without stopping", "Read it back", "Circle the one thing that matters most"]
+      title: "Write a letter to yourself",
+      description: "Clarity you write stays with you longer than clarity you think.",
+      steps: ["Open a doc or notebook", "Start with: 'I've been avoiding thinking about...' — write for 10 minutes", "Read it once without editing or judging", "Underline the most honest sentence", "Write one action you could take based on what you underlined"]
     },
     it: {
-      title: "Svuota la mente",
-      description: "Tiralo fuori dalla testa e mettilo su carta.",
-      steps: ["Imposta un timer di 10 minuti", "Scrivi tutto ciò che hai in testa senza fermarti", "Rileggi", "Cerchia la cosa più importante"]
+      title: "Scrivi una lettera a te stesso",
+      description: "La chiarezza che scrivi resta più a lungo di quella che pensi.",
+      steps: ["Apri un documento o quaderno", "Inizia con: 'Ho evitato di pensare a...' — scrivi per 10 minuti", "Leggila una volta senza correggere o giudicare", "Sottolinea la frase più onesta", "Scrivi un'azione che potresti fare in base a ciò che hai sottolineato"]
     }
   },
   {
     id: "thinking-03", type: "thinking", duration: 10,
     en: {
-      title: "The actual problem",
-      description: "The surface issue is rarely the real one.",
-      steps: ["Write the problem", "Ask 'why does this bother me?' Write the answer", "Ask why again. Write that answer too.", "The second or third answer is usually the real one"]
+      title: "Ask why three times",
+      description: "The surface issue is almost never the real one.",
+      steps: ["Write the thing that's bothering you", "Ask: 'Why does this actually bother me?' Write the answer", "Ask 'Why?' again — write that answer too", "Ask one more time — write it", "The third answer is usually the real problem. Write one thing you can do about it."]
     },
     it: {
-      title: "Il problema vero",
-      description: "Il problema in superficie raramente è quello reale.",
-      steps: ["Scrivi il problema", "Chiediti 'perché mi disturba?' Scrivi la risposta", "Chiediti di nuovo perché. Scrivi anche quella.", "La seconda o terza risposta è di solito quella vera"]
+      title: "Chiediti perché tre volte",
+      description: "Il problema in superficie non è quasi mai quello reale.",
+      steps: ["Scrivi la cosa che ti disturba", "Chiediti: 'Perché mi disturba davvero?' Scrivi la risposta", "Chiediti di nuovo 'Perché?' — scrivi anche quella risposta", "Chiediti un'altra volta — scrivila", "La terza risposta è di solito il problema reale. Scrivi una cosa che puoi fare al riguardo."]
     }
   },
   {
     id: "thinking-04", type: "thinking", duration: 5,
     en: {
       title: "Say it out loud",
-      description: "Thinking it and speaking it are different.",
-      steps: ["Find a private space", "Say out loud what's been on your mind", "Listen to yourself", "Write one sentence about what you heard"]
+      description: "Thinking it and hearing yourself say it are completely different.",
+      steps: ["Find a private space for 5 minutes", "Say out loud — in full sentences — what you've been thinking", "Don't filter it, don't perform it", "Write one sentence after: 'What I actually need is...'"]
     },
     it: {
       title: "Dillo ad alta voce",
-      description: "Pensarlo e dirlo sono cose diverse.",
-      steps: ["Trova uno spazio privato", "Di' ad alta voce ciò che hai in testa", "Ascoltati", "Scrivi una frase su ciò che hai sentito"]
+      description: "Pensarlo e sentirtelo dire sono cose completamente diverse.",
+      steps: ["Trova uno spazio privato per 5 minuti", "Di' ad alta voce — in frasi complete — quello che hai pensato", "Non filtrarlo, non recitarlo", "Scrivi una frase dopo: 'Quello di cui ho davvero bisogno è...'"]
     }
   },
   {
     id: "thinking-05", type: "thinking", duration: 15,
     en: {
-      title: "Letter to yourself",
-      description: "Clarity you write stays with you longer.",
-      steps: ["Start with 'I've been avoiding thinking about...'", "Write for 10 minutes without stopping", "Read it once without judging it", "Underline the most honest sentence"]
+      title: "Map the thought, not the problem",
+      description: "You're not solving it right now — you're understanding it.",
+      steps: ["Open a blank page", "Write the thought in the centre", "Around it, write every related thought, fear, or question", "Draw lines between what's connected", "Circle the one node that, if resolved, would change everything else"]
     },
     it: {
-      title: "Lettera a te stesso",
-      description: "La chiarezza che scrivi rimane più a lungo.",
-      steps: ["Inizia con 'Ho evitato di pensare a...'", "Scrivi per 10 minuti senza fermarti", "Leggila una volta senza giudicarla", "Sottolinea la frase più onesta"]
+      title: "Mappa il pensiero, non il problema",
+      description: "Non stai risolvendo adesso — stai capendo.",
+      steps: ["Apri una pagina bianca", "Scrivi il pensiero al centro", "Attorno, scrivi ogni pensiero, paura o domanda collegata", "Traccia linee tra ciò che è collegato", "Cerchia il nodo che, se risolto, cambierebbe tutto il resto"]
     }
   },
   {
     id: "thinking-06", type: "thinking", duration: 10,
     en: {
-      title: "What would actually change?",
-      description: "Some things matter less than they feel like they do.",
-      steps: ["Write what's worrying you", "Write: if this goes badly, what actually changes?", "Write: what stays the same no matter what?", "Notice how big the problem actually is"]
+      title: "What actually changes if this goes wrong?",
+      description: "Most worry is proportionally bigger than the real risk.",
+      steps: ["Write the thing you're worried about", "Write: 'If this goes badly, what actually changes in my life?'", "Write: 'What stays the same no matter what happens?'", "Write: 'What's one thing I can do right now regardless of the outcome?'"]
     },
     it: {
-      title: "Cosa cambierebbe davvero?",
-      description: "Alcune cose pesano meno di quanto sembra.",
-      steps: ["Scrivi cosa ti preoccupa", "Scrivi: se va male, cosa cambia davvero?", "Scrivi: cosa rimane uguale in ogni caso?", "Osserva quanto è grande il problema nella realtà"]
+      title: "Cosa cambia davvero se va male?",
+      description: "La maggior parte delle preoccupazioni è sproporzionata rispetto al rischio reale.",
+      steps: ["Scrivi la cosa che ti preoccupa", "Scrivi: 'Se va male, cosa cambia concretamente nella mia vita?'", "Scrivi: 'Cosa rimane uguale in ogni caso?'", "Scrivi: 'Una cosa che posso fare adesso indipendentemente dall'esito?'"]
     }
   },
   {
     id: "thinking-07", type: "thinking", duration: 5,
     en: {
-      title: "One honest sentence",
-      description: "You don't need to resolve it. Just name it.",
-      steps: ["Write the one thing you haven't wanted to admit", "Read it back", "You don't have to do anything else right now"]
+      title: "Write the one sentence you've avoided",
+      description: "There's usually one thing you haven't let yourself say.",
+      steps: ["Write: 'The thing I haven't wanted to admit is...'", "Finish the sentence — don't stop mid-thought", "Read it once", "Write: 'And what I could do about it is...' — even if the answer is 'nothing yet'"]
     },
     it: {
-      title: "Una frase onesta",
-      description: "Non devi risolverlo. Solo nominarlo.",
-      steps: ["Scrivi la cosa che non hai voluto ammettere", "Rileggila", "Non devi fare nient'altro adesso"]
+      title: "Scrivi la frase che hai evitato",
+      description: "Di solito c'è una cosa che non ti sei permesso di dire.",
+      steps: ["Scrivi: 'La cosa che non ho voluto ammettere è...'", "Finisci la frase — non fermarti a metà pensiero", "Leggila una volta", "Scrivi: 'E ciò che potrei fare al riguardo è...' — anche se la risposta è 'niente per ora'"]
     }
   },
 
@@ -1106,92 +1119,92 @@ const ACTIVITIES = [
   {
     id: "stuck-01", type: "stuck", duration: 5,
     en: {
-      title: "Move anyway",
-      description: "Clarity comes after action.",
-      steps: ["Pick one useful thing", "Start immediately"]
+      title: "Name the block. Then do one thing.",
+      description: "Clarity first. Then movement.",
+      steps: ["Write: 'Right now I'm stuck on ___'", "Look at your to-do list or open tabs", "Pick the task that requires zero decisions", "Start it immediately — no rereading, no planning"]
     },
     it: {
-      title: "Muoviti lo stesso",
-      description: "La chiarezza arriva dopo l'azione.",
-      steps: ["Scegli una cosa utile", "Inizia subito"]
+      title: "Nomina il blocco. Poi fai una cosa.",
+      description: "Prima chiarezza. Poi movimento.",
+      steps: ["Scrivi: 'Adesso sono bloccato su ___'", "Guarda la tua lista o le schede aperte", "Scegli il compito che non richiede nessuna decisione", "Inizialo subito — senza rileggere, senza pianificare"]
     }
   },
   {
     id: "stuck-02", type: "stuck", duration: 10,
     en: {
-      title: "Change location",
-      description: "Your environment shapes your state.",
-      steps: ["Stand up", "Go to a different room or step outside", "Stay there for 5 minutes", "Come back and start one task"]
+      title: "Identify the block. Change location. Return.",
+      description: "Name it. Reset. Come back with one task.",
+      steps: ["Write in one sentence what's blocking you right now", "Stand up and leave the room for 5 minutes — no phone", "Come back. Open one task.", "Start it before you sit down."]
     },
     it: {
-      title: "Cambia posto",
-      description: "L'ambiente influenza il tuo stato.",
-      steps: ["Alzati", "Vai in un'altra stanza o esci fuori", "Resta lì per 5 minuti", "Torna e inizia un compito"]
+      title: "Identifica il blocco. Cambia posto. Torna.",
+      description: "Nominalo. Resetta. Torna con un compito.",
+      steps: ["Scrivi in una frase cosa ti sta bloccando adesso", "Alzati e lascia la stanza per 5 minuti — senza telefono", "Torna. Apri un compito.", "Inizialo prima di sederti."]
     }
   },
   {
     id: "stuck-03", type: "stuck", duration: 5,
     en: {
-      title: "The smallest thing",
-      description: "When everything feels too big, make it tiny.",
-      steps: ["Write the task you're stuck on", "Break it into 5 steps", "Do only the first one"]
+      title: "Write what's blocking you. Break it into steps.",
+      description: "Name the task. Split it. Do step 1.",
+      steps: ["Write: 'The thing I'm avoiding is ___'", "Write 4 steps to complete it — be specific", "Do only step 1 right now", "Stop after step 1 — the block is broken"]
     },
     it: {
-      title: "La cosa più piccola",
-      description: "Quando tutto sembra troppo grande, rendilo minuscolo.",
-      steps: ["Scrivi il compito su cui sei bloccato", "Dividilo in 5 passi", "Fai solo il primo"]
+      title: "Scrivi cosa ti blocca. Dividilo in passi.",
+      description: "Nomina il compito. Spezzalo. Fai il passo 1.",
+      steps: ["Scrivi: 'La cosa che sto evitando è ___'", "Scrivi 4 passi per completarla — sii specifico", "Fai solo il passo 1 adesso", "Fermati dopo il passo 1 — il blocco è rotto"]
     }
   },
   {
     id: "stuck-04", type: "stuck", duration: 15,
     en: {
-      title: "Energy reset",
-      description: "Stuck often means depleted.",
-      steps: ["Drink a glass of water", "Step outside for 5 minutes", "Do 10 slow deep breaths", "Return and pick one task. Start."]
+      title: "Name it. Reset. Come back and start.",
+      description: "Identify the block. Reset the body. Return to one task.",
+      steps: ["Write: 'The thing blocking me is ___ and what I need to do is ___'", "Drink a full glass of water. Step outside for 5 minutes — no phone.", "Do 5 slow deep breaths before coming back in", "Return. Open the task you named. Start it immediately."]
     },
     it: {
-      title: "Reset energetico",
-      description: "Sentirsi bloccati spesso significa essere esauriti.",
-      steps: ["Bevi un bicchiere d'acqua", "Esci per 5 minuti", "Fai 10 respiri profondi e lenti", "Torna e scegli un compito. Inizia."]
+      title: "Nominalo. Resetta. Torna e inizia.",
+      description: "Identifica il blocco. Resetta il corpo. Torna a un compito.",
+      steps: ["Scrivi: 'La cosa che mi blocca è ___ e quello che devo fare è ___'", "Bevi un bicchiere d'acqua. Esci per 5 minuti — senza telefono.", "Fai 5 respiri lenti prima di rientrare", "Torna. Apri il compito che hai nominato. Inizialo subito."]
     }
   },
   {
     id: "stuck-05", type: "stuck", duration: 10,
     en: {
-      title: "Write the block",
-      description: "Naming resistance weakens it.",
-      steps: ["Write: 'I'm stuck because...'", "Keep writing until you've said everything", "Underline the one true reason", "Write what you'd do if that reason weren't there"]
+      title: "Write what's actually stopping you",
+      description: "Naming resistance is half of breaking it.",
+      steps: ["Open a blank page", "Write: 'I'm stuck because...' — keep writing until you've said everything", "Read it back and underline the one real reason", "Write: 'One thing I can do despite that reason is...'", "Do that thing now"]
     },
     it: {
-      title: "Scrivi il blocco",
-      description: "Nominare la resistenza la indebolisce.",
-      steps: ["Scrivi: 'Sono bloccato perché...'", "Continua a scrivere finché non hai detto tutto", "Sottolinea il vero motivo", "Scrivi cosa faresti se quel motivo non ci fosse"]
+      title: "Scrivi cosa ti sta bloccando davvero",
+      description: "Nominare la resistenza è metà del superarla.",
+      steps: ["Apri una pagina bianca", "Scrivi: 'Sono bloccato perché...' — continua a scrivere finché non hai detto tutto", "Rileggi e sottolinea il vero motivo", "Scrivi: 'Una cosa che posso fare nonostante quel motivo è...'", "Fai quella cosa adesso"]
     }
   },
   {
     id: "stuck-06", type: "stuck", duration: 5,
     en: {
-      title: "Do the boring thing",
-      description: "When nothing feels right, do the obvious thing.",
-      steps: ["Look at your list", "Pick the least interesting task", "Do it. Momentum builds from here."]
+      title: "Identify the avoidance. Then clear it.",
+      description: "Name what you've been skipping. Do it now.",
+      steps: ["Write: 'The task I've been avoiding is ___'", "Set a 5-minute timer", "Do it at minimum acceptable quality", "Mark it done — it's gone"]
     },
     it: {
-      title: "Fai la cosa noiosa",
-      description: "Quando niente sembra giusto, fai la cosa ovvia.",
-      steps: ["Guarda la tua lista", "Scegli il compito meno interessante", "Fallo. Lo slancio nasce da qui."]
+      title: "Identifica l'evitamento. Poi eliminalo.",
+      description: "Nomina cosa hai saltato. Fallo adesso.",
+      steps: ["Scrivi: 'Il compito che ho evitato è ___'", "Imposta un timer da 5 minuti", "Fallo alla qualità minima accettabile", "Segnalo fatto — è sparito"]
     }
   },
   {
     id: "stuck-07", type: "stuck", duration: 10,
     en: {
-      title: "Talk it out",
-      description: "Being stuck in your head ends when you involve another person.",
-      steps: ["Text or call someone you trust", "Tell them what you're stuck on in one sentence", "Ask: what would you do?", "You don't have to take their advice — just hearing yourself say it helps"]
+      title: "Write the block. Send it. Pick a step.",
+      description: "Externalise it. Then move.",
+      steps: ["Open a message to someone you trust", "Write: 'I'm stuck on ___ because ___. What would you do?'", "Send it", "While you wait for a reply: pick one small step and start it now"]
     },
     it: {
-      title: "Parlane",
-      description: "Essere bloccati nella testa finisce quando coinvolgi un'altra persona.",
-      steps: ["Scrivi o chiama qualcuno di cui ti fidi", "Digli in una frase su cosa sei bloccato", "Chiedi: cosa faresti?", "Non devi seguire il consiglio — sentirsi dire la cosa ad alta voce aiuta già"]
+      title: "Scrivi il blocco. Invialo. Scegli un passo.",
+      description: "Esternalizzalo. Poi muoviti.",
+      steps: ["Apri un messaggio a qualcuno di cui ti fidi", "Scrivi: 'Sono bloccato su ___ perché ___. Cosa faresti?'", "Invialo", "Mentre aspetti la risposta: scegli un piccolo passo e inizialo adesso"]
     }
   },
   {
@@ -1207,6 +1220,136 @@ const ACTIVITIES = [
       steps: ["Scrivi com'è andata la giornata finora", "Identifica dove ti sei fermato", "Scrivi com'è una versione diversa di oggi", "Fai subito una cosa di quella versione"]
     }
   },
+  {
+    id: "stuck-09", type: "stuck", duration: 15,
+    en: {
+      title: "Unsent letter",
+      description: "Some blocks live in what you haven't said.",
+      steps: ["Write a letter to whoever or whatever is blocking you", "Don't filter — say everything", "Read it back once", "Decide what to do with the insight, not the letter"]
+    },
+    it: {
+      title: "Lettera non inviata",
+      description: "Alcuni blocchi vivono in ciò che non hai detto.",
+      steps: ["Scrivi una lettera a chi o cosa ti blocca", "Non filtrare — di' tutto", "Rileggila una volta", "Decidi cosa fare con l'intuizione, non con la lettera"]
+    }
+  },
+  {
+    id: "stuck-10", type: "stuck", duration: 15,
+    en: {
+      title: "The smallest version",
+      description: "You're stuck on the big version. Do the small one.",
+      steps: ["Write down the full thing you're trying to do", "Strip it down to its smallest possible form", "Do only that stripped-down version right now", "Decide whether to expand after you finish"]
+    },
+    it: {
+      title: "La versione più piccola",
+      description: "Sei bloccato sulla versione grande. Fai quella piccola.",
+      steps: ["Scrivi la cosa intera che stai cercando di fare", "Riducila alla forma più piccola possibile", "Fai solo quella versione ridotta adesso", "Decidi se espandere dopo aver finito"]
+    }
+  },
+  {
+    id: "training-08", type: "training", duration: 15,
+    en: {
+      title: "15 minutes of non-stop movement",
+      description: "Choose one movement. Do it without stopping.",
+      steps: ["Pick one: fast walking, jumping jacks, jogging in place, or cycling", "Set a 15-minute timer", "Keep moving — no pausing, no checking your phone", "Stop only when the timer rings"]
+    },
+    it: {
+      title: "15 minuti di movimento continuo",
+      description: "Scegli un movimento. Fallo senza fermarti.",
+      steps: ["Scegli uno: camminata veloce, jumping jack, corsa sul posto, o bici", "Imposta un timer da 15 minuti", "Continua a muoverti — senza pause, senza controllare il telefono", "Fermati solo quando suona il timer"]
+    }
+  },
+  {
+    id: "training-09", type: "training", duration: 15,
+    en: {
+      title: "Superset circuit",
+      description: "Two exercises, back to back, no rest between them.",
+      steps: ["Pick two exercises you know (e.g. push-ups + squats)", "Do 10 reps of each, back to back", "Rest 60 seconds", "Repeat for 15 minutes total"]
+    },
+    it: {
+      title: "Circuito superset",
+      description: "Due esercizi, uno dopo l'altro, senza pausa tra loro.",
+      steps: ["Scegli due esercizi che conosci (es. flessioni + squat)", "Fai 10 ripetizioni di ognuno, uno dopo l'altro", "Riposa 60 secondi", "Ripeti per 15 minuti totali"]
+    }
+  },
+  {
+    id: "training-10", type: "training", duration: 15,
+    en: {
+      title: "Active recovery — 15 minutes",
+      description: "Not every session is hard. This one just needs to happen.",
+      steps: ["Put on comfortable clothes or shoes", "Go outside or clear space indoors", "Walk, stretch, or move gently for 15 minutes — no timer pressure", "When done: drink water and sit down for 2 minutes before anything else"]
+    },
+    it: {
+      title: "Recupero attivo — 15 minuti",
+      description: "Non ogni sessione è intensa. Questa deve solo avvenire.",
+      steps: ["Indossa abiti comodi o metti le scarpe", "Esci o libera uno spazio in casa", "Cammina, allunga o muoviti dolcemente per 15 minuti — senza pressione", "Quando finisci: bevi acqua e siediti per 2 minuti prima di qualsiasi altra cosa"]
+    }
+  },
+  {
+    id: "decision-08", type: "decision", duration: 15,
+    en: {
+      title: "Inversion test",
+      description: "Sometimes you find clarity by thinking backwards.",
+      steps: ["Write the decision you're avoiding", "Write what the worst possible choice would look like", "Ask: am I avoiding this because it resembles that?", "Write what the opposite of the worst looks like", "Choose in that direction"]
+    },
+    it: {
+      title: "Test di inversione",
+      description: "A volte trovi chiarezza pensando al contrario.",
+      steps: ["Scrivi la decisione che stai evitando", "Scrivi com'è la scelta peggiore possibile", "Chiediti: la sto evitando perché assomiglia a quella?", "Scrivi com'è l'opposto del peggio", "Scegli in quella direzione"]
+    }
+  },
+  {
+    id: "decision-09", type: "decision", duration: 15,
+    en: {
+      title: "Pre-mortem",
+      description: "Imagine you chose wrong. Work backwards.",
+      steps: ["Pick the option you're leaning toward", "Write: 'It's 1 year later and this went badly. Why?'", "List every reason it could fail", "Decide if those risks are manageable or dealbreakers", "Choose or eliminate based on what you wrote"]
+    },
+    it: {
+      title: "Pre-mortem",
+      description: "Immagina di aver scelto male. Lavora a ritroso.",
+      steps: ["Scegli l'opzione verso cui ti inclini", "Scrivi: 'È passato 1 anno e è andata male. Perché?'", "Elenca tutti i motivi per cui potrebbe fallire", "Decidi se quei rischi sono gestibili o insormontabili", "Scegli o elimina in base a ciò che hai scritto"]
+    }
+  },
+  {
+    id: "decision-10", type: "decision", duration: 15,
+    en: {
+      title: "Values alignment",
+      description: "The right decision aligns with what actually matters to you.",
+      steps: ["Write your top 3 values in this area of life", "Score each option from 1–5 on how well it fits each value", "Add the scores", "The highest score is probably your answer", "If you feel resistance to it — that's the real information"]
+    },
+    it: {
+      title: "Allineamento ai valori",
+      description: "La decisione giusta si allinea a ciò che conta davvero per te.",
+      steps: ["Scrivi i tuoi 3 valori principali in quest'area della vita", "Valuta ogni opzione da 1 a 5 su quanto si adatta a ogni valore", "Somma i punteggi", "Il punteggio più alto è probabilmente la tua risposta", "Se senti resistenza — quella è l'informazione vera"]
+    }
+  },
+  {
+    id: "thinking-08", type: "thinking", duration: 15,
+    en: {
+      title: "Thought timeline",
+      description: "When did this thought start? Tracing it changes it.",
+      steps: ["Write the thing you keep thinking about", "Write when it first appeared", "Write what was happening in your life at that time", "Write how it's changed since then", "Write one thing that's different now that makes it easier"]
+    },
+    it: {
+      title: "Timeline del pensiero",
+      description: "Quando è iniziato questo pensiero? Tracciarlo lo cambia.",
+      steps: ["Scrivi la cosa a cui continui a pensare", "Scrivi quando è apparsa per la prima volta", "Scrivi cosa stava succedendo nella tua vita in quel momento", "Scrivi come è cambiata da allora", "Scrivi una cosa che è diversa adesso che la rende più facile"]
+    }
+  },
+  {
+    id: "thinking-09", type: "thinking", duration: 15,
+    en: {
+      title: "Worst case, best case, likely case",
+      description: "Most anxiety lives between best and worst. Write the likely.",
+      steps: ["Write the thought that's looping", "Write the absolute worst outcome in detail", "Write the absolute best outcome in detail", "Write the most realistic outcome", "Spend the rest of the time on what to do given the realistic case"]
+    },
+    it: {
+      title: "Caso peggiore, migliore, più probabile",
+      description: "La maggior parte dell'ansia vive tra il meglio e il peggio. Scrivi il probabile.",
+      steps: ["Scrivi il pensiero che gira in tondo", "Scrivi il risultato assolutamente peggiore in dettaglio", "Scrivi il risultato assolutamente migliore in dettaglio", "Scrivi il risultato più realistico", "Spendi il resto del tempo su cosa fare dato il caso realistico"]
+    }
+  },
 
   // ── TRUTH MODE: reason-specific activities ────────────────────
   // reason values: too_difficult | dont_feel_like | afraid |
@@ -1216,53 +1359,53 @@ const ACTIVITIES = [
   {
     id: "tm-diff-01", type: "work", reason: "too_difficult", duration: 5,
     en: {
-      title: "You don't have to do it all",
-      description: "You're avoiding the whole thing. Do one piece.",
-      steps: ["Identify the single smallest part", "Ignore everything else", "Do only that part now"]
+      title: "Do the first 5% only",
+      description: "Don't think about the whole task. Find its first 5%.",
+      steps: ["Open the file, document, or tool", "Write a title or label — just that", "Add one bullet point or one line", "Stop — you've started"]
     },
     it: {
-      title: "Non devi farlo tutto",
-      description: "Stai evitando il tutto. Fai una sola parte.",
-      steps: ["Identifica la parte più piccola", "Ignora tutto il resto", "Fai solo quella parte adesso"]
+      title: "Fai solo il primo 5%",
+      description: "Non pensare all'intero compito. Trova il suo primo 5%.",
+      steps: ["Apri il file, documento o strumento", "Scrivi un titolo o un'etichetta — solo quello", "Aggiungi un punto elenco o una riga", "Fermati — hai iniziato"]
     }
   },
   {
     id: "tm-diff-02", type: "work", reason: "too_difficult", duration: 10,
     en: {
-      title: "Hard things start easy",
-      description: "The difficult part is rarely the first step.",
-      steps: ["Write what specifically feels hard", "Find the step before that hard part", "Do that easier step now", "Stop there — you've started"]
+      title: "Find the step before the hard part",
+      description: "The difficult part is rarely first. Find what comes before it.",
+      steps: ["Write in one sentence what feels too hard", "Write: 'What would I need to do before that hard part?'", "Write that easier step", "Do it now — 10 minutes, nothing else"]
     },
     it: {
-      title: "Le cose difficili iniziano facilmente",
-      description: "La parte difficile raramente è il primo passo.",
-      steps: ["Scrivi cosa sembra specificamente difficile", "Trova il passo prima di quella parte difficile", "Fai quel passo più semplice adesso", "Fermati lì — hai iniziato"]
+      title: "Trova il passo prima della parte difficile",
+      description: "La parte difficile raramente viene per prima. Trova cosa viene prima.",
+      steps: ["Scrivi in una frase cosa sembra troppo difficile", "Scrivi: 'Cosa dovrei fare prima di quella parte difficile?'", "Scrivi quel passo più semplice", "Fallo adesso — 10 minuti, nient'altro"]
     }
   },
   {
     id: "tm-diff-03", type: "decision", reason: "too_difficult", duration: 10,
     en: {
-      title: "Difficult decisions are still decisions",
-      description: "You don't need certainty. You need a choice.",
-      steps: ["Write the two options in plain language", "Write which one you'd regret more in a year", "Choose the one you'd regret less"]
+      title: "Write the two options in plain words. Choose.",
+      description: "Hard decisions stay hard because you keep them vague.",
+      steps: ["Write Option A in one simple sentence (no jargon)", "Write Option B in one simple sentence", "Write which one you'd regret more in 12 months", "Choose the one you'd regret less. Write it down."]
     },
     it: {
-      title: "Le decisioni difficili sono pur sempre decisioni",
-      description: "Non hai bisogno di certezza. Hai bisogno di una scelta.",
-      steps: ["Scrivi le due opzioni in modo semplice", "Scrivi quale rimpianta di più tra un anno", "Scegli quella che rimpianta meno"]
+      title: "Scrivi le due opzioni in parole semplici. Scegli.",
+      description: "Le decisioni difficili restano difficili perché le tieni vaghe.",
+      steps: ["Scrivi l'opzione A in una frase semplice (senza tecnicismi)", "Scrivi l'opzione B in una frase semplice", "Scrivi quale rimpianta di più tra 12 mesi", "Scegli quella che rimpianta meno. Scrivila."]
     }
   },
   {
     id: "tm-diff-04", type: "training", reason: "too_difficult", duration: 5,
     en: {
-      title: "Easy version only",
-      description: "You don't need to train hard. You need to train.",
-      steps: ["Pick the easiest movement you can think of", "Do it for 5 minutes", "That counts"]
+      title: "Easy version — no compromise",
+      description: "You don't need to do the hard version. You need to move.",
+      steps: ["Forget your normal workout", "Do exactly this: 5 push-ups, 10 squats, 5 push-ups", "That's it. That's the session.", "It counts. You did it."]
     },
     it: {
-      title: "Solo la versione facile",
-      description: "Non devi allenarti duramente. Devi allenarti.",
-      steps: ["Scegli il movimento più semplice che ti viene in mente", "Fallo per 5 minuti", "Conta lo stesso"]
+      title: "Versione facile — senza compromessi",
+      description: "Non hai bisogno di fare la versione difficile. Hai bisogno di muoverti.",
+      steps: ["Dimentica il tuo allenamento normale", "Fai esattamente questo: 5 flessioni, 10 squat, 5 flessioni", "È tutto. Questo è l'allenamento.", "Conta. L'hai fatto."]
     }
   },
 
@@ -1270,53 +1413,53 @@ const ACTIVITIES = [
   {
     id: "tm-dfl-01", type: "work", reason: "dont_feel_like", duration: 5,
     en: {
-      title: "You don't need to feel like it",
-      description: "Motivation follows action. Not the other way around.",
-      steps: ["Open the task", "Do the first thing without thinking", "See how you feel after 5 minutes"]
+      title: "Open it. Do one thing. That's it.",
+      description: "You don't need to want to do it. You need to open it.",
+      steps: ["Open the task — the file, the doc, the tool", "Do the single most obvious action", "Stop after 5 minutes — you've beaten the resistance"]
     },
     it: {
-      title: "Non hai bisogno di averne voglia",
-      description: "La motivazione segue l'azione. Non il contrario.",
-      steps: ["Apri il compito", "Fai la prima cosa senza pensare", "Guarda come ti senti dopo 5 minuti"]
+      title: "Aprilo. Fai una cosa. Basta.",
+      description: "Non hai bisogno di volerlo fare. Hai bisogno di aprirlo.",
+      steps: ["Apri il compito — il file, il documento, lo strumento", "Fai la singola azione più ovvia", "Fermati dopo 5 minuti — hai vinto la resistenza"]
     }
   },
   {
     id: "tm-dfl-02", type: "work", reason: "dont_feel_like", duration: 10,
     en: {
-      title: "Not feeling it is normal",
-      description: "Most work happens without enthusiasm. That's fine.",
-      steps: ["Accept that you don't feel like it", "Do it anyway for 10 minutes", "Decide after whether to continue"]
+      title: "10 minutes, then you can stop",
+      description: "You're allowed to stop after 10 minutes. But start first.",
+      steps: ["Set a timer for exactly 10 minutes", "Open the task and work — no quality bar, just work", "When the timer rings, stop or keep going — your call"]
     },
     it: {
-      title: "Non averne voglia è normale",
-      description: "La maggior parte del lavoro avviene senza entusiasmo. Va bene.",
-      steps: ["Accetta di non averne voglia", "Fallo comunque per 10 minuti", "Poi decidi se continuare"]
+      title: "10 minuti, poi puoi smettere",
+      description: "Puoi smettere dopo 10 minuti. Ma prima inizia.",
+      steps: ["Imposta un timer esatto di 10 minuti", "Apri il compito e lavora — nessun standard di qualità, lavora e basta", "Quando suona il timer, smetti o continua — decidi tu"]
     }
   },
   {
     id: "tm-dfl-03", type: "training", reason: "dont_feel_like", duration: 10,
     en: {
-      title: "Move without enjoying it",
-      description: "You don't have to like it. You just have to do it.",
-      steps: ["Put on your shoes", "Start moving — any movement", "Stay with it for 10 minutes", "Enjoyment is optional"]
+      title: "Shoes on. Out the door.",
+      description: "You don't have to feel ready. You have to get moving.",
+      steps: ["Put on your shoes. Don't change into sports clothes yet if that feels like too much.", "Step outside or stand up in a space with room to move", "Do 5 minutes of walking or any movement", "After 5 minutes, decide if you want to continue or do a quick circuit"]
     },
     it: {
-      title: "Muoviti senza apprezzarlo",
-      description: "Non devi piacerti. Devi solo farlo.",
-      steps: ["Metti le scarpe", "Inizia a muoverti — qualsiasi movimento", "Resisti per 10 minuti", "Apprezzarlo è facoltativo"]
+      title: "Scarpe ai piedi. Fuori dalla porta.",
+      description: "Non devi sentirti pronto. Devi muoverti.",
+      steps: ["Metti le scarpe. Non cambiarti ancora in abbigliamento sportivo se sembra troppo.", "Esci o alzati in uno spazio dove puoi muoverti", "Fai 5 minuti di camminata o qualsiasi movimento", "Dopo 5 minuti, decidi se continuare o fare un circuito veloce"]
     }
   },
   {
     id: "tm-dfl-04", type: "thinking", reason: "dont_feel_like", duration: 5,
     en: {
-      title: "Five minutes, nothing more",
-      description: "You don't want to think about it. Think for five minutes.",
-      steps: ["Set a timer for 5 minutes", "Write whatever comes to mind about the thing", "Stop when the timer rings"]
+      title: "5 minutes. Timer. Write. Stop.",
+      description: "No motivation needed. Just the timer and the page.",
+      steps: ["Set a timer for 5 minutes", "Write the first thing that comes to mind about it — no editing", "Keep writing until the timer rings", "Stop. Close the notebook. Done."]
     },
     it: {
-      title: "Cinque minuti, niente di più",
-      description: "Non vuoi pensarci. Pensa per cinque minuti.",
-      steps: ["Imposta un timer da 5 minuti", "Scrivi quello che ti viene in mente sulla cosa", "Fermati quando suona"]
+      title: "5 minuti. Timer. Scrivi. Stop.",
+      description: "Non serve motivazione. Solo il timer e la pagina.",
+      steps: ["Imposta un timer da 5 minuti", "Scrivi la prima cosa che ti viene in mente al riguardo — senza modificare", "Continua a scrivere fino allo scadere del timer", "Fermati. Chiudi il quaderno. Fatto."]
     }
   },
 
@@ -1324,53 +1467,53 @@ const ACTIVITIES = [
   {
     id: "tm-fear-01", type: "work", reason: "afraid", duration: 5,
     en: {
-      title: "Fear doesn't go away by waiting",
-      description: "Starting is the only thing that reduces it.",
-      steps: ["Name what you're afraid of — write it", "Do the first step anyway", "Notice that you survived it"]
+      title: "Name the fear. Do the first step.",
+      description: "Fear is strongest before you start. Start.",
+      steps: ["Write in one sentence what you're afraid of about this task", "Write the first step that needs no bravery — just a physical action", "Do that step now", "Do the second step"]
     },
     it: {
-      title: "La paura non sparisce aspettando",
-      description: "Iniziare è l'unica cosa che la riduce.",
-      steps: ["Nomina di cosa hai paura — scrivilo", "Fai il primo passo lo stesso", "Nota che sei sopravvissuto"]
+      title: "Nomina la paura. Fai il primo passo.",
+      description: "La paura è più forte prima di iniziare. Inizia.",
+      steps: ["Scrivi in una frase di cosa hai paura riguardo a questo compito", "Scrivi il primo passo che non richiede coraggio — solo un'azione fisica", "Fai quel passo adesso", "Fai il secondo passo"]
     }
   },
   {
     id: "tm-fear-02", type: "decision", reason: "afraid", duration: 10,
     en: {
-      title: "Name what you're afraid of",
-      description: "Vague fear is stronger than named fear.",
-      steps: ["Write: I'm afraid that...", "Write the actual worst case", "Write how likely that really is", "Decide with that clarity"]
+      title: "Name exactly what you're afraid will happen",
+      description: "Vague fear is harder to handle than named fear.",
+      steps: ["Write: 'I'm afraid that if I decide this, then...'", "Write the full worst-case scenario — specifically", "Write how likely that outcome actually is, as a percentage", "Write what you'd do if it happened", "Make the decision — you've seen the worst and you can handle it"]
     },
     it: {
-      title: "Nomina di cosa hai paura",
-      description: "La paura vaga è più forte di quella nominata.",
-      steps: ["Scrivi: Ho paura che...", "Scrivi il vero caso peggiore", "Scrivi quanto è realisticamente probabile", "Decidi con quella chiarezza"]
+      title: "Nomina esattamente cosa hai paura che accada",
+      description: "La paura vaga è più difficile da gestire di quella nominata.",
+      steps: ["Scrivi: 'Ho paura che se decido questo, allora...'", "Scrivi lo scenario peggiore completo — in modo specifico", "Scrivi quanto è realisticamente probabile quell'esito, come percentuale", "Scrivi cosa faresti se accadesse", "Prendi la decisione — hai visto il peggio e puoi gestirlo"]
     }
   },
   {
     id: "tm-fear-03", type: "thinking", reason: "afraid", duration: 10,
     en: {
-      title: "Look at it directly",
-      description: "The thing you're afraid to think about controls you until you do.",
-      steps: ["Write the thing you've been avoiding thinking about", "Write what the fear actually is", "Write what you'd do if the fear came true", "Read it back — it's more manageable than it seemed"]
+      title: "Look at the thing you're afraid to think about",
+      description: "It controls you more when you avoid it than when you face it.",
+      steps: ["Write at the top: 'The thing I've been afraid to think about is...'", "Write it — all of it. Don't stop when it gets uncomfortable.", "Write: 'The real fear underneath this is...'", "Write: 'If that fear came true, I would...'", "Read it back. It's smaller than it was in your head."]
     },
     it: {
-      title: "Guardalo direttamente",
-      description: "La cosa di cui hai paura di pensare ti controlla finché non lo fai.",
-      steps: ["Scrivi la cosa che stai evitando di pensare", "Scrivi qual è la vera paura", "Scrivi cosa faresti se la paura si avverasse", "Rileggilo — è più gestibile di quanto sembrasse"]
+      title: "Guarda la cosa di cui hai paura di pensare",
+      description: "Ti controlla di più quando la eviti che quando la affronti.",
+      steps: ["Scrivi in cima: 'La cosa di cui ho paura di pensare è...'", "Scrivila — tutta. Non fermarti quando diventa scomodo.", "Scrivi: 'La vera paura sotto questa è...'", "Scrivi: 'Se quella paura si avverasse, farei...'", "Rileggila. È più piccola di quanto era nella tua testa."]
     }
   },
   {
     id: "tm-fear-04", type: "training", reason: "afraid", duration: 5,
     en: {
-      title: "The body knows before the mind",
-      description: "Physical movement reduces anxiety faster than thinking.",
-      steps: ["Don't plan anything", "Start moving immediately — walk, stretch, anything", "Keep going for 5 minutes"]
+      title: "Move first. Think after.",
+      description: "Physical movement reduces fear faster than reasoning does.",
+      steps: ["Don't plan anything", "Stand up right now", "Walk, pace, or do 10 jumping jacks — immediately", "Keep moving for 5 minutes without thinking about the workout"]
     },
     it: {
-      title: "Il corpo sa prima della mente",
-      description: "Il movimento fisico riduce l'ansia più velocemente del pensiero.",
-      steps: ["Non pianificare niente", "Inizia a muoverti subito — cammina, allunga, qualcosa", "Vai avanti per 5 minuti"]
+      title: "Prima muoviti. Poi pensa.",
+      description: "Il movimento fisico riduce la paura più velocemente del ragionamento.",
+      steps: ["Non pianificare niente", "Alzati adesso", "Cammina, pattina, o fai 10 jumping jack — subito", "Continua a muoverti per 5 minuti senza pensare all'allenamento"]
     }
   },
 
@@ -1378,53 +1521,53 @@ const ACTIVITIES = [
   {
     id: "tm-dns-01", type: "work", reason: "dont_know_start", duration: 5,
     en: {
-      title: "Start anywhere",
-      description: "The right starting point doesn't exist. Any point works.",
-      steps: ["Pick any part of the task at random", "Do that part for 5 minutes", "The rest will become clearer"]
+      title: "Pick a role. Search it on LinkedIn.",
+      description: "You don't need a plan. You need one search.",
+      steps: ["Write 2–3 job titles you could see yourself doing", "Pick the one that feels most realistic right now", "Open LinkedIn and search for that job title", "Look at 2 job posts — just read them"]
     },
     it: {
-      title: "Inizia da qualsiasi punto",
-      description: "Il punto di partenza giusto non esiste. Qualsiasi punto funziona.",
-      steps: ["Scegli una parte qualsiasi del compito a caso", "Fai quella parte per 5 minuti", "Il resto diventerà più chiaro"]
+      title: "Scegli un ruolo. Cercalo su LinkedIn.",
+      description: "Non ti serve un piano. Ti serve una ricerca.",
+      steps: ["Scrivi 2–3 titoli di lavoro che potresti fare", "Scegli quello che sembra più realistico adesso", "Apri LinkedIn e cerca quel titolo", "Leggi 2 offerte — solo leggile"]
     }
   },
   {
     id: "tm-dns-02", type: "work", reason: "dont_know_start", duration: 10,
     en: {
-      title: "Map it first",
-      description: "You don't know where to start because you haven't mapped the task.",
-      steps: ["Write every part of the task you can think of", "Don't organise — just list", "Circle the one that can be done in 10 minutes", "Start there"]
+      title: "Clarify your direction. Find 2 real offers.",
+      description: "Clarity first. Action second. Both in 10 minutes.",
+      steps: ["Write: 3 things you're good at, 2 sectors you like, 1 role that combines them", "Open LinkedIn or Indeed and search for that role", "Read 3 job posts — note what skills they ask for", "Save the 2 that feel most realistic"]
     },
     it: {
-      title: "Prima fai una mappa",
-      description: "Non sai da dove iniziare perché non hai mappato il compito.",
-      steps: ["Scrivi ogni parte del compito che ti viene in mente", "Non organizzare — elenca e basta", "Cerchia quella che puoi fare in 10 minuti", "Inizia da lì"]
+      title: "Chiarisci la direzione. Trova 2 offerte reali.",
+      description: "Prima chiarezza. Poi azione. Entrambe in 10 minuti.",
+      steps: ["Scrivi: 3 cose in cui sei bravo, 2 settori che ti piacciono, 1 ruolo che le combina", "Apri LinkedIn o Indeed e cerca quel ruolo", "Leggi 3 offerte di lavoro — annota che competenze chiedono", "Salva le 2 che sembrano più realistiche"]
     }
   },
   {
     id: "tm-dns-03", type: "decision", reason: "dont_know_start", duration: 5,
     en: {
-      title: "You don't need the full picture",
-      description: "You need the next step. Just one.",
-      steps: ["Write the decision you're facing", "Write the one next action that would move it forward", "Do that action now"]
+      title: "Write the decision. Write one next action.",
+      description: "You don't need the full picture. You need one move.",
+      steps: ["Write the decision you're facing in one sentence", "Write: 'The one next action that would move this forward is...'", "Do that action right now — don't skip to planning the rest"]
     },
     it: {
-      title: "Non hai bisogno del quadro completo",
-      description: "Hai bisogno del prossimo passo. Solo uno.",
-      steps: ["Scrivi la decisione che stai affrontando", "Scrivi la prossima azione che la farebbe avanzare", "Fai quell'azione adesso"]
+      title: "Scrivi la decisione. Scrivi una prossima azione.",
+      description: "Non hai bisogno del quadro completo. Hai bisogno di una mossa.",
+      steps: ["Scrivi la decisione che stai affrontando in una frase", "Scrivi: 'La prossima azione che farebbe avanzare questo è...'", "Fai quell'azione adesso — non saltare a pianificare il resto"]
     }
   },
   {
     id: "tm-dns-04", type: "stuck", reason: "dont_know_start", duration: 10,
     en: {
-      title: "Ask the obvious question",
-      description: "You know more than you think. Start with what you know.",
-      steps: ["Write: what do I already know about this?", "Write: what's the most obvious first step?", "Do that step — obvious is fine"]
+      title: "Write what you already know",
+      description: "You know more than you think. Start with what you already have.",
+      steps: ["Write: 'What I already know about this situation is...'", "Keep writing until you've listed everything", "Write: 'The most obvious first step given all that is...'", "Do that step — 'obvious' is perfectly fine"]
     },
     it: {
-      title: "Fai la domanda ovvia",
-      description: "Sai più di quanto pensi. Inizia da ciò che sai.",
-      steps: ["Scrivi: cosa so già di questo?", "Scrivi: qual è il primo passo più ovvio?", "Fai quel passo — ovvio va benissimo"]
+      title: "Scrivi quello che sai già",
+      description: "Sai più di quanto pensi. Inizia da quello che hai già.",
+      steps: ["Scrivi: 'Quello che so già di questa situazione è...'", "Continua a scrivere finché non hai elencato tutto", "Scrivi: 'Il primo passo più ovvio dato tutto questo è...'", "Fai quel passo — 'ovvio' va benissimo"]
     }
   },
 
@@ -1432,40 +1575,40 @@ const ACTIVITIES = [
   {
     id: "tm-ni-01", type: "work", reason: "not_important", duration: 5,
     en: {
-      title: "If it's not important, finish it",
-      description: "Unimportant things drain energy by staying undone.",
-      steps: ["Do the task quickly — don't overthink it", "Keep quality proportional to importance", "Mark it done and move on"]
+      title: "Do it now, imperfectly, and it's gone",
+      description: "Low-importance tasks drain energy by staying on the list.",
+      steps: ["Set a 5-minute timer", "Do the task at 70% quality — done is the standard", "Mark it complete", "Delete it from the list or close the tab"]
     },
     it: {
-      title: "Se non è importante, finiscilo",
-      description: "Le cose non importanti consumano energia restando incompiute.",
-      steps: ["Fai il compito velocemente — non pensarci troppo", "Mantieni la qualità proporzionale all'importanza", "Segnalo fatto e vai avanti"]
+      title: "Fallo adesso, in modo imperfetto, e sparisce",
+      description: "I compiti poco importanti consumano energia restando in lista.",
+      steps: ["Imposta un timer da 5 minuti", "Fai il compito al 70% di qualità — fatto è lo standard", "Segnalo completato", "Cancellalo dalla lista o chiudi la scheda"]
     }
   },
   {
     id: "tm-ni-02", type: "decision", reason: "not_important", duration: 5,
     en: {
-      title: "Low stakes — decide fast",
-      description: "If it doesn't matter much, it doesn't deserve much time.",
-      steps: ["Flip a coin or gut-check in 10 seconds", "Commit to that answer", "Move on immediately"]
+      title: "Decide in 30 seconds",
+      description: "Low-stakes decisions don't deserve more than 30 seconds.",
+      steps: ["Read the options once", "Pick the first one that comes to mind", "Commit to it — write 'decided: ___'", "Move on immediately. Don't revisit."]
     },
     it: {
-      title: "Basse conseguenze — decidi in fretta",
-      description: "Se non conta molto, non merita molto tempo.",
-      steps: ["Lancia una moneta o ascolta l'istinto in 10 secondi", "Impegnati in quella risposta", "Vai avanti subito"]
+      title: "Decidi in 30 secondi",
+      description: "Le decisioni a basse conseguenze non meritano più di 30 secondi.",
+      steps: ["Leggi le opzioni una volta", "Scegli la prima che ti viene in mente", "Impegnati — scrivi 'deciso: ___'", "Vai avanti subito. Non tornare indietro."]
     }
   },
   {
     id: "tm-ni-03", type: "thinking", reason: "not_important", duration: 5,
     en: {
-      title: "Check if it actually matters",
-      description: "Sometimes things feel important. They're not.",
-      steps: ["Write: what actually happens if I don't do this?", "Write: does that matter in 3 months?", "Decide whether to act or let it go"]
+      title: "Check: does this actually matter?",
+      description: "Spending 5 minutes to confirm it doesn't matter saves hours.",
+      steps: ["Write: 'If I don't do this, what actually happens?'", "Write: 'Does that outcome matter in 3 months?'", "If no: delete it from your list right now", "If yes: do it now and clear it"]
     },
     it: {
-      title: "Verifica se conta davvero",
-      description: "A volte le cose sembrano importanti. Non lo sono.",
-      steps: ["Scrivi: cosa succede davvero se non lo faccio?", "Scrivi: conta tra 3 mesi?", "Decidi se agire o lasciar perdere"]
+      title: "Verifica: conta davvero?",
+      description: "Spendere 5 minuti per confermare che non conta risparmia ore.",
+      steps: ["Scrivi: 'Se non lo faccio, cosa succede davvero?'", "Scrivi: 'Quell'esito conta tra 3 mesi?'", "Se no: cancellalo dalla lista adesso", "Se sì: fallo adesso e liberatene"]
     }
   },
 
@@ -1473,53 +1616,695 @@ const ACTIVITIES = [
   {
     id: "tm-stuck-01", type: "work", reason: "feel_stuck", duration: 5,
     en: {
-      title: "Stuck means stopped, not blocked",
-      description: "You can move. You've just stopped moving.",
-      steps: ["Pick the most mechanical part of the task", "Do it without thinking — hands only", "Let the brain catch up"]
+      title: "Name it. Then do the mechanical part.",
+      description: "First understand what's stuck. Then move your hands.",
+      steps: ["Write one sentence: 'I'm stuck on ___ because ___'", "Open the task", "Find the most mechanical part — copy, format, move, type", "Do that part without deciding anything"]
     },
     it: {
-      title: "Bloccato significa fermo, non impossibilitato",
-      description: "Puoi muoverti. Ti sei solo fermato.",
-      steps: ["Scegli la parte più meccanica del compito", "Falla senza pensare — solo le mani", "Lascia che il cervello recuperi"]
+      title: "Nominalo. Poi fai la parte meccanica.",
+      description: "Prima capisci cosa blocca. Poi muovi le mani.",
+      steps: ["Scrivi una frase: 'Sono bloccato su ___ perché ___'", "Apri il compito", "Trova la parte più meccanica — copia, formatta, sposta, scrivi", "Fai quella parte senza decidere niente"]
     }
   },
   {
     id: "tm-stuck-02", type: "thinking", reason: "feel_stuck", duration: 10,
     en: {
-      title: "Write your way out",
+      title: "Write until the block breaks",
       description: "Being stuck in your head ends when you put it on paper.",
-      steps: ["Write: I'm stuck because...", "Write everything — don't filter", "Read it back and underline one thing you can actually do", "Do that one thing"]
+      steps: ["Open a blank page or notebook", "Write: 'I'm stuck because...' — keep writing. Don't stop.", "Write: 'The one thing I could do right now, even if imperfect, is...'", "Do that one thing immediately"]
     },
     it: {
-      title: "Scriviti fuori dal blocco",
+      title: "Scrivi finché il blocco non si rompe",
       description: "Essere bloccati in testa finisce quando lo metti su carta.",
-      steps: ["Scrivi: sono bloccato perché...", "Scrivi tutto — non filtrare", "Rileggilo e sottolinea una cosa che puoi fare concretamente", "Fai quella cosa"]
+      steps: ["Apri una pagina bianca o un quaderno", "Scrivi: 'Sono bloccato perché...' — continua a scrivere. Non fermarti.", "Scrivi: 'La cosa che potrei fare adesso, anche se imperfetta, è...'", "Fai quella cosa immediatamente"]
     }
   },
   {
     id: "tm-stuck-03", type: "stuck", reason: "feel_stuck", duration: 5,
     en: {
-      title: "Do something useless first",
-      description: "Stuck often breaks when you stop trying to break it.",
-      steps: ["Do something completely unrelated for 3 minutes", "Walk, stretch, drink water", "Come back and pick one task. Start immediately."]
+      title: "Write the block. Then step away and come back.",
+      description: "Name what's stuck. Then break the pattern.",
+      steps: ["Write one sentence: what exactly is blocking you right now", "Walk to another room, pour a drink, or step outside for 3 minutes", "Come back. Look at your list.", "Pick the simplest task. Start it immediately."]
     },
     it: {
-      title: "Fai prima qualcosa di inutile",
-      description: "Il blocco spesso si rompe quando smetti di provare a romperlo.",
-      steps: ["Fai qualcosa di completamente diverso per 3 minuti", "Cammina, allunga, bevi acqua", "Torna e scegli un compito. Inizia subito."]
+      title: "Scrivi il blocco. Poi stacca e torna.",
+      description: "Nomina cosa blocca. Poi rompi il pattern.",
+      steps: ["Scrivi una frase: cosa ti sta bloccando esattamente adesso", "Vai in un'altra stanza, versati da bere, o esci fuori per 3 minuti", "Torna. Guarda la lista.", "Scegli il compito più semplice. Inizialo subito."]
     }
   },
   {
     id: "tm-stuck-04", type: "decision", reason: "feel_stuck", duration: 10,
     en: {
-      title: "Stuck on a decision means one option is winning",
-      description: "You're stuck because you already know the answer.",
-      steps: ["Write both options", "Write which one you keep coming back to", "Write why you're resisting it", "Choose it anyway if the reason is fear"]
+      title: "You're stuck because you already know the answer",
+      description: "Being stuck on a decision usually means one option is already winning.",
+      steps: ["Write both options", "Write: 'The one I keep coming back to is...'", "Write: 'The reason I'm resisting it is...'", "Ask: is that reason real, or is it fear?", "Choose the option you keep returning to"]
     },
     it: {
-      title: "Bloccato su una decisione significa che un'opzione sta vincendo",
-      description: "Sei bloccato perché sai già la risposta.",
-      steps: ["Scrivi entrambe le opzioni", "Scrivi a quale continui a tornare", "Scrivi perché ti stai resistendo", "Sceglila comunque se il motivo è paura"]
+      title: "Sei bloccato perché sai già la risposta",
+      description: "Essere bloccati su una decisione significa spesso che un'opzione sta già vincendo.",
+      steps: ["Scrivi entrambe le opzioni", "Scrivi: 'Quella a cui continuo a tornare è...'", "Scrivi: 'Il motivo per cui mi sto resistendo è...'", "Chiediti: quel motivo è reale, o è paura?", "Scegli l'opzione a cui continui a tornare"]
+    }
+  },
+
+  // ── ADDITIONAL REASON VARIANTS (2nd and 3rd options per slot) ─
+  // These exist solely to give pickDifferentActivity enough pool
+  // depth so it never widens to generic tasks.
+
+  // — dont_know_start: work ─────────────────────────────────────
+  {
+    id: "tm-dns-01b", type: "work", reason: "dont_know_start", duration: 5,
+    en: {
+      title: "Search one company. Read one job post.",
+      description: "No plan needed. One search, one post.",
+      steps: ["Think of one company you'd like to work for", "Open their website or LinkedIn page", "Find one open role and read the full description", "Write one line: what skills do you already have that match?"]
+    },
+    it: {
+      title: "Cerca un'azienda. Leggi un'offerta.",
+      description: "Nessun piano. Una ricerca, un'offerta.",
+      steps: ["Pensa a un'azienda per cui ti piacerebbe lavorare", "Apri il loro sito o la pagina LinkedIn", "Trova un ruolo aperto e leggi la descrizione completa", "Scrivi una riga: quali competenze hai già che corrispondono?"]
+    }
+  },
+  {
+    id: "tm-dns-01c", type: "work", reason: "dont_know_start", duration: 5,
+    en: {
+      title: "Open your CV. Update one section.",
+      description: "Start with what exists. Improve one part.",
+      steps: ["Open your CV file (or create a blank one)", "Find the most outdated section", "Update it with your most recent experience or skill", "Save the file"]
+    },
+    it: {
+      title: "Apri il CV. Aggiorna una sezione.",
+      description: "Parti da ciò che esiste. Migliora una parte.",
+      steps: ["Apri il file del tuo CV (o creane uno vuoto)", "Trova la sezione più obsoleta", "Aggiornala con la tua esperienza o competenza più recente", "Salva il file"]
+    }
+  },
+  {
+    id: "tm-dns-02b", type: "work", reason: "dont_know_start", duration: 10,
+    en: {
+      title: "Identify your skill gaps. Find one resource.",
+      description: "Know what's missing. Find how to fill it.",
+      steps: ["Open LinkedIn and search for 3 jobs you'd want", "Read each and list the skills they require", "Circle the skills you don't have yet", "Search for one free resource (course, article, video) for the top gap"]
+    },
+    it: {
+      title: "Identifica i gap. Trova una risorsa.",
+      description: "Scopri cosa manca. Trova come colmarlo.",
+      steps: ["Apri LinkedIn e cerca 3 lavori che vorresti", "Leggili ed elenca le competenze che richiedono", "Cerchia le competenze che non hai ancora", "Cerca una risorsa gratuita (corso, articolo, video) per il gap principale"]
+    }
+  },
+  {
+    id: "tm-dns-02c", type: "work", reason: "dont_know_start", duration: 10,
+    en: {
+      title: "Find 3 companies. Save their career pages.",
+      description: "Build a target list. Start small.",
+      steps: ["Think of 3 companies you'd want to work at", "Open each one's LinkedIn or careers page", "Check if they have open roles in your area", "Save or bookmark all three pages for follow-up"]
+    },
+    it: {
+      title: "Trova 3 aziende. Salva le loro pagine carriere.",
+      description: "Costruisci una lista di obiettivi. Inizia in piccolo.",
+      steps: ["Pensa a 3 aziende in cui vorresti lavorare", "Apri la pagina LinkedIn o careers di ognuna", "Controlla se hanno ruoli aperti nella tua area", "Salva o metti nei preferiti tutte e tre le pagine"]
+    }
+  },
+
+  // — dont_know_start: decision ─────────────────────────────────
+  {
+    id: "tm-dns-03b", type: "decision", reason: "dont_know_start", duration: 5,
+    en: {
+      title: "List what you know. Pick the next step.",
+      description: "You have more information than you think.",
+      steps: ["Write every fact you already know about this decision", "Write: 'The thing I'm missing before I can decide is...'", "Write the one action that would get you that information", "Do it now"]
+    },
+    it: {
+      title: "Elenca cosa sai. Scegli il passo successivo.",
+      description: "Hai più informazioni di quanto pensi.",
+      steps: ["Scrivi ogni fatto che già conosci su questa decisione", "Scrivi: 'La cosa che mi manca prima di poter decidere è...'", "Scrivi l'azione che ti darebbe quell'informazione", "Falla adesso"]
+    }
+  },
+  {
+    id: "tm-dns-03c", type: "decision", reason: "dont_know_start", duration: 5,
+    en: {
+      title: "Ask yourself: what would I tell a friend?",
+      description: "Advice is easier when it's not about you.",
+      steps: ["Write the decision as if a friend asked you for help with it", "Write what you'd tell them to do", "Read it back", "Follow your own advice — write the first action and do it"]
+    },
+    it: {
+      title: "Chiediti: cosa direi a un amico?",
+      description: "Il consiglio è più facile quando non riguarda te.",
+      steps: ["Scrivi la decisione come se un amico ti chiedesse aiuto con essa", "Scrivi cosa gli diresti di fare", "Rileggilo", "Segui il tuo stesso consiglio — scrivi la prima azione e falla"]
+    }
+  },
+
+  // — dont_know_start: stuck ────────────────────────────────────
+  {
+    id: "tm-dns-04b", type: "stuck", reason: "dont_know_start", duration: 10,
+    en: {
+      title: "Map the situation. Choose one move.",
+      description: "Get it on paper. Pick one direction.",
+      steps: ["Write the situation in 3 sentences — what it is, what's blocked, what you want", "Write 3 possible actions, however small", "Circle the one with the lowest barrier", "Do it now for 5 minutes"]
+    },
+    it: {
+      title: "Mappa la situazione. Scegli una mossa.",
+      description: "Mettila su carta. Scegli una direzione.",
+      steps: ["Scrivi la situazione in 3 frasi — cos'è, cosa è bloccato, cosa vuoi", "Scrivi 3 possibili azioni, anche piccole", "Cerchia quella con la barriera più bassa", "Falla adesso per 5 minuti"]
+    }
+  },
+  {
+    id: "tm-dns-04c", type: "stuck", reason: "dont_know_start", duration: 10,
+    en: {
+      title: "Find one person who's done this. Learn from them.",
+      description: "Someone has been where you are. Use their path.",
+      steps: ["Write who you know (or could find) who has navigated this situation", "Send them a message or search for their story online", "Write one thing you can copy from their approach", "Do that one thing now"]
+    },
+    it: {
+      title: "Trova qualcuno che l'ha fatto. Impara da loro.",
+      description: "Qualcuno è stato dove sei tu. Usa il loro percorso.",
+      steps: ["Scrivi chi conosci (o potresti trovare) che ha affrontato questa situazione", "Mandagli un messaggio o cerca la loro storia online", "Scrivi una cosa che puoi copiare dal loro approccio", "Fai quella cosa adesso"]
+    }
+  },
+
+  // — dont_feel_like: work ──────────────────────────────────────
+  {
+    id: "tm-dfl-01b", type: "work", reason: "dont_feel_like", duration: 5,
+    en: {
+      title: "Set the timer. Do one thing. Stop.",
+      description: "No motivation required. Timer only.",
+      steps: ["Set a timer for 5 minutes", "Open the most concrete task on your list", "Do it until the timer rings", "Stop completely — done"]
+    },
+    it: {
+      title: "Imposta il timer. Fai una cosa. Stop.",
+      description: "Nessuna motivazione richiesta. Solo il timer.",
+      steps: ["Imposta un timer da 5 minuti", "Apri il compito più concreto della lista", "Fallo fino allo scadere del timer", "Fermati completamente — fatto"]
+    }
+  },
+  {
+    id: "tm-dfl-01c", type: "work", reason: "dont_feel_like", duration: 5,
+    en: {
+      title: "Send one message you've been delaying.",
+      description: "One message. No thinking. Send it.",
+      steps: ["Open email, Slack, or WhatsApp", "Find the message you've been putting off", "Write 2 sentences. Send it.", "Close the app"]
+    },
+    it: {
+      title: "Invia un messaggio che hai rimandato.",
+      description: "Un messaggio. Senza pensare. Invialo.",
+      steps: ["Apri email, Slack o WhatsApp", "Trova il messaggio che hai rimandato", "Scrivi 2 frasi. Invialo.", "Chiudi l'app"]
+    }
+  },
+  {
+    id: "tm-dfl-02b", type: "work", reason: "dont_feel_like", duration: 10,
+    en: {
+      title: "Close everything. Work on one file for 10 minutes.",
+      description: "One tab. One task. No decisions.",
+      steps: ["Close every tab except the one you need", "Turn off all notifications", "Set a 10-minute timer", "Work on only that file until it rings"]
+    },
+    it: {
+      title: "Chiudi tutto. Lavora su un file per 10 minuti.",
+      description: "Una scheda. Un compito. Nessuna decisione.",
+      steps: ["Chiudi ogni scheda tranne quella che ti serve", "Disattiva tutte le notifiche", "Imposta un timer da 10 minuti", "Lavora solo su quel file fino alla fine"]
+    }
+  },
+  {
+    id: "tm-dfl-02c", type: "work", reason: "dont_feel_like", duration: 10,
+    en: {
+      title: "Clear 3 emails. Then stop.",
+      description: "Small output. Real progress.",
+      steps: ["Open your inbox", "Find the 3 most overdue emails", "Reply to each in 2 sentences", "Send all 3 and close your inbox"]
+    },
+    it: {
+      title: "Svuota 3 email. Poi basta.",
+      description: "Output piccolo. Progresso reale.",
+      steps: ["Apri la posta in arrivo", "Trova le 3 email più in ritardo", "Rispondi a ognuna in 2 frasi", "Invia tutte e 3 e chiudi la posta"]
+    }
+  },
+
+  // — dont_feel_like: training ──────────────────────────────────
+  {
+    id: "tm-dfl-03b", type: "training", reason: "dont_feel_like", duration: 10,
+    en: {
+      title: "10 squats. 10 push-ups. Repeat twice.",
+      description: "No setup. No decision. Start now.",
+      steps: ["Stand up right now", "10 squats — slow down, fast up", "10 push-ups — any variation counts", "Repeat the two exercises once more"]
+    },
+    it: {
+      title: "10 squat. 10 flessioni. Ripeti due volte.",
+      description: "Nessuna preparazione. Nessuna decisione. Inizia adesso.",
+      steps: ["Alzati adesso", "10 squat — scendi lento, su veloce", "10 flessioni — qualsiasi variante va bene", "Ripeti i due esercizi ancora una volta"]
+    }
+  },
+  {
+    id: "tm-dfl-03c", type: "training", reason: "dont_feel_like", duration: 10,
+    en: {
+      title: "Walk for 10 minutes. No phone.",
+      description: "Just walk. Nothing to think about.",
+      steps: ["Put your shoes on", "Leave your phone behind or turn it to silent", "Walk outside at a normal pace for 10 minutes", "Come back and drink water"]
+    },
+    it: {
+      title: "Cammina per 10 minuti. Senza telefono.",
+      description: "Solo camminare. Niente a cui pensare.",
+      steps: ["Metti le scarpe", "Lascia il telefono o mettilo in silenzio", "Cammina fuori a passo normale per 10 minuti", "Torna e bevi acqua"]
+    }
+  },
+
+  // — dont_feel_like: thinking ──────────────────────────────────
+  {
+    id: "tm-dfl-04b", type: "thinking", reason: "dont_feel_like", duration: 5,
+    en: {
+      title: "Write one sentence. Just one.",
+      description: "Not a journal. One honest sentence.",
+      steps: ["Open a notebook or notes app", "Write: 'The thing I've been avoiding thinking about is...'", "Finish that one sentence completely", "Close the notebook — done for now"]
+    },
+    it: {
+      title: "Scrivi una frase. Solo una.",
+      description: "Non un diario. Una frase onesta.",
+      steps: ["Apri un quaderno o l'app note", "Scrivi: 'La cosa che ho evitato di pensare è...'", "Finisci quella frase completamente", "Chiudi il quaderno — basta per ora"]
+    }
+  },
+  {
+    id: "tm-dfl-04c", type: "thinking", reason: "dont_feel_like", duration: 5,
+    en: {
+      title: "Say it out loud. Write one sentence after.",
+      description: "Hear yourself. Then write one thing.",
+      steps: ["Find 2 minutes alone", "Say out loud what's been on your mind — full sentences", "Write the one thing you just said that felt most true", "Stop there"]
+    },
+    it: {
+      title: "Dillo ad alta voce. Scrivi una frase dopo.",
+      description: "Ascoltati. Poi scrivi una cosa.",
+      steps: ["Trova 2 minuti da solo", "Di' ad alta voce quello che hai in testa — frasi complete", "Scrivi la cosa che hai appena detto che sembrava più vera", "Fermati qui"]
+    }
+  },
+
+  // — too_difficult: work ───────────────────────────────────────
+  {
+    id: "tm-diff-01b", type: "work", reason: "too_difficult", duration: 5,
+    en: {
+      title: "Write one sentence about the task. Nothing else.",
+      description: "The start is always smaller than the task.",
+      steps: ["Open a blank document or note", "Write one sentence describing what this task is about", "Write the next sentence — what's the goal?", "Stop — you've started"]
+    },
+    it: {
+      title: "Scrivi una frase sul compito. Nient'altro.",
+      description: "L'inizio è sempre più piccolo del compito.",
+      steps: ["Apri un documento o una nota vuota", "Scrivi una frase che descrive di cosa tratta questo compito", "Scrivi la frase successiva — qual è l'obiettivo?", "Fermati — hai iniziato"]
+    }
+  },
+  {
+    id: "tm-diff-01c", type: "work", reason: "too_difficult", duration: 5,
+    en: {
+      title: "Do the easiest 5 minutes of this task.",
+      description: "Not the important part. The easy part.",
+      steps: ["Ask yourself: what's the least intimidating part of this task?", "Open only that part", "Work on it for 5 minutes", "Stop — you're no longer at zero"]
+    },
+    it: {
+      title: "Fai i 5 minuti più semplici di questo compito.",
+      description: "Non la parte importante. La parte facile.",
+      steps: ["Chiediti: qual è la parte meno intimidatoria di questo compito?", "Apri solo quella parte", "Lavoraci per 5 minuti", "Fermati — non sei più a zero"]
+    }
+  },
+  {
+    id: "tm-diff-02b", type: "work", reason: "too_difficult", duration: 10,
+    en: {
+      title: "Break it into 3 parts. Do part 1.",
+      description: "The task isn't one thing. It's three. Start with one.",
+      steps: ["Write: 'This task has 3 parts: 1.___ 2.___ 3.___'", "Read part 1 — is it actually hard, or just unfamiliar?", "Work on part 1 only for 10 minutes", "Stop when the timer rings"]
+    },
+    it: {
+      title: "Dividilo in 3 parti. Fai la parte 1.",
+      description: "Il compito non è una cosa. Sono tre. Inizia con una.",
+      steps: ["Scrivi: 'Questo compito ha 3 parti: 1.___ 2.___ 3.___'", "Leggi la parte 1 — è davvero difficile, o solo sconosciuta?", "Lavora solo sulla parte 1 per 10 minuti", "Fermati quando suona il timer"]
+    }
+  },
+  {
+    id: "tm-diff-02c", type: "work", reason: "too_difficult", duration: 10,
+    en: {
+      title: "Search for one example of this done well.",
+      description: "Don't invent from scratch. Find a model.",
+      steps: ["Search online for an example of what you're trying to produce", "Find one good example — a template, a sample, a reference", "Open your task file next to it", "Copy the structure (not the content) and fill it in for 10 minutes"]
+    },
+    it: {
+      title: "Cerca un esempio ben fatto.",
+      description: "Non inventare da zero. Trova un modello.",
+      steps: ["Cerca online un esempio di ciò che stai cercando di produrre", "Trova un buon esempio — un template, un campione, un riferimento", "Apri il file del tuo compito accanto ad esso", "Copia la struttura (non il contenuto) e compilala per 10 minuti"]
+    }
+  },
+
+  // — too_difficult: decision ───────────────────────────────────
+  {
+    id: "tm-diff-03b", type: "decision", reason: "too_difficult", duration: 10,
+    en: {
+      title: "Write everything you're afraid of getting wrong.",
+      description: "Name the fear of the decision. Then decide.",
+      steps: ["Write: 'I'm afraid of choosing wrong because...'", "Write every fear — don't filter", "Read them back. Cross out the ones that are unlikely.", "Make the decision based on what's left"]
+    },
+    it: {
+      title: "Scrivi tutto ciò di cui hai paura di sbagliare.",
+      description: "Nomina la paura della decisione. Poi decidi.",
+      steps: ["Scrivi: 'Ho paura di sbagliare perché...'", "Scrivi ogni paura — senza filtrare", "Rileggile. Cancella quelle improbabili.", "Prendi la decisione in base a ciò che rimane"]
+    }
+  },
+  {
+    id: "tm-diff-03c", type: "decision", reason: "too_difficult", duration: 10,
+    en: {
+      title: "Find one person who has faced this. Ask them.",
+      description: "A 10-minute conversation beats 10 hours of thinking.",
+      steps: ["Think of one person who has made a similar decision", "Send them a message: 'Quick question — how did you decide ___?'", "While you wait: write what you think they'll say", "Use their answer (or your prediction) to decide"]
+    },
+    it: {
+      title: "Trova qualcuno che ha affrontato questo. Chiediglielo.",
+      description: "10 minuti di conversazione valgono 10 ore di pensiero.",
+      steps: ["Pensa a una persona che ha preso una decisione simile", "Mandagli un messaggio: 'Domanda veloce — come hai deciso ___?'", "Nell'attesa: scrivi cosa pensi che risponderà", "Usa la loro risposta (o la tua previsione) per decidere"]
+    }
+  },
+
+  // — too_difficult: training ───────────────────────────────────
+  {
+    id: "tm-diff-04b", type: "training", reason: "too_difficult", duration: 5,
+    en: {
+      title: "Walk for 5 minutes. That's the whole session.",
+      description: "The minimum counts. Do the minimum.",
+      steps: ["Put on shoes", "Walk outside or around your home for 5 minutes", "That's it — the session is complete", "Mark it done"]
+    },
+    it: {
+      title: "Cammina per 5 minuti. Questo è tutto l'allenamento.",
+      description: "Il minimo conta. Fai il minimo.",
+      steps: ["Metti le scarpe", "Cammina fuori o in casa per 5 minuti", "È tutto — la sessione è completa", "Segnala fatto"]
+    }
+  },
+  {
+    id: "tm-diff-04c", type: "training", reason: "too_difficult", duration: 5,
+    en: {
+      title: "Stretch only. 5 minutes.",
+      description: "Movement without effort. Still counts.",
+      steps: ["Stand up", "Neck: circles, 20 seconds", "Shoulders: cross-arm stretch, 20 seconds each side", "Hips: standing lunge, 20 seconds each side"]
+    },
+    it: {
+      title: "Solo stretching. 5 minuti.",
+      description: "Movimento senza sforzo. Conta comunque.",
+      steps: ["Alzati", "Collo: rotazioni, 20 secondi", "Spalle: allungamento braccio incrociato, 20 secondi per lato", "Fianchi: affondo in piedi, 20 secondi per lato"]
+    }
+  },
+
+  // — afraid: work ──────────────────────────────────────────────
+  {
+    id: "tm-fear-01b", type: "work", reason: "afraid", duration: 5,
+    en: {
+      title: "Write the fear. Do step 1 anyway.",
+      description: "Name it. Then ignore it for 5 minutes.",
+      steps: ["Write: 'I'm afraid that if I do this, ___'", "Write the first action that doesn't require courage — just a click or a line of text", "Set a 5-minute timer and do that action", "Stop at 5 minutes — you've proved the fear wrong"]
+    },
+    it: {
+      title: "Scrivi la paura. Fai il passo 1 lo stesso.",
+      description: "Nominala. Poi ignorala per 5 minuti.",
+      steps: ["Scrivi: 'Ho paura che se lo faccio, ___'", "Scrivi la prima azione che non richiede coraggio — solo un clic o una riga di testo", "Imposta un timer da 5 minuti e fai quell'azione", "Fermati a 5 minuti — hai dimostrato che la paura aveva torto"]
+    }
+  },
+  {
+    id: "tm-fear-01c", type: "work", reason: "afraid", duration: 5,
+    en: {
+      title: "Do the smallest possible version of the scary thing.",
+      description: "Not the full thing. The first 5% of it.",
+      steps: ["Write what you're afraid to do", "Write its smallest possible version (a draft, a note, a placeholder)", "Do that smallest version now", "Stop — you've started"]
+    },
+    it: {
+      title: "Fai la versione più piccola possibile della cosa spaventosa.",
+      description: "Non la cosa intera. Il primo 5%.",
+      steps: ["Scrivi cosa ti spaventa fare", "Scrivi la sua versione più piccola possibile (una bozza, una nota, un segnaposto)", "Fai quella versione minima adesso", "Fermati — hai iniziato"]
+    }
+  },
+
+  // — afraid: decision ──────────────────────────────────────────
+  {
+    id: "tm-fear-02b", type: "decision", reason: "afraid", duration: 10,
+    en: {
+      title: "Write the decision as if it's already made.",
+      description: "Commit in writing. See how it feels.",
+      steps: ["Write: 'I have decided to ___'", "Write what the next 3 days look like with that decision made", "Write: 'The thing I'd need to do immediately is...'", "Do that thing — or commit to when you will"]
+    },
+    it: {
+      title: "Scrivi la decisione come se fosse già presa.",
+      description: "Impegnati per iscritto. Senti come si sente.",
+      steps: ["Scrivi: 'Ho deciso di ___'", "Scrivi come appaiono i prossimi 3 giorni con quella decisione presa", "Scrivi: 'La cosa che dovrei fare immediatamente è...'", "Fai quella cosa — o impegnati su quando la farai"]
+    }
+  },
+  {
+    id: "tm-fear-02c", type: "decision", reason: "afraid", duration: 10,
+    en: {
+      title: "Rate each option on reversibility.",
+      description: "Fear is smaller when you know you can undo.",
+      steps: ["Write both options", "For each: write 'I can reverse this by ___' or 'This is permanent because ___'", "If both are reversible: decide immediately and write it down", "If one is permanent: write what you'd do to recover if it went wrong — then decide"]
+    },
+    it: {
+      title: "Valuta ogni opzione sulla reversibilità.",
+      description: "La paura è più piccola quando sai di poter tornare indietro.",
+      steps: ["Scrivi entrambe le opzioni", "Per ognuna: scrivi 'Posso tornare indietro facendo ___' o 'È permanente perché ___'", "Se entrambe sono reversibili: decidi subito e scrivilo", "Se una è permanente: scrivi cosa faresti per riprenderti se andasse male — poi decidi"]
+    }
+  },
+
+  // — afraid: training ──────────────────────────────────────────
+  {
+    id: "tm-fear-04b", type: "training", reason: "afraid", duration: 5,
+    en: {
+      title: "Do 20 jumping jacks right now.",
+      description: "Physical action cuts through mental resistance.",
+      steps: ["Stand up", "Do 20 jumping jacks — no warmup needed", "Do 10 squats immediately after", "Notice that you can do more than you thought"]
+    },
+    it: {
+      title: "Fai 20 jumping jack adesso.",
+      description: "L'azione fisica taglia la resistenza mentale.",
+      steps: ["Alzati", "Fai 20 jumping jack — nessun riscaldamento necessario", "Fai subito 10 squat dopo", "Nota che puoi fare più di quanto pensavi"]
+    }
+  },
+  {
+    id: "tm-fear-04c", type: "training", reason: "afraid", duration: 5,
+    en: {
+      title: "Start with breathing. Then move.",
+      description: "Calm first. Then 3 minutes of movement.",
+      steps: ["Sit or stand. Take 5 deep slow breaths.", "Stand up and do 10 slow squats", "Do 10 slow push-ups (knees ok)", "Sit back down — you've moved"]
+    },
+    it: {
+      title: "Inizia respirando. Poi muoviti.",
+      description: "Prima calma. Poi 3 minuti di movimento.",
+      steps: ["Siediti o alzati. Fai 5 respiri profondi e lenti.", "Alzati e fai 10 squat lenti", "Fai 10 flessioni lente (sulle ginocchia va bene)", "Siediti — ti sei mosso"]
+    }
+  },
+
+  // — afraid: thinking ──────────────────────────────────────────
+  {
+    id: "tm-fear-03b", type: "thinking", reason: "afraid", duration: 10,
+    en: {
+      title: "Write what you'd do if the fear came true.",
+      description: "Plan for the worst. Make it concrete.",
+      steps: ["Write: 'The thing I'm afraid to think about is...'", "Write: 'If the worst happened, I would...' — be specific", "Write: 'The first person I'd call is ___ and I'd tell them ___'", "Read it back — you have a plan now. The fear is smaller."]
+    },
+    it: {
+      title: "Scrivi cosa faresti se la paura si avverasse.",
+      description: "Pianifica il peggio. Rendilo concreto.",
+      steps: ["Scrivi: 'La cosa di cui ho paura di pensare è...'", "Scrivi: 'Se accadesse il peggio, farei...' — sii specifico", "Scrivi: 'La prima persona che chiamerei è ___ e le direi ___'", "Rileggilo — hai un piano adesso. La paura è più piccola."]
+    }
+  },
+  {
+    id: "tm-fear-03c", type: "thinking", reason: "afraid", duration: 10,
+    en: {
+      title: "Write the fear. Then write one counter-fact.",
+      description: "Name what's scary. Find one thing that disproves it.",
+      steps: ["Write: 'I'm afraid that ___'", "Write every related fear underneath — don't stop", "For each fear: write one fact that contradicts or reduces it", "Write: 'Given all that, the one thing I can do is...' and do it"]
+    },
+    it: {
+      title: "Scrivi la paura. Poi scrivi un fatto contrario.",
+      description: "Nomina ciò che spaventa. Trova qualcosa che lo contraddice.",
+      steps: ["Scrivi: 'Ho paura che ___'", "Scrivi ogni paura correlata sotto — non fermarti", "Per ogni paura: scrivi un fatto che la contraddice o riduce", "Scrivi: 'Dato tutto questo, la cosa che posso fare è...' e falla"]
+    }
+  },
+
+  // — not_important: work ───────────────────────────────────────
+  {
+    id: "tm-ni-01b", type: "work", reason: "not_important", duration: 5,
+    en: {
+      title: "Delegate or delete it. Right now.",
+      description: "If it's not important: it goes or you do it fast.",
+      steps: ["Ask: can someone else do this?", "If yes: write one message delegating it and send it", "If no: set a 5-minute timer and do it at minimum quality", "Remove it from your list"]
+    },
+    it: {
+      title: "Delegalo o cancellalo. Adesso.",
+      description: "Se non è importante: va via o lo fai in fretta.",
+      steps: ["Chiediti: può farlo qualcun altro?", "Se sì: scrivi un messaggio delegandolo e invialo", "Se no: imposta un timer da 5 minuti e fallo alla qualità minima", "Rimuovilo dalla lista"]
+    }
+  },
+  {
+    id: "tm-ni-01c", type: "work", reason: "not_important", duration: 5,
+    en: {
+      title: "Set a 3-minute limit. Finish it.",
+      description: "Unimportant tasks deserve less time than you're giving them.",
+      steps: ["Set a timer for 3 minutes", "Do the task — no perfection, no overthinking", "When the timer rings: stop and submit or send as-is", "It's done. Move on."]
+    },
+    it: {
+      title: "Imposta un limite di 3 minuti. Finiscilo.",
+      description: "I compiti non importanti meritano meno tempo di quanto stai dando.",
+      steps: ["Imposta un timer da 3 minuti", "Fai il compito — nessuna perfezione, nessun eccesso di pensiero", "Quando suona il timer: fermati e invia o consegna com'è", "È fatto. Vai avanti."]
+    }
+  },
+
+  // — not_important: decision ───────────────────────────────────
+  {
+    id: "tm-ni-02b", type: "decision", reason: "not_important", duration: 5,
+    en: {
+      title: "Pick B. Move on.",
+      description: "When it doesn't matter, picking anything is the right answer.",
+      steps: ["Look at the options", "Pick whichever option is second in the list", "Write: 'Decided: ___. Reason: it doesn't matter enough to debate.'", "Move on — do not revisit"]
+    },
+    it: {
+      title: "Scegli B. Vai avanti.",
+      description: "Quando non conta, scegliere qualsiasi cosa è la risposta giusta.",
+      steps: ["Guarda le opzioni", "Scegli qualsiasi opzione sia seconda nella lista", "Scrivi: 'Deciso: ___. Motivo: non conta abbastanza per discuterne.'", "Vai avanti — non tornare indietro"]
+    }
+  },
+  {
+    id: "tm-ni-02c", type: "decision", reason: "not_important", duration: 5,
+    en: {
+      title: "Set a 60-second timer. Decide before it rings.",
+      description: "Low-stakes decisions should take under a minute.",
+      steps: ["Set a 60-second timer", "Read the options once", "Decide before it rings — gut check only", "Write the decision and move on"]
+    },
+    it: {
+      title: "Imposta un timer da 60 secondi. Decidi prima che suoni.",
+      description: "Le decisioni a basse conseguenze devono richiedere meno di un minuto.",
+      steps: ["Imposta un timer da 60 secondi", "Leggi le opzioni una volta", "Decidi prima che suoni — solo istinto", "Scrivi la decisione e vai avanti"]
+    }
+  },
+
+  // — not_important: thinking ───────────────────────────────────
+  {
+    id: "tm-ni-03b", type: "thinking", reason: "not_important", duration: 5,
+    en: {
+      title: "Write: what's the worst that happens if I ignore this?",
+      description: "Some things should be ignored. Find out if this is one.",
+      steps: ["Write: 'The worst that happens if I never think about this again is...'", "Write: 'Is that outcome actually bad?'", "If no: delete it from your mind and your list", "If yes: write one action and do it now"]
+    },
+    it: {
+      title: "Scrivi: cosa succede di peggio se lo ignoro?",
+      description: "Alcune cose vanno ignorate. Scopri se questa è una di quelle.",
+      steps: ["Scrivi: 'La cosa peggiore che succede se non ci penso mai più è...'", "Scrivi: 'Quell'esito è davvero negativo?'", "Se no: cancellalo dalla testa e dalla lista", "Se sì: scrivi un'azione e falla adesso"]
+    }
+  },
+  {
+    id: "tm-ni-03c", type: "thinking", reason: "not_important", duration: 5,
+    en: {
+      title: "Decide in writing: act, schedule, or drop.",
+      description: "Every thought needs one of three answers.",
+      steps: ["Write the thing you've been thinking about", "Choose one: ACT NOW / SCHEDULE FOR LATER / DROP IT", "Write your choice and why in one sentence", "Take the action that matches your choice — right now"]
+    },
+    it: {
+      title: "Decidi per iscritto: agisci, pianifica, o lascia perdere.",
+      description: "Ogni pensiero ha bisogno di una di tre risposte.",
+      steps: ["Scrivi la cosa a cui stai pensando", "Scegli uno: AGISCI ORA / PIANIFICA PIÙ TARDI / LASCIA PERDERE", "Scrivi la tua scelta e il motivo in una frase", "Fai l'azione che corrisponde alla tua scelta — adesso"]
+    }
+  },
+
+  // — feel_stuck: work ──────────────────────────────────────────
+  {
+    id: "tm-stuck-01b", type: "work", reason: "feel_stuck", duration: 5,
+    en: {
+      title: "Write the block. Copy one thing from the file.",
+      description: "Name it. Then make one physical move.",
+      steps: ["Write: 'I'm stuck on this task because ___'", "Open the task file", "Copy, paste, or retype any existing content into a new section", "That movement is your start"]
+    },
+    it: {
+      title: "Scrivi il blocco. Copia una cosa dal file.",
+      description: "Nominalo. Poi fai una mossa fisica.",
+      steps: ["Scrivi: 'Sono bloccato su questo compito perché ___'", "Apri il file del compito", "Copia, incolla o riscrivi qualsiasi contenuto esistente in una nuova sezione", "Quel movimento è il tuo inizio"]
+    }
+  },
+  {
+    id: "tm-stuck-01c", type: "work", reason: "feel_stuck", duration: 5,
+    en: {
+      title: "Identify what's missing. Get it.",
+      description: "Stuck often means one input is missing. Find it.",
+      steps: ["Write: 'I can't move forward because I'm missing ___'", "Write where you could get that thing in the next 5 minutes", "Go get it — search, ask, or create a placeholder", "Resume the task with that gap filled"]
+    },
+    it: {
+      title: "Identifica cosa manca. Procuratelo.",
+      description: "Il blocco spesso significa che manca un input. Trovalo.",
+      steps: ["Scrivi: 'Non posso andare avanti perché mi manca ___'", "Scrivi dove potresti trovare quella cosa nei prossimi 5 minuti", "Vai a procurartela — cerca, chiedi o crea un segnaposto", "Riprendi il compito con quel gap colmato"]
+    }
+  },
+
+  // — feel_stuck: thinking ──────────────────────────────────────
+  {
+    id: "tm-stuck-02b", type: "thinking", reason: "feel_stuck", duration: 10,
+    en: {
+      title: "Write the loop. Find what breaks it.",
+      description: "Name the circular thought. Find the exit.",
+      steps: ["Write: 'I keep thinking about ___ because ___'", "Write: 'The thing that would make me stop thinking about this is...'", "Write: 'The one action I could take to get closer to that is...'", "Do that action now"]
+    },
+    it: {
+      title: "Scrivi il loop. Trova cosa lo rompe.",
+      description: "Nomina il pensiero circolare. Trova l'uscita.",
+      steps: ["Scrivi: 'Continuo a pensare a ___ perché ___'", "Scrivi: 'La cosa che mi farebbe smettere di pensarci è...'", "Scrivi: 'L'azione che potrei fare per avvicinarmi a questo è...'", "Fai quell'azione adesso"]
+    }
+  },
+  {
+    id: "tm-stuck-02c", type: "thinking", reason: "feel_stuck", duration: 10,
+    en: {
+      title: "Talk to yourself in writing for 8 minutes.",
+      description: "No structure. Just write until something shifts.",
+      steps: ["Open a notebook or blank doc", "Write: 'I'm stuck because...' and keep writing for 8 minutes", "Don't read back — keep writing forward", "At 8 minutes: circle the one sentence that felt most true. Do something about it."]
+    },
+    it: {
+      title: "Parla con te stesso per iscritto per 8 minuti.",
+      description: "Nessuna struttura. Scrivi finché qualcosa cambia.",
+      steps: ["Apri un quaderno o documento vuoto", "Scrivi: 'Sono bloccato perché...' e continua a scrivere per 8 minuti", "Non rileggere — continua a scrivere in avanti", "A 8 minuti: cerchia la frase che sembrava più vera. Fai qualcosa al riguardo."]
+    }
+  },
+
+  // — feel_stuck: stuck ─────────────────────────────────────────
+  {
+    id: "tm-stuck-03b", type: "stuck", reason: "feel_stuck", duration: 5,
+    en: {
+      title: "Name it. Walk for 3 minutes. Come back.",
+      description: "Clarity first. Reset. Then one task.",
+      steps: ["Write one sentence: 'I'm stuck because ___'", "Stand up and walk — outside, around the room, anywhere — for 3 minutes", "Come back and open your task list", "Start the simplest item on it immediately"]
+    },
+    it: {
+      title: "Nominalo. Cammina 3 minuti. Torna.",
+      description: "Prima chiarezza. Reset. Poi un compito.",
+      steps: ["Scrivi una frase: 'Sono bloccato perché ___'", "Alzati e cammina — fuori, in giro per la stanza, ovunque — per 3 minuti", "Torna e apri la lista dei compiti", "Inizia subito il compito più semplice"]
+    }
+  },
+  {
+    id: "tm-stuck-03c", type: "stuck", reason: "feel_stuck", duration: 5,
+    en: {
+      title: "Write what unstuck looks like. Do one step of it.",
+      description: "Imagine moving. Then move.",
+      steps: ["Write: 'When this is resolved, I will have done ___'", "Write the first step of that resolved version", "Do that first step now — even imperfectly", "Stop — you're no longer stuck"]
+    },
+    it: {
+      title: "Scrivi com'è sbloccarsi. Fai un passo di quello.",
+      description: "Immagina di muoverti. Poi muoviti.",
+      steps: ["Scrivi: 'Quando questo si risolve, avrò fatto ___'", "Scrivi il primo passo di quella versione risolta", "Fai quel primo passo adesso — anche imperfettamente", "Fermati — non sei più bloccato"]
+    }
+  },
+
+  // — feel_stuck: decision ──────────────────────────────────────
+  {
+    id: "tm-stuck-04b", type: "decision", reason: "feel_stuck", duration: 10,
+    en: {
+      title: "Write why you're stuck. Then choose.",
+      description: "Name the real block. Then decide despite it.",
+      steps: ["Write: 'I'm stuck on this decision because ___'", "Write: 'If that reason weren't there, I'd choose ___'", "That's your answer — write it down as your decision", "Write the first action that follows from that decision"]
+    },
+    it: {
+      title: "Scrivi perché sei bloccato. Poi scegli.",
+      description: "Nomina il vero blocco. Poi decidi nonostante esso.",
+      steps: ["Scrivi: 'Sono bloccato su questa decisione perché ___'", "Scrivi: 'Se quel motivo non ci fosse, sceglierei ___'", "Questa è la tua risposta — scrivila come tua decisione", "Scrivi la prima azione che segue da quella decisione"]
+    }
+  },
+  {
+    id: "tm-stuck-04c", type: "decision", reason: "feel_stuck", duration: 10,
+    en: {
+      title: "Set a 10-minute deadline. Decide before it ends.",
+      description: "You have 10 minutes. That's enough.",
+      steps: ["Set a timer for 10 minutes", "Write both options and one real consequence of each", "Cross out the option with the worse consequence", "Write the remaining option as your decision before the timer rings"]
+    },
+    it: {
+      title: "Imposta una scadenza di 10 minuti. Decidi prima che finisca.",
+      description: "Hai 10 minuti. È abbastanza.",
+      steps: ["Imposta un timer da 10 minuti", "Scrivi entrambe le opzioni e una conseguenza reale per ognuna", "Cancella l'opzione con la conseguenza peggiore", "Scrivi l'opzione rimanente come tua decisione prima che il timer suoni"]
     }
   },
 
@@ -1536,21 +2321,21 @@ const ACTIVITIES = [
       it: "Hai tempo. Non è quello il problema."
     },
     en: {
-      title: "Start with ten",
-      description: "Use the first 10 minutes to break the resistance.",
+      title: "10 minutes, one task only",
+      description: "Open the file. Work on it for 10 minutes. Nothing else.",
       steps: [
-        "Pick the smallest useful action",
-        "Work for 10 minutes",
-        "Stop or continue after the timer"
+        "Open the document, tool, or app for this task",
+        "Work on the first visible thing — type, edit, or fill in",
+        "Stop after 10 minutes"
       ]
     },
     it: {
-      title: "Inizia con dieci",
-      description: "Usa i primi 10 minuti per rompere la resistenza.",
+      title: "10 minuti, un solo compito",
+      description: "Apri il file. Lavoraci per 10 minuti. Nient'altro.",
       steps: [
-        "Scegli la più piccola azione utile",
-        "Lavora per 10 minuti",
-        "Fermati o continua dopo il timer"
+        "Apri il documento, strumento o app per questo compito",
+        "Lavora sulla prima cosa visibile — scrivi, modifica, compila",
+        "Fermati dopo 10 minuti"
       ]
     }
   },
@@ -1586,20 +2371,22 @@ const ACTIVITIES = [
       it: "Hai tempo. Usalo per muoverti, non per pianificare il movimento."
     },
     en: {
-      title: "Ten minutes into the block",
-      description: "When you feel stuck and have time, the risk is planning instead of doing.",
+      title: "Name the block. Take one action.",
+      description: "Identify what's stuck. Then move — not plan.",
       steps: [
+        "Write one sentence: 'I'm stuck on ___ because ___'",
         "Write the next physical action in one sentence",
-        "Start that action — not a plan, the action itself",
+        "Start that action immediately — not a plan, the action itself",
         "Work for 10 minutes before reviewing anything"
       ]
     },
     it: {
-      title: "Dieci minuti nel blocco",
-      description: "Quando ti senti bloccato e hai tempo, il rischio è pianificare invece di fare.",
+      title: "Nomina il blocco. Fai una sola azione.",
+      description: "Identifica cosa blocca. Poi muoviti — non pianificare.",
       steps: [
+        "Scrivi una frase: 'Sono bloccato su ___ perché ___'",
         "Scrivi la prossima azione fisica in una frase",
-        "Inizia quell'azione — non un piano, l'azione stessa",
+        "Inizia quell'azione subito — non un piano, l'azione stessa",
         "Lavora per 10 minuti prima di rivedere qualcosa"
       ]
     }
@@ -1611,21 +2398,21 @@ const ACTIVITIES = [
       it: "Non ti serve un nuovo piano. Ti serve il prossimo blocco."
     },
     en: {
-      title: "Keep the chain moving",
-      description: "Continue with one focused 15-minute block.",
+      title: "Next 15 minutes, same task",
+      description: "No new plan. Open what you already started and continue.",
       steps: [
-        "Open what you already started",
-        "Pick the next visible action",
-        "Work for 15 minutes without switching"
+        "Open the file, doc, or tool from your last session",
+        "Read the last thing you wrote or did — 30 seconds only",
+        "Continue from exactly that point for 15 minutes"
       ]
     },
     it: {
-      title: "Tieni il movimento",
-      description: "Continua con un blocco concentrato da 15 minuti.",
+      title: "Prossimi 15 minuti, stesso compito",
+      description: "Nessun nuovo piano. Apri quello che hai già iniziato e continua.",
       steps: [
-        "Apri ciò che hai già iniziato",
-        "Scegli la prossima azione visibile",
-        "Lavora per 15 minuti senza cambiare attività"
+        "Apri il file, documento o strumento dell'ultima sessione",
+        "Leggi l'ultima cosa che hai scritto o fatto — solo 30 secondi",
+        "Continua esattamente da quel punto per 15 minuti"
       ]
     }
   },
@@ -1661,21 +2448,21 @@ const ACTIVITIES = [
       it: "Quindici minuti di pensiero con una penna valgono due ore di pensiero in testa."
     },
     en: {
-      title: "Think on paper",
-      description: "You have been sitting with this. Write it out fully.",
+      title: "Write it out fully",
+      description: "Stop thinking about it. Put it all on paper in 15 minutes.",
       steps: [
-        "Write everything this thought or problem contains",
-        "Write what you have already decided without admitting it",
-        "Write the one next step that would move it forward"
+        "Open a notebook or blank doc. Write the thing at the top.",
+        "Write every related thought, concern, or question — don't organize",
+        "Write: 'The one thing I can actually do next is...' and do it"
       ]
     },
     it: {
-      title: "Pensa su carta",
-      description: "Ci stai rimuginando. Scrivilo per intero.",
+      title: "Scrivilo per intero",
+      description: "Smetti di pensarci. Metti tutto su carta in 15 minuti.",
       steps: [
-        "Scrivi tutto quello che questo pensiero o problema contiene",
-        "Scrivi quello che hai già deciso senza ammetterlo",
-        "Scrivi il prossimo passo che lo farebbe avanzare"
+        "Apri un quaderno o documento vuoto. Scrivi la cosa in cima.",
+        "Scrivi ogni pensiero, preoccupazione o domanda collegata — senza organizzare",
+        "Scrivi: 'La cosa che posso fare concretamente adesso è...' e falla"
       ]
     }
   }
@@ -1695,6 +2482,8 @@ const state = {
   selectedMoreTimeMode: null,     // "start" | "continue" | null
   currentActivity: null,
   lastActivityId: null,
+  seenActivityIds: [],            // ordered history for this flow session
+  anotherClickCount: 0,           // how many times "another" was clicked this session
   timer: null,
   timerRemaining: 0,
   timerRunning: false
@@ -1731,6 +2520,108 @@ function addMinutes(minutes) {
   return stats;
 }
 
+// ── Task History ───────────────────────────────────────────────
+// Persists shown/completed task records across sessions.
+// Schema: { [activityId]: { id, type, reason, duration, shownAt, completedAt } }
+// Kept compact — only one record per activity id (latest wins).
+const HISTORY_KEY   = "startnow_history";
+const HISTORY_MAX   = 200;   // max records before pruning oldest
+const RECENCY_DAYS  = 7;     // avoid repeating within this window
+
+function getTaskHistory() {
+  try {
+    const raw = localStorage.getItem(HISTORY_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch { return {}; }
+}
+
+function saveTaskHistory(history) {
+  try {
+    // Prune to HISTORY_MAX by removing oldest shownAt entries
+    const entries = Object.values(history);
+    if (entries.length > HISTORY_MAX) {
+      entries.sort((a, b) => (a.shownAt || 0) - (b.shownAt || 0));
+      const pruned = {};
+      entries.slice(-HISTORY_MAX).forEach(e => { pruned[e.id] = e; });
+      localStorage.setItem(HISTORY_KEY, JSON.stringify(pruned));
+    } else {
+      localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
+    }
+  } catch { /* storage full or unavailable — degrade silently */ }
+}
+
+function recordTaskShown(activity) {
+  if (!activity) return;
+  const history = getTaskHistory();
+  history[activity.id] = {
+    id:          activity.id,
+    type:        activity.type   || null,
+    reason:      activity.reason || null,
+    duration:    activity.duration,
+    shownAt:     Date.now(),
+    completedAt: history[activity.id]?.completedAt || null
+  };
+  saveTaskHistory(history);
+}
+
+function markTaskCompleted(activity) {
+  if (!activity) return;
+  const history = getTaskHistory();
+  const existing = history[activity.id] || {};
+  history[activity.id] = {
+    ...existing,
+    id:          activity.id,
+    type:        activity.type   || null,
+    reason:      activity.reason || null,
+    duration:    activity.duration,
+    completedAt: Date.now()
+  };
+  saveTaskHistory(history);
+}
+
+/**
+ * historyAwareSort(pool)
+ * Sorts a pool of activities so that:
+ *   1. Never-shown tasks come first (shuffled among themselves)
+ *   2. Tasks not seen in the last RECENCY_DAYS days come next (sorted oldest-shown first)
+ *   3. Recently seen tasks come last (sorted oldest-shown first, so least-recent is preferred)
+ * Returns sorted array — caller picks the first eligible candidate.
+ */
+function historyAwareSort(pool) {
+  const history  = getTaskHistory();
+  const cutoff   = Date.now() - RECENCY_DAYS * 24 * 60 * 60 * 1000;
+
+  const unseen   = [];
+  const stale    = [];
+  const recent   = [];
+
+  pool.forEach(a => {
+    const rec = history[a.id];
+    if (!rec || !rec.shownAt) {
+      unseen.push(a);
+    } else if (rec.shownAt < cutoff) {
+      stale.push({ a, shownAt: rec.shownAt });
+    } else {
+      recent.push({ a, shownAt: rec.shownAt });
+    }
+  });
+
+  // Shuffle unseen (fair random among fresh tasks)
+  for (let i = unseen.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [unseen[i], unseen[j]] = [unseen[j], unseen[i]];
+  }
+
+  stale.sort((a, b) => a.shownAt - b.shownAt);
+  recent.sort((a, b) => a.shownAt - b.shownAt);
+
+  return [
+    ...unseen,
+    ...stale.map(x => x.a),
+    ...recent.map(x => x.a)
+  ];
+}
+
 function refreshIntroStats() {
   const today = new Date().toISOString().split("T")[0];
   const raw   = localStorage.getItem("startnow_stats");
@@ -1752,14 +2643,15 @@ function refreshIntroStats() {
 //   1. type + duration + moreTimeMode  (More Time specific)
 //   2. type + duration + reason        (Truth Mode specific)
 //   3. type + duration                 (general fallback)
+// Within each pool, historyAwareSort ensures variety across sessions.
 function pickActivity(type, duration, reason, moreTimeMode) {
   function pickFrom(pool) {
     if (!pool.length) return null;
-    const filtered   = pool.filter(a => a.id !== state.lastActivityId);
-    const candidates = filtered.length ? filtered : pool;
-    const picked     = candidates[Math.floor(Math.random() * candidates.length)];
-    state.lastActivityId = picked.id;
-    return picked;
+    // Sort by history recency, exclude the immediate last pick within session
+    const sorted = historyAwareSort(pool);
+    const candidate = sorted.find(a => a.id !== state.lastActivityId) || sorted[0];
+    state.lastActivityId = candidate.id;
+    return candidate;
   }
 
   // 1. More Time pool: matches type + duration + moreTimeMode
@@ -1800,65 +2692,66 @@ function pickActivity(type, duration, reason, moreTimeMode) {
 
 /**
  * pickDifferentActivity(type, duration, reason, moreTimeMode, excludeId)
- * Used by "Another one" — always excludes the currently visible activity,
- * cascading through progressively wider fallback pools.
- * Returns null only when no different activity exists at all.
+ * Used by "Another one". Excludes all previously seen activities in this
+ * session (state.seenActivityIds). When all options are exhausted, cycles
+ * back from the beginning (excluding only the immediately current one).
+ * Returns null only when the entire ACTIVITIES array has a single item.
  */
 function pickDifferentActivity(type, duration, reason, moreTimeMode, excludeId) {
-  function rand(pool) {
-    const candidates = pool.filter(a => a.id !== excludeId);
-    if (!candidates.length) return null;
-    const picked = candidates[Math.floor(Math.random() * candidates.length)];
+  // Build the relevant pool using the same priority chain as pickActivity
+  let pool = [];
+
+  if (moreTimeMode) {
+    pool = ACTIVITIES.filter(
+      a => a.moreTimeMode === moreTimeMode && a.duration === duration &&
+           (!a.type || a.type === type)
+    );
+    if (!pool.length) {
+      pool = ACTIVITIES.filter(
+        a => a.moreTimeMode === moreTimeMode && a.duration === duration
+      );
+    }
+  }
+
+  if (!pool.length && reason) {
+    pool = ACTIVITIES.filter(
+      a => a.type === type && a.duration === duration &&
+           a.reason === reason && !a.moreTimeMode
+    );
+  }
+
+  if (!pool.length) {
+    pool = ACTIVITIES.filter(
+      a => a.type === type && a.duration === duration && !a.moreTimeMode
+    );
+  }
+
+  // Wider fallbacks if primary pool is tiny
+  if (pool.length <= 1) {
+    const wider = ACTIVITIES.filter(
+      a => a.type === type && !a.moreTimeMode
+    );
+    if (wider.length > pool.length) pool = wider;
+  }
+
+  if (!pool.length) return null;
+
+  // Try unseen candidates first, sorted by history recency
+  const unseenSorted = historyAwareSort(pool.filter(a => !state.seenActivityIds.includes(a.id)));
+  if (unseenSorted.length) {
+    const picked = unseenSorted[0];
     state.lastActivityId = picked.id;
+    state.seenActivityIds.push(picked.id);
     return picked;
   }
 
-  // 1. Exact match: same type + duration + reason + moreTimeMode
-  if (moreTimeMode) {
-    const r = rand(ACTIVITIES.filter(
-      a => a.moreTimeMode === moreTimeMode && a.duration === duration &&
-           (!a.type || a.type === type)
-    ));
-    if (r) return r;
-
-    const r2 = rand(ACTIVITIES.filter(
-      a => a.moreTimeMode === moreTimeMode && a.duration === duration
-    ));
-    if (r2) return r2;
-  }
-
-  // 2. type + duration + reason
-  if (reason) {
-    const r = rand(ACTIVITIES.filter(
-      a => a.type === type && a.duration === duration &&
-           a.reason === reason && !a.moreTimeMode
-    ));
-    if (r) return r;
-  }
-
-  // 3. type + duration (no reason filter)
-  const r3 = rand(ACTIVITIES.filter(
-    a => a.type === type && a.duration === duration && !a.moreTimeMode
-  ));
-  if (r3) return r3;
-
-  // 4. reason + duration (any type)
-  if (reason) {
-    const r = rand(ACTIVITIES.filter(
-      a => a.reason === reason && a.duration === duration
-    ));
-    if (r) return r;
-  }
-
-  // 5. same type (any duration)
-  const r5 = rand(ACTIVITIES.filter(a => a.type === type && !a.moreTimeMode));
-  if (r5) return r5;
-
-  // 6. same duration (any type)
-  const r6 = rand(ACTIVITIES.filter(a => a.duration === duration && !a.moreTimeMode));
-  if (r6) return r6;
-
-  return null; // truly nothing different available
+  // All seen in this session — cycle: prefer least-recently shown globally
+  const cycleSorted = historyAwareSort(pool.filter(a => a.id !== excludeId));
+  const picked = cycleSorted.length ? cycleSorted[0] : pool[0];
+  state.lastActivityId = picked.id;
+  // Reset seen list, keep only current excluded id
+  state.seenActivityIds = [excludeId, picked.id];
+  return picked;
 }
 
 // ── Language system ────────────────────────────────────────────
@@ -2070,6 +2963,8 @@ function goTo(screenName, opts = {}) {
     state.selectedDuration     = null;
     state.selectedMoreTimeMode = null;
     state.currentActivity      = null;
+    state.seenActivityIds      = [];
+    state.anotherClickCount    = 0;
     document.querySelectorAll("[data-type], [data-reason], [data-duration], [data-moretime]")
       .forEach(b => b.classList.remove("selected"));
     refreshIntroStats();
@@ -2174,6 +3069,10 @@ function renderResult(activity) {
   const flash = document.getElementById("done-flash");
   if (flash) { flash.textContent = ""; flash.classList.remove("visible"); }
 
+  // Reset "another" button text to default (called on new activity from time screen)
+  const btnAnother = document.getElementById("btn-another");
+  if (btnAnother && t.btnAnother) btnAnother.textContent = t.btnAnother;
+
   // ── Why it works
   const whyToggle = document.getElementById("why-toggle");
   const whyBody   = document.getElementById("why-body");
@@ -2251,6 +3150,8 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", () => {
       state.selectedDuration     = parseInt(btn.dataset.duration, 10);
       state.selectedMoreTimeMode = null;   // clear any previous More Time choice
+      state.seenActivityIds      = [];     // reset seen history for new session
+      state.anotherClickCount    = 0;
       document.querySelectorAll("[data-duration]").forEach(b => b.classList.remove("selected"));
       btn.classList.add("selected");
 
@@ -2262,6 +3163,10 @@ document.addEventListener("DOMContentLoaded", () => {
         || ACTIVITIES.find(a => a.duration === state.selectedDuration && !a.reason && !a.moreTimeMode)
         || ACTIVITIES[0];
 
+      if (state.currentActivity) {
+        state.seenActivityIds = [state.currentActivity.id];
+        recordTaskShown(state.currentActivity);
+      }
       renderResult(state.currentActivity);
       setTimeout(() => goTo("result"), 200);
     });
@@ -2296,6 +3201,9 @@ document.addEventListener("DOMContentLoaded", () => {
         || ACTIVITIES.find(a => a.duration === state.selectedDuration && !a.reason && !a.moreTimeMode)
         || ACTIVITIES[0];
 
+      state.seenActivityIds   = state.currentActivity ? [state.currentActivity.id] : [];
+      state.anotherClickCount = 0;
+      if (state.currentActivity) recordTaskShown(state.currentActivity);
       renderResult(state.currentActivity);
       setTimeout(() => goTo("result"), 200);
     });
@@ -2314,6 +3222,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("btn-done").addEventListener("click", () => {
     stopTimer();
     const stats   = addMinutes(state.currentActivity.duration);
+    markTaskCompleted(state.currentActivity);
     const t       = TRANSLATIONS[currentLang];
     const doneBtn = document.getElementById("btn-done");
     const flash   = document.getElementById("done-flash");
@@ -2353,7 +3262,6 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     if (!activity) {
-      // Nothing different exists — show a subtle inline message
       const noTaskMsg = {
         en: "No other task available for this selection.",
         it: "Nessun altro compito disponibile per questa scelta."
@@ -2371,9 +3279,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "margin-top:12px",
         "line-height:1.5"
       ].join(";");
-
-      const btnAnother = document.getElementById("btn-another");
-      btnAnother.insertAdjacentElement("afterend", msg);
+      document.getElementById("btn-another").insertAdjacentElement("afterend", msg);
       return;
     }
 
@@ -2381,7 +3287,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const noTaskMsg = document.getElementById("no-other-task-msg");
     if (noTaskMsg) noTaskMsg.style.display = "none";
 
+    // Increment click count and update button label dynamically from click 2 onward
+    state.anotherClickCount++;
+    const t        = TRANSLATIONS[currentLang];
+    const variants = t.anotherVariants || [t.btnAnother];
+    const varIdx   = Math.min(state.anotherClickCount - 1, variants.length - 1);
+    const btnEl    = document.getElementById("btn-another");
+    if (btnEl) btnEl.textContent = variants[varIdx];
+
     state.currentActivity = activity;
+    recordTaskShown(activity);
     renderResult(activity);
   });
 
@@ -2411,6 +3326,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const t = TRANSLATIONS[currentLang];
     if (window.confirm(t.confirmResetStats)) {
       localStorage.removeItem("startnow_stats");
+      localStorage.removeItem(HISTORY_KEY);
       refreshIntroStats();
     }
   });
