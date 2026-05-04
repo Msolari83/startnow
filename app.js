@@ -12,7 +12,7 @@ const TRANSLATIONS = {
     // Intro screen
     introTagline:    "Take action",
     introHeadline:   "Stop thinking.<br><em>Start doing.</em>",
-    introBody:       "You're avoiding something. This app helps you start — right now, with whatever time you have.",
+    introBody:       "Whether you're avoiding something or don't know where to start, this app helps you begin — right now, with the time you have.",
     statLabelToday:  "min today",
     statLabelTotal:  "total min",
     statLabelStreak: "day streak",
@@ -28,6 +28,26 @@ const TRANSLATIONS = {
     typeDecision:    "A decision",
     typeTraining:    "Physical training",
     typeStuck:       "I'm stuck in a situation",
+
+    // Intent screen (new Step 1)
+    step1of4Label:         "Step 1 of 4",
+    step2of4Label:         "Step 2 of 4",
+    step3of4Label:         "Step 3 of 4",
+    step4of4Label:         "Step 4 of 4",
+    questionIntent:        "Where do you want<br>to start?",
+    questionIntentHelper:  "Choose the kind of support you need right now",
+    intentAvoidance:       "I have something to do",
+    intentAvoidanceSub:    "I know what I need to do, but I'm avoiding it",
+    intentSupport:         "I don't know where to start",
+    intentSupportSub:      "I feel blocked, confused, or low on energy",
+
+    // Avoidance flow — type screen
+    questionTypeAvoidance:       "What are you<br>putting off?",
+    questionTypeAvoidanceHelper: "Choose the area to start from",
+
+    // Support flow — type screen
+    questionTypeSupport:         "What do you<br>need right now?",
+    questionTypeSupportHelper:   "Choose the simplest way to begin",
 
     // Time screen
     step2Label:      "Step 3 of 3",
@@ -115,10 +135,48 @@ const TRANSLATIONS = {
     // New categories
     typeMentalCleanup:    "Clear your mind",
     typeQuickWin:         "Start with something small",
+    typeGetClarity:       "Get clarity",
+    typeRegainEnergy:     "Regain energy",
+    typeResetRestart:     "Reset and restart",
 
-    // 2-min reduce option
+    // Reset stats
+    btnResetStats:        "Reset stats",
+    btnResetStatsHelper:  "Also clears saved data",
+    confirmResetStats:    "Are you sure you want to reset your statistics?",
     btnReduceTo2:         "− Reduce to 2 min",
     reduceFirstStep:      "Do only the first step.",
+
+    // Support flow — per-category question keys
+    questionSupportMentalCleanup: "What are you feeling<br>right now?",
+    questionSupportGetClarity:    "What's unclear<br>right now?",
+    questionSupportRegainEnergy:  "How is your energy<br>right now?",
+    questionSupportQuickWin:      "What do you want<br>to start with?",
+    questionSupportResetRestart:  "Do you want<br>a fresh restart?",
+
+    // Support answers — mental_cleanup
+    supportTooMuchOnMind:     "Too much on my mind",
+    supportFeelConfused:      "I feel confused",
+    supportFeelStressed:      "I feel stressed",
+    supportCantFocus:         "I can't focus",
+    supportDontKnow:          "I don't know",
+
+    // Support answers — get_clarity
+    supportTooManyOptions:    "Too many options",
+    supportDontKnowChoose:    "I don't know what to choose",
+    supportTooManyOpenThings: "Too many open things",
+    supportDontKnowImportant: "I don't know what matters most",
+
+    // Support answers — regain_energy
+    supportFeelTired:         "I feel tired",
+    supportNoMotivation:      "I have no motivation",
+    supportEverythingHeavy:   "Everything feels heavy",
+    supportDontWantToStart:   "I don't want to start anything",
+
+    // Support answers — reset_restart
+    supportWantToReset:       "I want to clear everything",
+    supportNeedSimplicity:    "I need simplicity",
+    supportWantLightRestart:  "I want to restart lightly",
+    supportJustDoSomething:   "I just want to do something",
 
     // Follow-up hint on intro
     followUpHint:         "You started with {category}. Want to continue?",
@@ -132,7 +190,14 @@ const TRANSLATIONS = {
       thinking:       "studying",
       stuck:          "getting unstuck",
       mental_cleanup: "clearing your mind",
-      quick_win:      "a quick win",
+      quick_win:      "starting small",
+      get_clarity:    "getting clarity",
+      regain_energy:  "regaining energy",
+      reset_restart:  "a fresh restart",
+    },
+    intentName: {
+      avoidance: "avoidance",
+      support:   "support",
     },
   },
 
@@ -140,7 +205,7 @@ const TRANSLATIONS = {
     // Intro screen
     introTagline:    "Agisci adesso",
     introHeadline:   "Smettila di pensare.<br><em>Inizia a fare.</em>",
-    introBody:       "Stai evitando qualcosa. Questa app ti aiuta a iniziare — adesso, con il tempo che hai.",
+    introBody:       "Che tu stia evitando qualcosa o non sappia da dove partire, questa app ti aiuta a iniziare — adesso, con il tempo che hai.",
     statLabelToday:  "min oggi",
     statLabelTotal:  "min totali",
     statLabelStreak: "giorni di fila",
@@ -156,6 +221,26 @@ const TRANSLATIONS = {
     typeDecision:    "Prendere una decisione",
     typeTraining:    "Allenamento fisico",
     typeStuck:       "Sono bloccato in una situazione",
+
+    // Intent screen (new Step 1)
+    step1of4Label:         "Passo 1 di 4",
+    step2of4Label:         "Passo 2 di 4",
+    step3of4Label:         "Passo 3 di 4",
+    step4of4Label:         "Passo 4 di 4",
+    questionIntent:        "Da dove vuoi<br>partire?",
+    questionIntentHelper:  "Scegli il tipo di supporto che ti serve adesso",
+    intentAvoidance:       "Ho qualcosa da fare",
+    intentAvoidanceSub:    "So cosa devo fare, ma lo sto rimandando",
+    intentSupport:         "Non so da dove iniziare",
+    intentSupportSub:      "Mi sento bloccato, confuso o senza energia",
+
+    // Avoidance flow — type screen
+    questionTypeAvoidance:       "Cosa stai<br>rimandando?",
+    questionTypeAvoidanceHelper: "Scegli l'area da cui partire",
+
+    // Support flow — type screen
+    questionTypeSupport:         "Di cosa hai<br>bisogno adesso?",
+    questionTypeSupportHelper:   "Scegli il modo più semplice per iniziare",
 
     // Time screen
     step2Label:      "Passo 3 di 3",
@@ -189,8 +274,9 @@ const TRANSLATIONS = {
     btnResultHome:   "Home",
 
     // Reset stats
-    btnResetStats:       "Azzera statistiche",
-    confirmResetStats:   "Sei sicuro di voler resettare le statistiche?",
+    btnResetStats:        "Azzera statistiche",
+    btnResetStatsHelper:  "Cancella anche i dati salvati",
+    confirmResetStats:    "Sei sicuro di voler resettare le statistiche?",
 
     // Truth Mode — reason screen
     step1of3Label:       "Passo 1 di 3",
@@ -243,10 +329,45 @@ const TRANSLATIONS = {
     // New categories
     typeMentalCleanup:    "Svuotare la mente",
     typeQuickWin:         "Parti da qualcosa di piccolo",
+    typeGetClarity:       "Fare chiarezza",
+    typeRegainEnergy:     "Recuperare energia",
+    typeResetRestart:     "Ripartire da zero",
 
     // 2-min reduce option
     btnReduceTo2:         "− Riduci a 2 min",
     reduceFirstStep:      "Fai solo il primo passo.",
+
+    // Support flow — per-category question keys
+    questionSupportMentalCleanup: "Cosa senti<br>in questo momento?",
+    questionSupportGetClarity:    "Cosa ti manca<br>per decidere?",
+    questionSupportRegainEnergy:  "Come ti senti<br>adesso?",
+    questionSupportQuickWin:      "Da cosa vuoi<br>partire?",
+    questionSupportResetRestart:  "Vuoi ripartire<br>senza pressione?",
+
+    // Support answers — mental_cleanup
+    supportTooMuchOnMind:     "Troppe cose in testa",
+    supportFeelConfused:      "Mi sento confuso",
+    supportFeelStressed:      "Mi sento stressato",
+    supportCantFocus:         "Non riesco a concentrarmi",
+    supportDontKnow:          "Non lo so",
+
+    // Support answers — get_clarity
+    supportTooManyOptions:    "Troppe opzioni",
+    supportDontKnowChoose:    "Non so cosa scegliere",
+    supportTooManyOpenThings: "Ho troppe cose aperte",
+    supportDontKnowImportant: "Non capisco cosa è importante",
+
+    // Support answers — regain_energy
+    supportFeelTired:         "Mi sento stanco",
+    supportNoMotivation:      "Non ho motivazione",
+    supportEverythingHeavy:   "Mi pesa tutto",
+    supportDontWantToStart:   "Non ho voglia di iniziare",
+
+    // Support answers — reset_restart
+    supportWantToReset:       "Voglio azzerare tutto",
+    supportNeedSimplicity:    "Ho bisogno di semplicità",
+    supportWantLightRestart:  "Voglio ricominciare leggero",
+    supportJustDoSomething:   "Voglio solo fare qualcosa",
 
     // Follow-up hint on intro
     followUpHint:         "Hai iniziato con {category}. Vuoi continuare?",
@@ -260,7 +381,14 @@ const TRANSLATIONS = {
       thinking:       "lo studio",
       stuck:          "sbloccarti",
       mental_cleanup: "svuotare la mente",
-      quick_win:      "una cosa veloce",
+      quick_win:      "partire da qualcosa di piccolo",
+      get_clarity:    "fare chiarezza",
+      regain_energy:  "recuperare energia",
+      reset_restart:  "ripartire da zero",
+    },
+    intentName: {
+      avoidance: "evitamento",
+      support:   "supporto",
     },
   }
 };
@@ -2765,115 +2893,93 @@ const ACTIVITIES = [
   {
     id: "mental-01", type: "mental_cleanup", duration: 5,
     en: {
-      title: "Write everything on your mind.",
-      description: "Don't sort. Don't filter. Just empty your head onto the page.",
+      title: "Empty your head.",
+      description: "Open something. Write. Don't sort.",
       steps: [
-        "Open a notebook, notes app, or blank document",
-        "Set a 5-minute timer",
-        "Write every thought, worry, or task that's floating around — no order, no judgment",
-        "Stop when the timer ends. Close it. You've offloaded it."
+        "Open any note. Write everything floating in your head — messy, fast, no order. Stop when you run out."
       ]
     },
     it: {
-      title: "Scrivi tutto quello che hai in testa.",
-      description: "Non ordinare. Non filtrare. Svuota la testa sulla pagina.",
+      title: "Svuota la testa.",
+      description: "Apri qualcosa. Scrivi. Non ordinare.",
       steps: [
-        "Apri un quaderno, un'app di note o un documento vuoto",
-        "Imposta un timer da 5 minuti",
-        "Scrivi ogni pensiero, preoccupazione o compito che galleggia — senza ordine, senza giudizi",
-        "Fermati quando il timer finisce. Chiudilo. L'hai scaricato."
+        "Apri qualsiasi nota. Scrivi tutto quello che ti gira in testa — veloce, disordinato, senza filtri. Fermati quando finisci."
       ]
     }
   },
   {
     id: "mental-02", type: "mental_cleanup", duration: 10,
     en: {
-      title: "List what is stressing you.",
-      description: "Name it to shrink it. A written list is easier to handle than a mental fog.",
+      title: "Name what's stressing you.",
+      description: "Write it. Don't fix it yet.",
       steps: [
-        "Open a blank page",
-        "Write: 'Things stressing me right now:' at the top",
-        "List everything — work, personal, unfinished, vague — spend 7 minutes",
-        "Pick one item. Write one thing you could do about it. Just one."
+        "Open a note. Write 'What's stressing me:' and list everything — work, personal, vague. No limit.",
+        "Pick one item. Write one thing you could do about it. Just one. You don't have to do it now."
       ]
     },
     it: {
-      title: "Elenca quello che ti sta stressando.",
-      description: "Dargli un nome lo riduce. Una lista scritta è più gestibile di una nebbia mentale.",
+      title: "Scrivi cosa ti sta stressando.",
+      description: "Scrivilo. Non risolverlo ancora.",
       steps: [
-        "Apri una pagina vuota",
-        "Scrivi: 'Cose che mi stressano adesso:' in cima",
-        "Elenca tutto — lavoro, personale, incompiuto, vago — passa 7 minuti",
-        "Scegli un elemento. Scrivi una cosa che potresti fare. Solo una."
+        "Apri una nota. Scrivi 'Cosa mi stressa:' e elenca tutto — lavoro, personale, vago. Senza limite.",
+        "Scegli una cosa. Scrivi un'azione possibile. Solo una. Non devi farla adesso."
       ]
     }
   },
   {
     id: "mental-03", type: "mental_cleanup", duration: 15,
     en: {
-      title: "Turn chaos into 3 next actions.",
-      description: "From overwhelmed to a short list. That's the whole goal.",
+      title: "3 things. One action each.",
+      description: "Write everything out. Pick three. That's it.",
       steps: [
-        "Spend 5 minutes writing everything on your mind — no filter",
-        "Read what you wrote. Circle the 3 most pressing items",
-        "For each of the 3, write one concrete next action (not a goal — an action)",
-        "Put the list somewhere visible. You've turned noise into a plan."
+        "Write everything in your head — 5 minutes, no filter, no order.",
+        "Read it back. Circle the 3 things that feel most urgent.",
+        "For each one, write one next action — not a goal, one concrete thing. Done."
       ]
     },
     it: {
-      title: "Trasforma il caos in 3 azioni successive.",
-      description: "Da sopraffatto a una lista corta. Questo è l'unico obiettivo.",
+      title: "3 cose. Un'azione ciascuna.",
+      description: "Scrivi tutto. Scegli tre. Basta.",
       steps: [
-        "Passa 5 minuti a scrivere tutto quello che hai in mente — senza filtri",
-        "Leggi quello che hai scritto. Cerchia i 3 elementi più urgenti",
-        "Per ognuno dei 3, scrivi una prossima azione concreta (non un obiettivo — un'azione)",
-        "Metti la lista in un posto visibile. Hai trasformato il rumore in un piano."
+        "Scrivi tutto quello che hai in testa — 5 minuti, senza filtri, senza ordine.",
+        "Rileggilo. Cerchia le 3 cose che sembrano più urgenti.",
+        "Per ognuna, scrivi una prossima azione — non un obiettivo, una cosa concreta. Fatto."
       ]
     }
   },
   {
     id: "mental-04", type: "mental_cleanup", duration: 5,
     en: {
-      title: "Write the one thing that won't leave you alone.",
-      description: "There's always one thought circling. Name it. Put it down.",
+      title: "Name the thing circling.",
+      description: "One thought. Write it. Put it down.",
       steps: [
-        "Open a blank note",
-        "Write the one thought, worry, or task that keeps coming back",
-        "Below it, write: 'What I can do about it right now is ___'",
-        "If you can act on it, do it. If not, close the note — you've acknowledged it."
+        "Open a note. Write the one thing that keeps coming back. Below it: 'One thing I can do: ___'. That's it."
       ]
     },
     it: {
-      title: "Scrivi la cosa che non ti lascia in pace.",
-      description: "C'è sempre un pensiero che gira. Dagli un nome. Mettilo giù.",
+      title: "Scrivi il pensiero che gira.",
+      description: "Un pensiero. Scrivilo. Mettilo giù.",
       steps: [
-        "Apri una nota vuota",
-        "Scrivi il pensiero, la preoccupazione o il compito che continua a tornare",
-        "Sotto, scrivi: 'Quello che posso fare adesso è ___'",
-        "Se puoi agire, fallo. Se no, chiudi la nota — l'hai riconosciuto."
+        "Apri una nota. Scrivi la cosa che continua a tornare. Sotto: 'Una cosa che posso fare: ___'. Basta così."
       ]
     }
   },
   {
     id: "mental-05", type: "mental_cleanup", duration: 10,
     en: {
-      title: "Sort your open loops into 3 buckets.",
-      description: "Do it now. Schedule it. Drop it. Three buckets, no exceptions.",
+      title: "Do now, later, or drop.",
+      description: "Three buckets. Every open thing goes in one.",
       steps: [
-        "Write down every open task or worry on your mind — fast, no analysis",
-        "Draw 3 columns: Do Now / Schedule / Drop",
-        "Sort each item into one column — no item stays in the middle",
-        "Pick one from 'Do Now' and do it before moving on."
+        "Write every open task or worry — fast. Then draw 3 columns: Do Now / Later / Drop.",
+        "Put each item in a column. Pick one from 'Do Now'. Do it before you close."
       ]
     },
     it: {
-      title: "Ordina i tuoi loop aperti in 3 categorie.",
-      description: "Fallo adesso. Schedulalo. Lascia perdere. Tre categorie, nessuna eccezione.",
+      title: "Adesso, dopo o lascia perdere.",
+      description: "Tre categorie. Ogni cosa aperta va in una.",
       steps: [
-        "Scrivi ogni compito o preoccupazione aperta — veloce, senza analisi",
-        "Disegna 3 colonne: Fai Adesso / Schedula / Lascia Perdere",
-        "Metti ogni elemento in una colonna — nessun elemento rimane nel mezzo",
-        "Scegline uno da 'Fai Adesso' e fallo prima di andare avanti."
+        "Scrivi ogni compito o preoccupazione aperta — veloce. Poi: Fai Adesso / Dopo / Lascia Perdere.",
+        "Metti ogni cosa in una categoria. Scegli una da 'Fai Adesso'. Falla prima di chiudere."
       ]
     }
   },
@@ -2883,137 +2989,379 @@ const ACTIVITIES = [
     id: "quick-01", type: "quick_win", duration: 5,
     en: {
       title: "Clear one surface.",
-      description: "Pick a desk, table, or counter. Make it completely clear.",
+      description: "One surface. Everything off it.",
       steps: [
-        "Pick one surface — desk, kitchen counter, bedside table",
-        "Set a 5-minute timer",
-        "Remove everything that doesn't belong. Put it where it belongs.",
-        "Wipe the surface if you can. Done."
+        "Pick any surface near you. Remove everything that doesn't belong. Done."
       ]
     },
     it: {
       title: "Libera una superficie.",
-      description: "Scegli una scrivania, un tavolo o un piano. Rendilo completamente libero.",
+      description: "Una superficie. Tutto via.",
       steps: [
-        "Scegli una superficie — scrivania, piano cucina, comodino",
-        "Imposta un timer da 5 minuti",
-        "Rimuovi tutto ciò che non appartiene lì. Mettilo dove deve stare.",
-        "Pulisci la superficie se puoi. Fatto."
+        "Scegli qualsiasi superficie vicino a te. Rimuovi tutto quello che non ci appartiene. Fatto."
       ]
     }
   },
   {
     id: "quick-02", type: "quick_win", duration: 10,
     en: {
-      title: "Delete or archive 10 emails.",
-      description: "Not manage — delete. Fast decisions only.",
+      title: "Delete 10 emails.",
+      description: "Open inbox. Delete. Don't read.",
       steps: [
-        "Open your inbox",
-        "Start from the oldest or most cluttered section",
-        "Delete or archive 10 emails — if you haven't needed it in a week, it goes",
-        "Don't read them fully. Subject line is enough to decide."
+        "Open your inbox. Start from the oldest. Subject line only — delete or archive, no reading.",
+        "Stop at 10. Close it."
       ]
     },
     it: {
-      title: "Elimina o archivia 10 email.",
-      description: "Non gestire — eliminare. Solo decisioni rapide.",
+      title: "Elimina 10 email.",
+      description: "Apri la posta. Elimina. Non leggere.",
       steps: [
-        "Apri la tua casella di posta",
-        "Inizia dalla sezione più vecchia o più caotica",
-        "Elimina o archivia 10 email — se non ti è servita in una settimana, va via",
-        "Non leggerle per intero. La riga dell'oggetto basta per decidere."
+        "Apri la posta. Parti dalle più vecchie. Solo l'oggetto — elimina o archivia, senza leggere.",
+        "Fermati a 10. Chiudi."
       ]
     }
   },
   {
     id: "quick-03", type: "quick_win", duration: 15,
     en: {
-      title: "Finish one tiny pending thing.",
-      description: "You know exactly what it is. The one you've been skipping.",
+      title: "Finish one pending thing.",
+      description: "The small one you keep skipping. Do it now.",
       steps: [
-        "Name it: write down the one small pending thing you keep avoiding",
-        "Open it, start it, and finish it — it's small enough to complete in 15 min",
-        "If it takes less time, pick the next smallest pending thing",
-        "Mark it done. Move on."
+        "Write the name of the one small pending thing. Open it.",
+        "Finish it. If it takes less than 15 minutes, pick the next smallest one.",
+        "Mark it done. Close everything else."
       ]
     },
     it: {
-      title: "Finisci una piccola cosa in sospeso.",
-      description: "Sai esattamente cos'è. Quella che continui a saltare.",
+      title: "Finisci una cosa in sospeso.",
+      description: "La piccola cosa che continui a saltare. Falla adesso.",
       steps: [
-        "Dagli un nome: scrivi la piccola cosa in sospeso che continui a evitare",
-        "Aprila, inizia e finiscila — è abbastanza piccola da completare in 15 min",
-        "Se ci vuole meno tempo, prendi la prossima cosa in sospeso più piccola",
-        "Segna come fatto. Vai avanti."
+        "Scrivi il nome della piccola cosa in sospeso. Aprila.",
+        "Finiscila. Se ci vuole meno di 15 minuti, prendi la prossima più piccola.",
+        "Segnala come fatta. Chiudi tutto il resto."
       ]
     }
   },
   {
     id: "quick-04", type: "quick_win", duration: 5,
     en: {
-      title: "Reply to one message you've been avoiding.",
-      description: "It won't get easier. Send it now.",
+      title: "Reply to that one message.",
+      description: "2 sentences. Send. Done.",
       steps: [
-        "Find the message — email, WhatsApp, Slack — you've been putting off",
-        "Write 2 sentences maximum. Don't overthink it.",
-        "Send it before you re-read it more than once.",
-        "Close the app."
+        "Find the message you've been avoiding. Write 2 sentences. Send before you re-read it. Close."
       ]
     },
     it: {
-      title: "Rispondi a un messaggio che hai evitato.",
-      description: "Non diventerà più facile. Invialo adesso.",
+      title: "Rispondi a quel messaggio.",
+      description: "2 frasi. Invia. Fatto.",
       steps: [
-        "Trova il messaggio — email, WhatsApp, Slack — che hai rimandato",
-        "Scrivi massimo 2 frasi. Non pensarci troppo.",
-        "Invialo prima di rileggerlo più di una volta.",
-        "Chiudi l'app."
+        "Trova il messaggio che hai rimandato. Scrivi 2 frasi. Invia senza rileggerlo. Chiudi."
       ]
     }
   },
   {
     id: "quick-05", type: "quick_win", duration: 10,
     en: {
-      title: "Make one decision you've been sitting on.",
-      description: "Small decisions left open drain energy. Close one.",
+      title: "Close one open decision.",
+      description: "Two options only. Pick one. Move on.",
       steps: [
-        "Write: 'The small decision I keep avoiding is ___'",
-        "Write the two options. Not ten — two.",
-        "Pick one. Write it down as if it's final.",
-        "Take one concrete action that makes the decision real (schedule it, book it, confirm it)."
+        "Write the decision you keep avoiding. Write exactly two options — cross out the rest.",
+        "Pick one. Write it as if it's final. Take one action that makes it real."
       ]
     },
     it: {
-      title: "Prendi una decisione che stai rimandando.",
-      description: "Le piccole decisioni lasciate aperte consumano energia. Chiudine una.",
+      title: "Chiudi una decisione aperta.",
+      description: "Solo due opzioni. Scegline una. Vai avanti.",
       steps: [
-        "Scrivi: 'La piccola decisione che continuo a evitare è ___'",
-        "Scrivi le due opzioni. Non dieci — due.",
-        "Scegli una. Scrivila come se fosse definitiva.",
-        "Fai un'azione concreta che rende la decisione reale (schedulala, prenotala, confermala)."
+        "Scrivi la decisione che eviti. Scrivi solo due opzioni — cancella il resto.",
+        "Scegline una. Scrivila come se fosse definitiva. Fai un'azione che la rende reale."
       ]
     }
   },
   {
     id: "quick-06", type: "quick_win", duration: 15,
     en: {
-      title: "Tidy one drawer or bag.",
-      description: "Physical order has an outsized effect on mental clarity.",
+      title: "Tidy one drawer.",
+      description: "Empty it. Keep what belongs. Close it.",
       steps: [
-        "Pick one drawer, shelf, or bag that's bothering you",
-        "Empty it completely",
-        "Remove anything you don't need — bin or donate pile",
-        "Put the rest back in a way that makes sense. Close it."
+        "Pick one drawer or bag. Empty it completely.",
+        "Remove what you don't need. Put the rest back.",
+        "Close it. Done — one physical thing is clearer."
       ]
     },
     it: {
-      title: "Riordina un cassetto o una borsa.",
-      description: "L'ordine fisico ha un effetto sproporzionato sulla chiarezza mentale.",
+      title: "Riordina un cassetto.",
+      description: "Svuotalo. Tieni quello che serve. Chiudilo.",
       steps: [
-        "Scegli un cassetto, scaffale o borsa che ti disturba",
-        "Svuotalo completamente",
-        "Rimuovi tutto ciò che non ti serve — pila del cestino o della donazione",
-        "Rimetti il resto in modo che abbia senso. Chiudilo."
+        "Scegli un cassetto o una borsa. Svuotalo completamente.",
+        "Rimuovi quello che non serve. Rimetti il resto.",
+        "Chiudilo. Fatto — una cosa fisica è più in ordine."
+      ]
+    }
+  },
+
+  // ── GET CLARITY ────────────────────────────────────────────────
+  {
+    id: "clarity-01", type: "get_clarity", duration: 5,
+    en: {
+      title: "Write what's unclear.",
+      description: "Name it. Don't solve it yet.",
+      steps: [
+        "Open a note. Write: 'What I'm unclear about is ___'. Write the first honest answer. Don't fix it."
+      ]
+    },
+    it: {
+      title: "Scrivi cosa non è chiaro.",
+      description: "Dagli un nome. Non risolverlo ancora.",
+      steps: [
+        "Apri una nota. Scrivi: 'Quello che non mi è chiaro è ___'. Scrivi la prima risposta onesta. Non risolverla."
+      ]
+    }
+  },
+  {
+    id: "clarity-02", type: "get_clarity", duration: 10,
+    en: {
+      title: "Two options. Pick one.",
+      description: "Write them all. Cross out all but two.",
+      steps: [
+        "Write every option you have — fast. Then cross out everything except the two that feel most important.",
+        "For each: one reason for, one against. Pick one. Write it as if it's decided."
+      ]
+    },
+    it: {
+      title: "Due opzioni. Scegline una.",
+      description: "Scrivile tutte. Cancella tutto tranne due.",
+      steps: [
+        "Scrivi tutte le opzioni — veloce. Poi cancella tutto tranne le due più importanti.",
+        "Per ognuna: un motivo a favore, uno contro. Scegli. Scrivila come se fosse deciso."
+      ]
+    }
+  },
+  {
+    id: "clarity-03", type: "get_clarity", duration: 15,
+    en: {
+      title: "Sort what's open.",
+      description: "Everything out of your head. Three piles. One action.",
+      steps: [
+        "Write every open decision or task circling in your head. Fast, no editing.",
+        "Sort each into: Do now / Schedule / Let go.",
+        "Pick one from 'Do now'. Take one action before you close."
+      ]
+    },
+    it: {
+      title: "Ordina quello che è aperto.",
+      description: "Tutto fuori dalla testa. Tre pile. Un'azione.",
+      steps: [
+        "Scrivi ogni decisione o compito aperto che ti gira in testa. Veloce, senza modifiche.",
+        "Metti ognuno in: Fai adesso / Schedula / Lascia andare.",
+        "Scegli uno da 'Fai adesso'. Fai un'azione prima di chiudere."
+      ]
+    }
+  },
+  {
+    id: "clarity-04", type: "get_clarity", duration: 5,
+    en: {
+      title: "Write the question you keep avoiding.",
+      description: "One question. Write it honestly.",
+      steps: [
+        "Write: 'The question I keep avoiding is ___'. Write it. Don't answer it yet — just having it written is enough."
+      ]
+    },
+    it: {
+      title: "Scrivi la domanda che eviti.",
+      description: "Una domanda. Scrivila onestamente.",
+      steps: [
+        "Scrivi: 'La domanda che continuo a evitare è ___'. Scrivila. Non rispondere ancora — averla scritta è già abbastanza."
+      ]
+    }
+  },
+  {
+    id: "clarity-05", type: "get_clarity", duration: 10,
+    en: {
+      title: "Write what you know. Write what you don't.",
+      description: "Two lists. That's it.",
+      steps: [
+        "Write: 'What I know for sure:' — list everything, fast.",
+        "Write: 'What I still need to figure out:' — pick one item. Write one small step toward it."
+      ]
+    },
+    it: {
+      title: "Scrivi cosa sai. Scrivi cosa non sai.",
+      description: "Due liste. Basta.",
+      steps: [
+        "Scrivi: 'Quello che so per certo:' — elenca tutto, veloce.",
+        "Scrivi: 'Quello che devo ancora capire:' — scegli un elemento. Scrivi un piccolo passo verso di esso."
+      ]
+    }
+  },
+
+  // ── REGAIN ENERGY ─────────────────────────────────────────────
+  {
+    id: "energy-01", type: "regain_energy", duration: 5,
+    en: {
+      title: "Move once.",
+      description: "Smallest possible action. Just move.",
+      steps: [
+        "Stand up. Walk to another room and back. Or do 5 slow stretches. That's enough — you moved."
+      ]
+    },
+    it: {
+      title: "Muoviti una volta.",
+      description: "L'azione più piccola possibile. Muoviti e basta.",
+      steps: [
+        "Alzati. Vai in un'altra stanza e torna. O fai 5 allungamenti lenti. Basta — ti sei mosso."
+      ]
+    }
+  },
+  {
+    id: "energy-02", type: "regain_energy", duration: 10,
+    en: {
+      title: "Walk. Then pick one thing.",
+      description: "10 minutes. Move first, work after.",
+      steps: [
+        "Walk for 5 minutes — outside if possible, around the room if not. Breathe slowly.",
+        "Come back. Pick the smallest task you can start. Begin."
+      ]
+    },
+    it: {
+      title: "Cammina. Poi scegli una cosa.",
+      description: "10 minuti. Prima muoviti, poi lavora.",
+      steps: [
+        "Cammina per 5 minuti — fuori se puoi, in giro per la stanza se no. Respira lentamente.",
+        "Torna. Scegli il compito più piccolo che riesci a iniziare. Inizia."
+      ]
+    }
+  },
+  {
+    id: "energy-03", type: "regain_energy", duration: 15,
+    en: {
+      title: "Find the drain. Take one step.",
+      description: "Name it. Pick one thing you control.",
+      steps: [
+        "Write: 'What's draining me right now:' — list everything. Tasks, people, situations. Fast.",
+        "Circle the one thing you have some control over.",
+        "Write one small action you could take on it. Do it now — just the first move."
+      ]
+    },
+    it: {
+      title: "Trova cosa ti svuota. Fai un passo.",
+      description: "Dagli un nome. Scegli una cosa che controlli.",
+      steps: [
+        "Scrivi: 'Cosa mi sta svuotando adesso:' — elenca tutto. Compiti, persone, situazioni. Veloce.",
+        "Cerchia la cosa su cui hai un po' di controllo.",
+        "Scrivi una piccola azione possibile. Falla adesso — solo la prima mossa."
+      ]
+    }
+  },
+  {
+    id: "energy-04", type: "regain_energy", duration: 5,
+    en: {
+      title: "Water. Breathe. Start.",
+      description: "Literally. Right now.",
+      steps: [
+        "Get water. Drink it. Take 3 slow breaths — inhale 4, hold 2, exhale 6. Then pick anything small and start."
+      ]
+    },
+    it: {
+      title: "Acqua. Respira. Inizia.",
+      description: "Letteralmente. Adesso.",
+      steps: [
+        "Prendi l'acqua. Bevila. Fai 3 respiri lenti — inspira 4, tieni 2, espira 6. Poi scegli qualcosa di piccolo e inizia."
+      ]
+    }
+  },
+  {
+    id: "energy-05", type: "regain_energy", duration: 10,
+    en: {
+      title: "Do one easy thing. Finish it.",
+      description: "Finishing feels better than trying. Pick something small.",
+      steps: [
+        "Think of one task that's easy enough to finish in 10 minutes. Something you'll feel good about.",
+        "Do it now. No distractions. When it's done, stop — you finished something."
+      ]
+    },
+    it: {
+      title: "Fai una cosa facile. Finiscila.",
+      description: "Finire è meglio di provare. Scegli qualcosa di piccolo.",
+      steps: [
+        "Pensa a una cosa abbastanza facile da finire in 10 minuti. Qualcosa che ti farà sentire bene.",
+        "Falla adesso. Nessuna distrazione. Quando è fatta, fermati — hai finito qualcosa."
+      ]
+    }
+  },
+
+  // ── RESET AND RESTART ─────────────────────────────────────────
+  {
+    id: "reset-01", type: "reset_restart", duration: 5,
+    en: {
+      title: "Blank page. One thing.",
+      description: "Forget everything else. Just this.",
+      steps: [
+        "Open a blank note. Write: 'If I had 5 minutes and no obligations, I'd ___'. Do that — even just part of it."
+      ]
+    },
+    it: {
+      title: "Pagina bianca. Una cosa.",
+      description: "Dimentica tutto il resto. Solo questa.",
+      steps: [
+        "Apri una nota vuota. Scrivi: 'Se avessi 5 minuti e nessun obbligo, farei ___'. Fallo — anche solo in parte."
+      ]
+    }
+  },
+  {
+    id: "reset-02", type: "reset_restart", duration: 10,
+    en: {
+      title: "Pause everything. Start one thing.",
+      description: "You don't have to solve it all. Just park it.",
+      steps: [
+        "Write: 'On pause for now:' — list everything you're setting aside. Be specific.",
+        "Write: 'The one thing I'll do in the next 10 minutes:'. Set a timer. Do only that."
+      ]
+    },
+    it: {
+      title: "Metti in pausa tutto. Inizia una cosa.",
+      description: "Non devi risolvere tutto. Mettilo da parte e basta.",
+      steps: [
+        "Scrivi: 'In pausa adesso:' — elenca tutto quello che stai mettendo da parte. Sii specifico.",
+        "Scrivi: 'La cosa che farò nei prossimi 10 minuti:'. Imposta un timer. Fai solo quella."
+      ]
+    }
+  },
+  {
+    id: "reset-03", type: "reset_restart", duration: 15,
+    en: {
+      title: "Three things. Pick one. Start.",
+      description: "Not a full plan. Just today.",
+      steps: [
+        "Write: 'If today ended well, I would have done ___' — list at most 3 things.",
+        "Cross out anything that's not actually important today.",
+        "Pick the first one. Start a 10-minute block on it now."
+      ]
+    },
+    it: {
+      title: "Tre cose. Scegliene una. Inizia.",
+      description: "Non un piano completo. Solo oggi.",
+      steps: [
+        "Scrivi: 'Se oggi finisse bene, avrei fatto ___' — elenca al massimo 3 cose.",
+        "Cancella quello che non è davvero importante oggi.",
+        "Scegli la prima. Inizia un blocco da 10 minuti adesso."
+      ]
+    }
+  },
+  {
+    id: "reset-04", type: "reset_restart", duration: 5,
+    en: {
+      title: "Lightest thing. 5 minutes. Stop.",
+      description: "No finish required. Just move.",
+      steps: [
+        "Pick the thing that feels lightest right now. Do it for 5 minutes. You don't have to finish. That's it."
+      ]
+    },
+    it: {
+      title: "La cosa più leggera. 5 minuti. Stop.",
+      description: "Non devi finire. Solo muoverti.",
+      steps: [
+        "Scegli la cosa che sembra più leggera adesso. Falla per 5 minuti. Non devi finire. Basta così."
       ]
     }
   }
@@ -3196,8 +3544,10 @@ function adaptedActivityContent(activity) {
 // ── App State ──────────────────────────────────────────────────
 const state = {
   screen: "intro",
+  selectedIntent: null,           // "avoidance" | "support"
   selectedType: null,
-  selectedReason: null,           // Truth Mode: why they are avoiding it
+  selectedSupportType: null,      // support flow sub-type key (for REASON_SCREENS lookup)
+  selectedReason: null,           // why they are avoiding it / support state
   selectedDuration: null,
   selectedMoreTimeMode: null,     // "start" | "continue" | null
   currentActivity: null,
@@ -3366,7 +3716,9 @@ function saveLastCompleted(activity) {
   try {
     localStorage.setItem(LAST_COMPLETED_KEY, JSON.stringify({
       id:       activity.id,
-      type:     activity.type   || null,
+      intent:   state.selectedIntent  || null,
+      type:     activity.type         || null,
+      reason:   state.selectedReason  || null,
       duration: activity.duration,
       date:     new Date().toISOString().split("T")[0]
     }));
@@ -3412,12 +3764,10 @@ function renderFollowUpHint() {
   btnStart.parentNode.insertBefore(hint, btnStart);
 
   document.getElementById("btn-follow-up").addEventListener("click", () => {
-    state.selectedType = last.type;
-    // Clear any stale selections
-    document.querySelectorAll("[data-type]").forEach(b => {
-      b.classList.toggle("selected", b.dataset.type === last.type);
-    });
-    goTo("reason");
+    state.selectedIntent = last.intent || "avoidance";
+    state.selectedType   = last.type;
+    state.selectedReason = null;
+    goTo("type");
   });
 }
 
@@ -3470,7 +3820,19 @@ function pickActivity(type, duration, reason, moreTimeMode) {
     a => a.type === type && a.duration === duration &&
          !a.reason && !a.moreTimeMode
   );
-  return pickFrom(pool);
+  const picked = pickFrom(pool);
+  if (picked) return picked;
+
+  // 4. Support-type fallback: if selectedSupportType differs from type, try it
+  //    (e.g. type="get_clarity" maps directly, but safety net for future remaps)
+  if (state.selectedSupportType && state.selectedSupportType !== type) {
+    const supportPool = ACTIVITIES.filter(
+      a => a.type === state.selectedSupportType && a.duration === duration &&
+           !a.reason && !a.moreTimeMode
+    );
+    return pickFrom(supportPool);
+  }
+  return picked;
 }
 
 /**
@@ -3566,6 +3928,11 @@ function setLanguage(lang) {
   // If reason screen is showing, re-render question + options in new language
   if (state.screen === "reason") {
     renderReasonScreen();
+  }
+
+  // If type screen is showing, re-render in new language
+  if (state.screen === "type") {
+    renderTypeScreen();
   }
 }
 
@@ -3724,6 +4091,110 @@ function getWhyItWorks(activity) {
   return null;
 }
 
+// ── Dynamic Type Screen ────────────────────────────────────────
+// Category configs for each intent. Each entry: { type, i18nKey, iconClass, svg }
+const TYPE_CATEGORIES = {
+  avoidance: [
+    {
+      type: "work", i18nKey: "typeWork", iconClass: "option-icon--work",
+      svg: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3h7l3 3v11a1 1 0 01-1 1H5a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 3v4h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1="10" x2="13" y2="10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><line x1="7" y1="13" x2="11" y2="13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>'
+    },
+    {
+      type: "work", i18nKey: "typeSearchJob", iconClass: "option-icon--search",
+      svg: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8.5" cy="8.5" r="5" stroke="currentColor" stroke-width="1.8"/><line x1="12.5" y1="12.5" x2="17" y2="17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>'
+    },
+    {
+      type: "thinking", i18nKey: "typeLearn", iconClass: "option-icon--learn",
+      svg: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 5C10 5 7 4 4 4.5V16c3-.5 6 .5 6 .5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 5c0 0 3-1 6-.5V16c-3-.5-6 .5-6 .5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><line x1="10" y1="5" x2="10" y2="16.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>'
+    },
+    {
+      type: "decision", i18nKey: "typeDecision", iconClass: "option-icon--decision",
+      svg: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="17" x2="10" y2="10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M10 10 L5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M10 10 L15 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="5" cy="4" r="1.5" fill="currentColor"/><circle cx="15" cy="4" r="1.5" fill="currentColor"/><circle cx="10" cy="17" r="1.5" fill="currentColor"/></svg>'
+    },
+    {
+      type: "training", i18nKey: "typeTraining", iconClass: "option-icon--training",
+      svg: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="13" cy="3.5" r="1.5" fill="currentColor"/><path d="M11 6.5 L8.5 9.5 L5.5 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 6.5 L12.5 10 L10 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 13 L8 16.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12.5 10 L15 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>'
+    },
+    {
+      type: "stuck", i18nKey: "typeStuck", iconClass: "option-icon--stuck",
+      svg: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="9" width="12" height="9" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M7 9V6.5a3 3 0 016 0V9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="10" cy="14" r="1.2" fill="currentColor"/></svg>'
+    },
+  ],
+  support: [
+    {
+      type: "mental_cleanup", supportType: "mental_cleanup",
+      i18nKey: "typeMentalCleanup", iconClass: "option-icon--mental",
+      svg: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 3.5C7 3.5 4.5 6 4.5 9c0 1.8.8 3.4 2.1 4.5l-.1 2.5 2.2-1.2c.4.1.8.2 1.3.2 3 0 5.5-2.5 5.5-5.5S13 3.5 10 3.5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><line x1="7.5" y1="9" x2="12.5" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/><line x1="7.5" y1="11" x2="11" y2="11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/></svg>'
+    },
+    {
+      type: "get_clarity", supportType: "get_clarity",
+      i18nKey: "typeGetClarity", iconClass: "option-icon--decision",
+      svg: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.8"/><line x1="10" y1="6.5" x2="10" y2="10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="10" cy="13" r="1" fill="currentColor"/></svg>'
+    },
+    {
+      type: "regain_energy", supportType: "regain_energy",
+      i18nKey: "typeRegainEnergy", iconClass: "option-icon--training",
+      svg: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 10h3l2-5 3 10 2-5h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>'
+    },
+    {
+      type: "quick_win", supportType: "quick_win",
+      i18nKey: "typeQuickWin", iconClass: "option-icon--quickwin",
+      svg: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.8"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+    },
+    {
+      type: "reset_restart", supportType: "reset_restart",
+      i18nKey: "typeResetRestart", iconClass: "option-icon--learn",
+      svg: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 10A4.5 4.5 0 1 0 7 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><polyline points="4,4 7,6.5 4.5,9.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+    },
+  ]
+};
+
+/**
+ * renderTypeScreen()
+ * Rewrites the type screen question, helper text, and option grid
+ * based on state.selectedIntent ("avoidance" | "support").
+ * Called on every entry to the type screen.
+ */
+function renderTypeScreen() {
+  const intent  = state.selectedIntent || "avoidance";
+  const t       = TRANSLATIONS[currentLang];
+  const cats    = TYPE_CATEGORIES[intent] || TYPE_CATEGORIES.avoidance;
+
+  // Question heading
+  const qKey    = intent === "support" ? "questionTypeSupport"       : "questionTypeAvoidance";
+  const hKey    = intent === "support" ? "questionTypeSupportHelper" : "questionTypeAvoidanceHelper";
+  const qEl     = document.getElementById("type-question");
+  const hEl     = document.getElementById("type-question-helper");
+  if (qEl) qEl.innerHTML  = t[qKey]  || "";
+  if (hEl) hEl.textContent = t[hKey] || "";
+
+  // Option grid
+  const gridEl = document.querySelector("#screen-type .option-grid");
+  if (!gridEl) return;
+
+  gridEl.innerHTML = cats.map(cat => {
+    const label       = t[cat.i18nKey] || cat.i18nKey;
+    const supportAttr = cat.supportType ? ` data-support-type="${cat.supportType}"` : "";
+    return (
+      `<button class="option-btn" data-type="${cat.type}" data-category-key="${cat.i18nKey}"${supportAttr}>` +
+        `<span class="option-icon ${cat.iconClass}" aria-hidden="true">${cat.svg}</span>` +
+        `<span>${label}</span>` +
+      `</button>`
+    );
+  }).join("");
+
+  // Wire click handlers on freshly rendered buttons
+  gridEl.querySelectorAll("[data-type]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      state.selectedType    = btn.dataset.type;
+      state.selectedSupportType = btn.dataset.supportType || null;
+      gridEl.querySelectorAll("[data-type]").forEach(b => b.classList.remove("selected"));
+      btn.classList.add("selected");
+      setTimeout(() => goTo("reason"), 200);
+    });
+  });
+}
+
 // ── Dynamic Reason Screen ──────────────────────────────────────
 // Defines which question and options to show for each type.
 // Each option: { reason, i18nKey, iconClass, iconSvg }
@@ -3731,8 +4202,116 @@ function getWhyItWorks(activity) {
 
 const REASON_SCREENS = {
 
+  get_clarity: {
+    questionKey: "questionSupportGetClarity",
+    options: [
+      {
+        reason: "too_many_options",
+        i18nKey: "supportTooManyOptions",
+        iconClass: "option-icon--decision",
+        svg: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="17" x2="10" y2="10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M10 10 L5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M10 10 L15 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="5" cy="4" r="1.5" fill="currentColor"/><circle cx="15" cy="4" r="1.5" fill="currentColor"/><circle cx="10" cy="17" r="1.5" fill="currentColor"/></svg>'
+      },
+      {
+        reason: "dont_know_choose",
+        i18nKey: "supportDontKnowChoose",
+        iconClass: "option-icon--nostart",
+        svg: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.8"/><polygon points="10,4 12,10 10,9 8,10" fill="currentColor"/><polygon points="10,16 8,10 10,11 12,10" fill="currentColor" opacity="0.4"/><circle cx="10" cy="10" r="1.2" fill="currentColor"/></svg>'
+      },
+      {
+        reason: "too_many_open",
+        i18nKey: "supportTooManyOpenThings",
+        iconClass: "option-icon--mental",
+        svg: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 3.5C7 3.5 4.5 6 4.5 9c0 1.8.8 3.4 2.1 4.5l-.1 2.5 2.2-1.2c.4.1.8.2 1.3.2 3 0 5.5-2.5 5.5-5.5S13 3.5 10 3.5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><line x1="7.5" y1="8" x2="12.5" y2="8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity="0.6"/><line x1="7.5" y1="10.5" x2="12.5" y2="10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity="0.4"/></svg>'
+      },
+      {
+        reason: "dont_know_important",
+        i18nKey: "supportDontKnowImportant",
+        iconClass: "option-icon--notimportant",
+        svg: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.8"/><line x1="6.5" y1="10" x2="13.5" y2="10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>'
+      },
+      {
+        reason: "dont_know",
+        i18nKey: "supportDontKnow",
+        iconClass: "option-icon--dontknow",
+        svg: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.8"/><path d="M7.8 7.8C7.8 6.5 8.8 5.5 10 5.5s2.2 1 2.2 2.3c0 1.5-2.2 2.2-2.2 3.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="10" cy="14.2" r="1" fill="currentColor"/></svg>'
+      }
+    ]
+  },
+
+  regain_energy: {
+    questionKey: "questionSupportRegainEnergy",
+    options: [
+      {
+        reason: "feel_tired",
+        i18nKey: "supportFeelTired",
+        iconClass: "option-icon--nofeel",
+        svg: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 9.5C6 7 7.5 5 10 5s4 2 4 4.5c0 3-4 7-4 7s-4-4-4-7z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>'
+      },
+      {
+        reason: "no_motivation",
+        i18nKey: "supportNoMotivation",
+        iconClass: "option-icon--feelstuck",
+        svg: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10 C5 6.5 8 4 10 4 C14 4 15 7 13 9 C11 11 7 11 7 14 C7 16 9 17 11 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12.5" cy="15.5" r="1.5" fill="currentColor"/></svg>'
+      },
+      {
+        reason: "everything_heavy",
+        i18nKey: "supportEverythingHeavy",
+        iconClass: "option-icon--afraid",
+        svg: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 2.5 L17 5.5 V10 C17 14 10 17.5 10 17.5 C10 17.5 3 14 3 10 V5.5 Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="11.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="10" cy="13.5" r="0.9" fill="currentColor"/></svg>'
+      },
+      {
+        reason: "dont_want_to_start",
+        i18nKey: "supportDontWantToStart",
+        iconClass: "option-icon--difficult",
+        svg: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="11" r="6" stroke="currentColor" stroke-width="1.8"/><path d="M7 8.5C7.5 6.5 9 5.5 10 5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="6" y1="17" x2="14" y2="17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>'
+      },
+      {
+        reason: "dont_know",
+        i18nKey: "supportDontKnow",
+        iconClass: "option-icon--dontknow",
+        svg: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.8"/><path d="M7.8 7.8C7.8 6.5 8.8 5.5 10 5.5s2.2 1 2.2 2.3c0 1.5-2.2 2.2-2.2 3.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="10" cy="14.2" r="1" fill="currentColor"/></svg>'
+      }
+    ]
+  },
+
+  reset_restart: {
+    questionKey: "questionSupportResetRestart",
+    options: [
+      {
+        reason: "want_to_reset",
+        i18nKey: "supportWantToReset",
+        iconClass: "option-icon--learn",
+        svg: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 10A4.5 4.5 0 1 0 7 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><polyline points="4,4 7,6.5 4.5,9.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+      },
+      {
+        reason: "need_simplicity",
+        i18nKey: "supportNeedSimplicity",
+        iconClass: "option-icon--notimportant",
+        svg: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.8"/><line x1="6.5" y1="10" x2="13.5" y2="10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>'
+      },
+      {
+        reason: "light_restart",
+        i18nKey: "supportWantLightRestart",
+        iconClass: "option-icon--quickwin",
+        svg: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.8"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+      },
+      {
+        reason: "just_do_something",
+        i18nKey: "supportJustDoSomething",
+        iconClass: "option-icon--work",
+        svg: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3h7l3 3v11a1 1 0 01-1 1H5a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 3v4h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+      },
+      {
+        reason: "dont_know",
+        i18nKey: "supportDontKnow",
+        iconClass: "option-icon--dontknow",
+        svg: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.8"/><path d="M7.8 7.8C7.8 6.5 8.8 5.5 10 5.5s2.2 1 2.2 2.3c0 1.5-2.2 2.2-2.2 3.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="10" cy="14.2" r="1" fill="currentColor"/></svg>'
+      }
+    ]
+  },
+
   quick_win: {
-    questionKey: "questionReasonQuickWin",
+    questionKey: "questionSupportQuickWin",
     options: [
       {
         reason: "small_easy",
@@ -3768,35 +4347,35 @@ const REASON_SCREENS = {
   },
 
   mental_cleanup: {
-    questionKey: "questionReasonMentalCleanup",
+    questionKey: "questionSupportMentalCleanup",
     options: [
       {
         reason: "too_much_in_head",
-        i18nKey: "reasonTooMuchInHead",
+        i18nKey: "supportTooMuchOnMind",
         iconClass: "option-icon--mental",
         svg: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 3.5C7 3.5 4.5 6 4.5 9c0 1.8.8 3.4 2.1 4.5l-.1 2.5 2.2-1.2c.4.1.8.2 1.3.2 3 0 5.5-2.5 5.5-5.5S13 3.5 10 3.5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><line x1="7.5" y1="8" x2="12.5" y2="8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity="0.6"/><line x1="7.5" y1="10.5" x2="12.5" y2="10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity="0.4"/><line x1="7.5" y1="7" x2="12.5" y2="7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity="0.3"/></svg>'
       },
       {
         reason: "confused",
-        i18nKey: "reasonConfused",
+        i18nKey: "supportFeelConfused",
         iconClass: "option-icon--nostart",
         svg: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.8"/><polygon points="10,4 12,10 10,9 8,10" fill="currentColor"/><polygon points="10,16 8,10 10,11 12,10" fill="currentColor" opacity="0.4"/><circle cx="10" cy="10" r="1.2" fill="currentColor"/></svg>'
       },
       {
         reason: "stressed",
-        i18nKey: "reasonStressed",
+        i18nKey: "supportFeelStressed",
         iconClass: "option-icon--afraid",
         svg: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 2.5 L17 5.5 V10 C17 14 10 17.5 10 17.5 C10 17.5 3 14 3 10 V5.5 Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="11.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="10" cy="13.5" r="0.9" fill="currentColor"/></svg>'
       },
       {
         reason: "cant_focus",
-        i18nKey: "reasonCantFocus",
+        i18nKey: "supportCantFocus",
         iconClass: "option-icon--feelstuck",
         svg: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.8"/><circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2"/><circle cx="10" cy="10" r="1" fill="currentColor" opacity="0.5"/></svg>'
       },
       {
         reason: "dont_know",
-        i18nKey: "reasonDontKnow",
+        i18nKey: "supportDontKnow",
         iconClass: "option-icon--dontknow",
         svg: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.8"/><path d="M7.8 7.8C7.8 6.5 8.8 5.5 10 5.5s2.2 1 2.2 2.3c0 1.5-2.2 2.2-2.2 3.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="10" cy="14.2" r="1" fill="currentColor"/></svg>'
       }
@@ -3812,9 +4391,14 @@ const REASON_SCREENS = {
  * All other types keep the default avoidance question and static HTML options.
  */
 function renderReasonScreen() {
-  const type   = state.selectedType;
-  const t      = TRANSLATIONS[currentLang];
-  const config = REASON_SCREENS[type];
+  const type       = state.selectedType;
+  const t          = TRANSLATIONS[currentLang];
+  // In support flow, look up by the supportType key (e.g. "get_clarity", "regain_energy")
+  // In avoidance flow, look up by the activity type (e.g. "mental_cleanup", "quick_win")
+  const lookupKey  = (state.selectedIntent === "support" && state.selectedSupportType)
+    ? state.selectedSupportType
+    : type;
+  const config     = REASON_SCREENS[lookupKey];
 
   const questionEl = document.querySelector("#screen-reason .question");
   const gridEl     = document.querySelector("#screen-reason .option-grid");
@@ -3909,19 +4493,24 @@ function goTo(screenName, opts = {}) {
   // Render dynamic motivational message when entering time selection
   if (screenName === "time") renderMotivationalMessage();
 
+  // Render dynamic type screen when entering it
+  if (screenName === "type") renderTypeScreen();
+
   // Render dynamic reason screen when entering it
   if (screenName === "reason") renderReasonScreen();
 
   // Clear selection state when returning to home
   if (resetFlow) {
+    state.selectedIntent       = null;
     state.selectedType         = null;
+    state.selectedSupportType  = null;
     state.selectedReason       = null;
     state.selectedDuration     = null;
     state.selectedMoreTimeMode = null;
     state.currentActivity      = null;
     state.seenActivityIds      = [];
     state.anotherClickCount    = 0;
-    document.querySelectorAll("[data-type], [data-reason], [data-duration], [data-moretime]")
+    document.querySelectorAll("[data-type], [data-reason], [data-duration], [data-moretime], [data-intent]")
       .forEach(b => b.classList.remove("selected"));
     refreshIntroStats();
     renderFollowUpHint();
@@ -4095,21 +4684,23 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", goBack)
   );
 
-  // Intro → Type
-  document.getElementById("btn-start").addEventListener("click", () => goTo("type"));
+  // Intro → Intent
+  document.getElementById("btn-start").addEventListener("click", () => goTo("intent"));
 
-  // Type buttons → go to reason screen
-  document.querySelectorAll("[data-type]").forEach(btn => {
+  // Intent buttons → set intent, go to type screen (which renders per-intent)
+  document.querySelectorAll("[data-intent]").forEach(btn => {
     btn.addEventListener("click", () => {
-      state.selectedType = btn.dataset.type;
-      document.querySelectorAll("[data-type]").forEach(b => b.classList.remove("selected"));
+      state.selectedIntent = btn.dataset.intent;
+      state.selectedType   = null;
+      state.selectedReason = null;
+      document.querySelectorAll("[data-intent]").forEach(b => b.classList.remove("selected"));
       btn.classList.add("selected");
-      setTimeout(() => goTo("reason"), 200);
+      setTimeout(() => goTo("type"), 200);
     });
   });
 
+  // Type buttons are wired dynamically by renderTypeScreen() on each entry.
   // Reason buttons are wired dynamically by renderReasonScreen() on each entry.
-  // The initial render happens via goTo("reason") from the type-button handler.
 
   // Time buttons (5 / 10 / 15 min)
   document.querySelectorAll("[data-duration]").forEach(btn => {
@@ -4294,14 +4885,16 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.confirm(t.confirmResetStats)) {
       localStorage.removeItem("startnow_stats");
       localStorage.removeItem(HISTORY_KEY);
+      localStorage.removeItem(LAST_COMPLETED_KEY);
       refreshIntroStats();
+      renderFollowUpHint(); // re-renders with no data → hint disappears
     }
   });
 
-  // Done: Start another (jump to type, clear history so Back from type goes home)
+  // Done: Start another (jump to intent, clear history so Back from intent goes home)
   document.getElementById("btn-again").addEventListener("click", () => {
     history.length = 0;
-    goTo("type");
+    goTo("intent");
   });
 
   // Done: Home
