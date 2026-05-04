@@ -35,11 +35,11 @@ const TRANSLATIONS = {
     step3of4Label:         "Step 3 of 4",
     step4of4Label:         "Step 4 of 4",
     questionIntent:        "Where do you want<br>to start?",
-    questionIntentHelper:  "Choose the kind of support you need right now",
-    intentAvoidance:       "I have something to do",
-    intentAvoidanceSub:    "I know what I need to do, but I'm avoiding it",
-    intentSupport:         "I don't know where to start",
-    intentSupportSub:      "I feel blocked, confused, or low on energy",
+    questionIntentHelper:  "Choose what best describes how you feel right now",
+    intentAvoidance:       "I'm avoiding something",
+    intentAvoidanceSub:    "I know what I need to do, but I keep putting it off",
+    intentSupport:         "I want to start something",
+    intentSupportSub:      "But I don't know where to begin or what to do",
 
     // Avoidance flow — type screen
     questionTypeAvoidance:       "What are you<br>putting off?",
@@ -112,6 +112,13 @@ const TRANSLATIONS = {
     reasonConfused:           "I feel confused",
     reasonStressed:           "I feel stressed",
     reasonCantFocus:          "I can't focus",
+
+    // Result screen — intent-toned lines
+    resultIntentLineAvoidance: "It's not difficult. You're avoiding the first step.",
+    resultIntentLineSupport:   "You don't need to figure everything out. Start small.",
+    resultSecondaryAvoidance:  "Stop thinking. Take the first step.",
+    resultSecondarySupport:    "Keep it simple. One small step is enough.",
+    btnDoneSupport:            "Done",
 
     // Done screen
     doneMessage:     "You acted.<br>This changes everything.",
@@ -228,11 +235,11 @@ const TRANSLATIONS = {
     step3of4Label:         "Passo 3 di 4",
     step4of4Label:         "Passo 4 di 4",
     questionIntent:        "Da dove vuoi<br>partire?",
-    questionIntentHelper:  "Scegli il tipo di supporto che ti serve adesso",
-    intentAvoidance:       "Ho qualcosa da fare",
-    intentAvoidanceSub:    "So cosa devo fare, ma lo sto rimandando",
-    intentSupport:         "Non so da dove iniziare",
-    intentSupportSub:      "Mi sento bloccato, confuso o senza energia",
+    questionIntentHelper:  "Scegli cosa descrive meglio questo momento",
+    intentAvoidance:       "Sto evitando qualcosa",
+    intentAvoidanceSub:    "So cosa devo fare, ma continuo a rimandare",
+    intentSupport:         "Voglio iniziare qualcosa",
+    intentSupportSub:      "Ma non so da dove partire o cosa fare",
 
     // Avoidance flow — type screen
     questionTypeAvoidance:       "Cosa stai<br>rimandando?",
@@ -306,6 +313,13 @@ const TRANSLATIONS = {
     reasonConfused:              "Mi sento confuso",
     reasonStressed:              "Mi sento stressato",
     reasonCantFocus:             "Non riesco a concentrarmi",
+
+    // Result screen — intent-toned lines
+    resultIntentLineAvoidance: "Non è difficile. Stai evitando il primo passo.",
+    resultIntentLineSupport:   "Non serve capire tutto. Parti da qualcosa di piccolo.",
+    resultSecondaryAvoidance:  "Smetti di pensarci. Fai il primo passo.",
+    resultSecondarySupport:    "Tienila semplice. Basta un piccolo passo.",
+    btnDoneSupport:            "Ok, fatto",
 
     // Done screen
     doneMessage:     "Hai agito.<br>Questo cambia tutto.",
@@ -4564,6 +4578,19 @@ function renderResult(activity) {
   document.getElementById("result-title").textContent = content.title;
   document.getElementById("result-desc").textContent  = content.description;
 
+  // ── Intent-toned framing (replaces result-label + truth-line when no reason-specific line)
+  const intent          = state.selectedIntent || "avoidance";
+  const intentMainLine  = intent === "support"
+    ? (t.resultIntentLineSupport  || "")
+    : (t.resultIntentLineAvoidance || "");
+  const intentSecondary = intent === "support"
+    ? (t.resultSecondarySupport   || "")
+    : (t.resultSecondaryAvoidance || "");
+
+  // result-label: swap to intent-toned secondary text
+  const resultLabelEl = document.querySelector("#result-card .result-label");
+  if (resultLabelEl) resultLabelEl.textContent = intentSecondary || (t.resultLabel || "Your task");
+
   // ── Truth Mode / More Time badge (result card)
   const badge = document.getElementById("result-truth-badge");
   if (badge) {
@@ -4571,11 +4598,12 @@ function renderResult(activity) {
     badge.style.display = showBadge ? "inline-flex" : "none";
   }
 
-  // ── Truth line
+  // ── Truth line: intent main line shown when no reason-specific truth line exists
   const truthLineEl = document.getElementById("result-truth-line");
   if (truthLineEl) {
-    if (resolvedTruthLine) {
-      truthLineEl.textContent  = resolvedTruthLine;
+    const lineToShow = resolvedTruthLine || intentMainLine;
+    if (lineToShow) {
+      truthLineEl.textContent   = lineToShow;
       truthLineEl.style.display = "block";
     } else {
       truthLineEl.style.display = "none";
@@ -4607,7 +4635,9 @@ function renderResult(activity) {
   if (doneBtn)  {
     doneBtn.classList.remove("pulse", "confirmed");
     doneBtn.disabled = false;
-    doneBtn.textContent = t.btnDone;
+    doneBtn.textContent = (intent === "support" && t.btnDoneSupport)
+      ? t.btnDoneSupport
+      : t.btnDone;
   }
   if (timerBtn) timerBtn.textContent = t.btnTimer;
 
