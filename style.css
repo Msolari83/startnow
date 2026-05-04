@@ -103,22 +103,17 @@ body {
 /* ── Logo ─────────────────────────────────────────────────── */
 .logo {
   display: flex;
-  align-items: center;
-  gap: 7px;
+  flex-direction: column;
+  gap: 4px;
   cursor: default;
   user-select: none;
 }
 
-.logo-mark {
-  font-size: 11px;
-  line-height: 1;
-  color: var(--accent);
+.logo-main {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: baseline;
+  gap: 6px;
 }
-
-.logo-mark svg { display: block; }
 
 .logo-name {
   font-family: var(--font-serif);
@@ -126,7 +121,24 @@ body {
   font-weight: 500;
   letter-spacing: 0.01em;
   color: var(--text);
+  opacity: 0.85;
+}
+
+.app-label {
+  font-family: var(--font-sans);
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
   opacity: 0.75;
+}
+
+.logo-underline {
+  width: 32px;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.35;
 }
 
 /* ── Language Switcher ────────────────────────────────────── */
@@ -1093,7 +1105,7 @@ body {
 .logo-col {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 4px;
 }
 
 .intro-attribution {
@@ -1102,6 +1114,5 @@ body {
   color: var(--muted);
   font-weight: 400;
   line-height: 1;
-  padding-left: 18px;
   opacity: 0.45;
 }

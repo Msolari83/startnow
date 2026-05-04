@@ -3106,8 +3106,24 @@ function renderDone(stats) {
   }
 }
 
+// ── Logo Component ─────────────────────────────────────────────
+// Single source of truth for the logo markup.
+// Call once at boot to inject the logo into every .logo element.
+function renderLogo() {
+  const markup =
+    '<div class="logo-main">' +
+      '<span class="logo-name">StartNow</span>' +
+      '<span class="app-label">App</span>' +
+    '</div>' +
+    '<div class="logo-underline"></div>';
+  document.querySelectorAll(".logo").forEach(el => {
+    el.innerHTML = markup;
+  });
+}
+
 // ── Event Wiring ───────────────────────────────────────────────
 document.addEventListener("DOMContentLoaded", () => {
+  renderLogo();
 
   // Language toggle
   document.querySelectorAll(".lang-btn").forEach(btn =>
