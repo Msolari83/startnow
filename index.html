@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#0d0d0f" />
+  <meta name="theme-color" content="#f5f0e8" />
   <meta name="description" content="Stop procrastinating. StartNow." />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <title>StartNow</title>
   <link rel="manifest" href="manifest.json" />
   <link rel="stylesheet" href="style.css" />
@@ -16,12 +16,9 @@
 
 <div id="app">
 
-  <!-- ══════════════════════════════════════════════════
-       SCREEN 1 — INTRO
-  ══════════════════════════════════════════════════ -->
+  <!-- SCREEN 1 — INTRO -->
   <section class="screen" id="screen-intro">
 
-    <!-- Top bar: logo + language selector -->
     <div class="top-bar">
       <div class="logo-col">
         <div class="logo" aria-hidden="true">
@@ -30,8 +27,6 @@
         </div>
         <p class="intro-attribution">Initial version · built by Matteo Solari</p>
       </div>
-
-      <!-- Language selector — visible on first screen -->
       <div class="lang-switcher" role="group" aria-label="Language selector">
         <button class="lang-btn" data-lang="it" aria-label="Italiano">IT</button>
         <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
@@ -50,7 +45,6 @@
       You're avoiding something. This app helps you start — right now, with whatever time you have.
     </p>
 
-    <!-- Stats strip -->
     <div class="stats-strip" aria-label="Your progress">
       <div class="stat-chip">
         <span class="val" id="intro-today">0</span>
@@ -66,24 +60,20 @@
       </div>
     </div>
 
-    <button id="btn-start" class="btn-cta" data-i18n="btnStart">Inizia ora</button>
-
-    <!-- Reset statistics — subtle link-style below the CTA -->
+    <button id="btn-start" class="btn-cta" data-i18n="btnStart">Start now</button>
     <button id="btn-reset-stats" class="btn-reset-stats" data-i18n="btnResetStats">Reset statistics</button>
 
   </section>
 
 
-  <!-- ══════════════════════════════════════════════════
-       SCREEN 2 — TYPE SELECTION
-  ══════════════════════════════════════════════════ -->
+  <!-- SCREEN 2 — TYPE SELECTION -->
   <section class="screen" id="screen-type">
 
     <div class="top-bar">
       <div class="logo" aria-hidden="true">
         <div class="logo-mark">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <polygon points="4,2 14,8 4,14" fill="rgba(255,255,255,0.7)"/>
+            <polygon points="4,2 14,8 4,14" fill="currentColor" opacity="0.5"/>
           </svg>
         </div>
         <span class="logo-name">StartNow</span>
@@ -104,35 +94,29 @@
     </div>
 
     <div class="option-grid" role="group">
-      <!-- Un compito di lavoro: document -->
       <button class="option-btn" data-type="work">
         <span class="option-icon option-icon--work" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3h7l3 3v11a1 1 0 01-1 1H5a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 3v4h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1="10" x2="13" y2="10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><line x1="7" y1="13" x2="11" y2="13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
-        <span data-i18n="typeWork">Un compito di lavoro</span>
+        <span data-i18n="typeWork">Work task</span>
       </button>
-      <!-- Cercare lavoro: magnifier/search -->
       <button class="option-btn" data-type="work">
         <span class="option-icon option-icon--search" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8.5" cy="8.5" r="5" stroke="currentColor" stroke-width="1.8"/><line x1="12.5" y1="12.5" x2="17" y2="17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
-        <span data-i18n="typeSearchJob">Cercare lavoro</span>
+        <span data-i18n="typeSearchJob">Job searching</span>
       </button>
-      <!-- Studiare o imparare: open book -->
       <button class="option-btn" data-type="thinking">
         <span class="option-icon option-icon--learn" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 5C10 5 7 4 4 4.5V16c3-.5 6 .5 6 .5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 5c0 0 3-1 6-.5V16c-3-.5-6 .5-6 .5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><line x1="10" y1="5" x2="10" y2="16.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-        <span data-i18n="typeLearn">Studiare o imparare</span>
+        <span data-i18n="typeLearn">Studying or learning</span>
       </button>
-      <!-- Prendere una decisione: branching fork -->
       <button class="option-btn" data-type="decision">
         <span class="option-icon option-icon--decision" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="17" x2="10" y2="10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M10 10 L5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M10 10 L15 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="5" cy="4" r="1.5" fill="currentColor"/><circle cx="15" cy="4" r="1.5" fill="currentColor"/><circle cx="10" cy="17" r="1.5" fill="currentColor"/></svg></span>
-        <span data-i18n="typeDecision">Prendere una decisione</span>
+        <span data-i18n="typeDecision">A decision</span>
       </button>
-      <!-- Allenamento fisico: running figure -->
       <button class="option-btn" data-type="training">
         <span class="option-icon option-icon--training" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="13" cy="3.5" r="1.5" fill="currentColor"/><path d="M11 6.5 L8.5 9.5 L5.5 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 6.5 L12.5 10 L10 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 13 L8 16.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12.5 10 L15 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
-        <span data-i18n="typeTraining">Allenamento fisico</span>
+        <span data-i18n="typeTraining">Physical training</span>
       </button>
-      <!-- Sono bloccato in una situazione: padlock -->
       <button class="option-btn" data-type="stuck">
         <span class="option-icon option-icon--stuck" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="9" width="12" height="9" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M7 9V6.5a3 3 0 016 0V9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="10" cy="14" r="1.2" fill="currentColor"/></svg></span>
-        <span data-i18n="typeStuck">Sono bloccato in una situazione</span>
+        <span data-i18n="typeStuck">I'm stuck in a situation</span>
       </button>
     </div>
 
@@ -141,16 +125,14 @@
   </section>
 
 
-  <!-- ══════════════════════════════════════════════════
-       SCREEN 2b — REASON (Truth Mode)
-  ══════════════════════════════════════════════════ -->
+  <!-- SCREEN 2b — REASON (Truth Mode) -->
   <section class="screen" id="screen-reason">
 
     <div class="top-bar">
       <div class="logo" aria-hidden="true">
         <div class="logo-mark">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <polygon points="4,2 14,8 4,14" fill="rgba(255,255,255,0.7)"/>
+            <polygon points="4,2 14,8 4,14" fill="currentColor" opacity="0.5"/>
           </svg>
         </div>
         <span class="logo-name">StartNow</span>
@@ -170,40 +152,33 @@
     </div>
 
     <div class="option-grid" role="group">
-      <!-- Too difficult: boulder / weight -->
       <button class="option-btn" data-reason="too_difficult">
         <span class="option-icon option-icon--difficult" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="11" r="6" stroke="currentColor" stroke-width="1.8"/><path d="M7 8.5C7.5 6.5 9 5.5 10 5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="6" y1="17" x2="14" y2="17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
         <span data-i18n="reasonTooDifficult">Too difficult</span>
       </button>
-      <!-- Don't feel like it: battery empty / low energy -->
       <button class="option-btn" data-reason="dont_feel_like">
         <span class="option-icon option-icon--nofeel" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="6" width="13" height="8" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M16 9v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="5" y="8" width="3" height="4" rx="1" fill="currentColor" opacity="0.5"/></svg></span>
         <span data-i18n="reasonDontFeelLike">I don't feel like it</span>
       </button>
-      <!-- Afraid: shield with warning -->
       <button class="option-btn" data-reason="afraid">
         <span class="option-icon option-icon--afraid" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 2.5 L17 5.5 V10 C17 14 10 17.5 10 17.5 C10 17.5 3 14 3 10 V5.5 Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="11.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="10" cy="13.5" r="0.9" fill="currentColor"/></svg></span>
         <span data-i18n="reasonAfraid">I'm afraid</span>
       </button>
-      <!-- Don't know where to start: compass -->
       <button class="option-btn" data-reason="dont_know_start">
         <span class="option-icon option-icon--nostart" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.8"/><polygon points="10,4 12,10 10,9 8,10" fill="currentColor"/><polygon points="10,16 8,10 10,11 12,10" fill="currentColor" opacity="0.4"/><circle cx="10" cy="10" r="1.2" fill="currentColor"/></svg></span>
         <span data-i18n="reasonDontKnowStart">I don't know where to start</span>
       </button>
-      <!-- Not urgent: minus in circle -->
       <button class="option-btn" data-reason="not_important">
         <span class="option-icon option-icon--notimportant" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.8"/><line x1="6.5" y1="10" x2="13.5" y2="10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
-        <span data-i18n="reasonNotImportant">Non mi sembra urgente</span>
+        <span data-i18n="reasonNotImportant">It doesn't feel urgent</span>
       </button>
-      <!-- Feel stuck: tangled loop / knot -->
       <button class="option-btn" data-reason="feel_stuck">
         <span class="option-icon option-icon--feelstuck" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10 C5 6.5 8 4 10 4 C14 4 15 7 13 9 C11 11 7 11 7 14 C7 16 9 17 11 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12.5" cy="15.5" r="1.5" fill="currentColor"/></svg></span>
         <span data-i18n="reasonFeelStuck">I feel stuck</span>
       </button>
-      <!-- Non lo so: question mark in circle -->
       <button class="option-btn" data-reason="dont_know_start">
         <span class="option-icon option-icon--dontknow" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.8"/><path d="M7.8 7.8C7.8 6.5 8.8 5.5 10 5.5s2.2 1 2.2 2.3c0 1.5-2.2 2.2-2.2 3.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="10" cy="14.2" r="1" fill="currentColor"/></svg></span>
-        <span data-i18n="reasonDontKnow">Non lo so</span>
+        <span data-i18n="reasonDontKnow">I don't know</span>
       </button>
     </div>
 
@@ -212,16 +187,14 @@
   </section>
 
 
-  <!-- ══════════════════════════════════════════════════
-       SCREEN 3 — TIME SELECTION
-  ══════════════════════════════════════════════════ -->
+  <!-- SCREEN 3 — TIME SELECTION -->
   <section class="screen" id="screen-time">
 
     <div class="top-bar">
       <div class="logo" aria-hidden="true">
         <div class="logo-mark">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <polygon points="4,2 14,8 4,14" fill="rgba(255,255,255,0.7)"/>
+            <polygon points="4,2 14,8 4,14" fill="currentColor" opacity="0.5"/>
           </svg>
         </div>
         <span class="logo-name">StartNow</span>
@@ -254,24 +227,20 @@
       </button>
     </div>
 
-    <!-- More time option — below the grid, visually distinct but calm -->
     <button id="btn-more-time" class="btn-more-time" data-i18n="btnMoreTime">More time</button>
-
     <button id="btn-back-time" class="btn-back-nav" data-i18n="btnBack">Back</button>
 
   </section>
 
 
-  <!-- ══════════════════════════════════════════════════
-       SCREEN 3b — MORE TIME (Start or Continue)
-  ══════════════════════════════════════════════════ -->
+  <!-- SCREEN 3b — MORE TIME -->
   <section class="screen" id="screen-moretime">
 
     <div class="top-bar">
       <div class="logo" aria-hidden="true">
         <div class="logo-mark">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <polygon points="4,2 14,8 4,14" fill="rgba(255,255,255,0.7)"/>
+            <polygon points="4,2 14,8 4,14" fill="currentColor" opacity="0.5"/>
           </svg>
         </div>
         <span class="logo-name">StartNow</span>
@@ -306,79 +275,69 @@
   </section>
 
 
-  <!-- ══════════════════════════════════════════════════
-       SCREEN 4 — RESULT
-  ══════════════════════════════════════════════════ -->
+  <!-- SCREEN 4 — RESULT -->
   <section class="screen" id="screen-result">
 
     <div class="top-bar">
       <div class="logo" aria-hidden="true">
         <div class="logo-mark">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <polygon points="4,2 14,8 4,14" fill="rgba(255,255,255,0.7)"/>
+            <polygon points="4,2 14,8 4,14" fill="currentColor" opacity="0.5"/>
           </svg>
         </div>
         <span class="logo-name">StartNow</span>
       </div>
     </div>
 
-    <!-- Activity card -->
     <div class="result-card" id="result-card">
       <p class="result-label" data-i18n="resultLabel">Your task</p>
       <h2 class="result-title" id="result-title">—</h2>
-      <!-- Truth line — direct sentence tied to the selected reason -->
       <p id="result-truth-line" class="result-truth-line" style="display:none;"></p>
-      <p class="result-desc"  id="result-desc">—</p>
-      <button class="why-toggle" id="why-toggle" aria-expanded="false" data-i18n="whyToggle">Perché funziona</button>
+      <p class="result-desc" id="result-desc">—</p>
+      <button class="why-toggle" id="why-toggle" aria-expanded="false" data-i18n="whyToggle">Why this works</button>
       <p class="why-body" id="why-body" aria-hidden="true"></p>
     </div>
 
-    <!-- Steps card -->
     <div class="steps-card">
       <p class="steps-label" data-i18n="stepsLabel">Steps</p>
       <ol id="result-steps"></ol>
     </div>
 
-    <!-- Timer (hidden until started) -->
     <div id="timer-block" role="timer" aria-live="polite">
       <div class="timer-ring-wrap">
         <svg width="80" height="80" viewBox="0 0 80 80">
           <circle class="timer-track" cx="40" cy="40" r="36"/>
-          <circle id="timer-ring"    cx="40" cy="40" r="36"/>
+          <circle id="timer-ring" cx="40" cy="40" r="36"/>
         </svg>
         <span id="timer-display">00:00</span>
       </div>
       <div class="timer-meta">
         <p class="timer-state" data-i18n="timerStateLabel">Running</p>
-        <p class="timer-name"  id="timer-activity-name">—</p>
+        <p class="timer-name" id="timer-activity-name">—</p>
       </div>
     </div>
 
-    <!-- Inline feedback flash (shown briefly on Fatto click) -->
     <p id="done-flash" class="done-flash" aria-live="polite"></p>
 
-    <!-- Action buttons -->
     <div class="result-actions">
-      <button id="btn-done"        class="btn-primary"   data-i18n="btnDone">Done</button>
-      <button id="btn-timer"       class="btn-secondary" data-i18n="btnTimer">Start timer</button>
-      <button id="btn-back"        class="btn-secondary" data-i18n="btnBack">Back</button>
+      <button id="btn-done"        class="btn-primary"                     data-i18n="btnDone">Done</button>
+      <button id="btn-timer"       class="btn-secondary"                   data-i18n="btnTimer">Start timer</button>
+      <button id="btn-back"        class="btn-secondary"                   data-i18n="btnBack">Back</button>
       <button id="btn-another"     class="btn-secondary btn-another-inner" data-i18n="btnAnother">Another one</button>
-      <button id="btn-result-home" class="btn-secondary btn-home-result" data-i18n="btnResultHome">Home</button>
+      <button id="btn-result-home" class="btn-secondary btn-home-result"   data-i18n="btnResultHome">Home</button>
     </div>
 
   </section>
 
 
-  <!-- ══════════════════════════════════════════════════
-       SCREEN 5 — DONE / FEEDBACK
-  ══════════════════════════════════════════════════ -->
+  <!-- SCREEN 5 — DONE / FEEDBACK -->
   <section class="screen" id="screen-done">
 
     <div class="top-bar">
       <div class="logo" aria-hidden="true">
         <div class="logo-mark">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <polygon points="4,2 14,8 4,14" fill="rgba(255,255,255,0.7)"/>
+            <polygon points="4,2 14,8 4,14" fill="currentColor" opacity="0.5"/>
           </svg>
         </div>
         <span class="logo-name">StartNow</span>
@@ -407,8 +366,8 @@
     </div>
 
     <div class="done-actions">
-      <button id="btn-again" class="btn-cta"   data-i18n="btnAgain">Start another</button>
-      <button id="btn-home"  class="btn-ghost" data-i18n="btnHome">Back to home</button>
+      <button id="btn-again"     class="btn-cta"      data-i18n="btnAgain">Start another</button>
+      <button id="btn-home"      class="btn-ghost"    data-i18n="btnHome">Back to home</button>
       <button id="btn-back-done" class="btn-back-nav" data-i18n="btnBack">Back</button>
     </div>
 
@@ -419,7 +378,6 @@
 <script src="app.js"></script>
 
 <script>
-  // Register PWA service worker
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js').catch(() => {});
   }
