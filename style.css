@@ -379,6 +379,8 @@ body {
 .option-icon--thinking  { color: #5a7aaa; }
 .option-icon--stuck     { color: #a05050; }
 .option-icon--dontknow  { color: #7a7060; }
+.option-icon--mental    { color: #6a8898; }
+.option-icon--quickwin  { color: #5a8a6a; }
 
 .option-btn:hover .option-icon--work      { color: #3a6080; opacity: 1; }
 .option-btn:hover .option-icon--search    { color: #307070; opacity: 1; }
@@ -388,6 +390,8 @@ body {
 .option-btn:hover .option-icon--thinking  { color: #3a5a90; opacity: 1; }
 .option-btn:hover .option-icon--stuck     { color: #803030; opacity: 1; }
 .option-btn:hover .option-icon--dontknow  { color: #5a5040; opacity: 1; }
+.option-btn:hover .option-icon--mental    { color: #4a6878; opacity: 1; }
+.option-btn:hover .option-icon--quickwin  { color: #3a6a4a; opacity: 1; }
 
 /* Reason icons */
 .option-icon--difficult    { color: #9a6040; }
@@ -1115,4 +1119,71 @@ body {
   font-weight: 400;
   line-height: 1;
   opacity: 0.45;
+}
+
+/* ── Reduce to 2 min button ───────────────────────────────── */
+.btn-reduce-2 {
+  width: 100%;
+  margin-top: 6px;
+  padding: 15px 20px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--muted);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.btn-reduce-2:hover {
+  background: var(--surface2);
+  border-color: var(--border-hi);
+  color: var(--text);
+}
+
+.btn-reduce-2:active { transform: scale(0.98); }
+
+/* ── Follow-up hint on intro screen ──────────────────────── */
+.follow-up-hint {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 0 18px;
+  border-top: 1px solid var(--border);
+}
+
+.follow-up-text {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.follow-up-btn {
+  align-self: flex-start;
+  padding: 8px 18px;
+  background: transparent;
+  border: 1px solid rgba(160, 120, 64, 0.35);
+  border-radius: var(--radius-sm);
+  color: var(--accent);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 400;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.follow-up-btn:hover {
+  background: var(--accent-bg);
+  border-color: rgba(160, 120, 64, 0.55);
 }
